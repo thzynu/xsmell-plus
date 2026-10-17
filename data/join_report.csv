@@ -1,0 +1,5 @@
+smell,total,matched,ck_missing,with_ck,match_rate
+blob,2267,1964,297,1970,0.997
+data_class,2304,1993,304,2000,0.996
+feature_envy,2372,2043,321,2051,0.996
+long_method,2424,2088,328,2096,0.996

@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+imbalanced-learn>=0.12
+xgboost>=2.0
+shap>=0.45
+matplotlib>=3.8
+# versions used for the reported results: Python 3.13, pandas 3.0.2, numpy 2.4.3, scipy 1.17.1,
+# scikit-learn 1.8.0, shap 0.51.0, matplotlib 3.10.9
+
+javalang>=0.13   # needed by 13_mi_metrics.py, 14_sonar_debt.py, xs_quality.py

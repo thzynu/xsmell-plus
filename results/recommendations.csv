@@ -1,0 +1,951 @@
+smell,sample_id,code_name,p_smelly,true_label,abstained,recommended,shap_only_top1,rule_only_top1
+blob,3700666,com.alibaba.otter.canal.protocol.CanalEntry.RowChange.Builder,0.783,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3702984,com.alibaba.otter.canal.client.adapter.hbase.support.PhTypeUtil,0.507,1,False,Extract Class,Move Method,Extract Class
+blob,3721456,com.android.tools.r8.dex.AtlasVirtualFile.PackageMapDistributor,0.537,0,False,Move Method,Move Method,Extract Class
+blob,3725605,com.alibaba.jvm.sandbox.core.util.matcher.structure.ClassStructureImplByJDK,0.513,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3732429,com.alibaba.druid.pool.DruidDataSource,0.703,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3786480,com.google.android.exoplayer2.ext.okhttp.OkHttpDataSource,0.807,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3790799,com.google.android.exoplayer2.offline.DownloadAction,0.557,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3813750,org.apache.activemq.artemis.core.server.cluster.ClusterControl,0.513,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,3827535,org.apache.accumulo.server.util.MetadataTableUtil,0.907,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3856241,org.apache.accumulo.core.security.VisibilityEvaluator,0.537,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3888598,com.datatorrent.stram.engine.AbstractReservoir.SpscArrayQueueReservoir,0.52,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3908492,org.apache.archiva.consumers.metadata.ArchivaMetadataCreationConsumer,0.563,1,False,Move Method,Move Method,Extract Class
+blob,3931780,org.apache.accumulo.proxy.thrift.AccumuloProxy.deleteTable_args,0.563,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,3938271,org.apache.aries.cdi.container.internal.container.ConfigurationListener,0.62,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,3950225,org.apache.atlas.discovery.EntityLineageService,0.85,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,3953485,org.apache.apex.malhar.lib.fs.s3.S3FileMerger,0.71,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4034686,org.apache.beam.sdk.options.PipelineOptionsFactory,0.897,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4035683,org.apache.beam.runners.dataflow.worker.WindmillStateReader,0.77,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4068444,org.apache.bookkeeper.proto.PerChannelBookieClient,0.727,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4070938,org.apache.bookkeeper.client.BookKeeper,0.797,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4090808,org.apache.brooklyn.entity.webapp.DynamicWebAppClusterImpl,0.56,0,False,Extract Class,Extract Class,Extract Class
+blob,4108183,org.apache.asterix.om.pointables.nonvisitor.ARecordPointable,0.53,0,False,Move Method,Move Method,Extract Class
+blob,4113343,org.apache.brooklyn.core.effector.MethodEffector,0.57,0,False,Move Method,Extract Class,Extract Class
+blob,4124615,org.apache.brooklyn.rest.resources.SensorResource,0.627,1,False,Extract Class,Extract Class,Extract Class
+blob,4131952,org.apache.calcite.util.ImmutableBitSet,0.7,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4159543,org.apache.calcite.avatica.proto.Common.Signature,0.873,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4199164,org.apache.cayenne.tools.CayenneGeneratorMojo,0.64,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4214220,org.apache.bsf.util.event.generator.EventAdapterGenerator,0.547,1,False,Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4220805,org.apache.cassandra.db.view.ViewUpdateGenerator,0.703,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4272508,org.apache.commons.validator.example.ValidateExample,0.512,0,False,,Extract Class,Extract Class
+blob,4292390,org.apache.deltaspike.core.impl.crypto.DefaultCipherService,0.51,0,False,Extract Class,Move Method,Extract Class
+blob,4296219,org.apache.directory.fortress.web.panel.ConstraintBasePanel,0.563,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4306236,org.apache.kerby.has.server.web.WebServer,0.88,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4359600,org.apache.derby.impl.store.raw.data.CopyRowsOperation,0.577,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4370541,org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor,0.923,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4373673,org.apache.cxf.rs.security.jose.jws.JwsJsonSignatureEntry,0.607,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4401103,org.apache.directory.studio.apacheds.configuration.editor.PasswordPolicyDetailsPage,0.737,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4401367,org.apache.directory.studio.ldapbrowser.core.jobs.ImportDsmlRunnable,0.827,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4428269,org.apache.eagle.alert.metadata.impl.JdbcMetadataDaoImpl,0.573,0,False,Move Method,Extract Class,Extract Class
+blob,4433896,org.apache.falcon.state.store.InMemoryStateStore,0.677,0,False,Move Method,Move Method,Extract Class
+blob,4455297,org.apache.drill.exec.proto.UserProtos.GetTablesReq.Builder,0.643,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4456492,org.apache.drill.exec.planner.logical.DrillFilterItemStarReWriterRule,0.5,1,False,Move Method,Extract Class,Extract Class
+blob,4496340,org.apache.drill.exec.server.rest.profile.OperatorWrapper,0.553,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4499277,org.apache.flume.instrumentation.GangliaServer,0.673,1,False,Move Method,Move Method,Extract Class
+blob,4505549,org.apache.fluo.core.impl.TimestampTracker,0.627,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4542224,org.apache.fineract.integrationtests.common.Utils,0.533,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4556348,freemarker.core.DynamicKeyName,0.817,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4558704,freemarker.core.TemplateConfiguration,0.503,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4580142,org.apache.fop.layoutmgr.BalancingColumnBreakingAlgorithm,0.67,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4611617,org.apache.flink.runtime.iterative.task.AbstractIterativeTask,0.947,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4640509,org.apache.hadoop.hdfs.protocol.proto.DataTransferProtos.OpCopyBlockProto,0.527,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4726345,org.apache.edgent.topology.plumbing.PlumbingStreams,0.61,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4727936,org.apache.edgent.runtime.appservice.AppService,0.767,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4737430,hivemall.ftvec.binning.BuildBinsUDAF.BuildBinsUDAFEvaluator,0.583,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4745312,org.netbeans.html.boot.impl.FnUtils.FindInClass.FindInMethod,0.533,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4757534,org.apache.plc4x.java.ethernetip.netty.Plc4XEtherNetIpProtocol,0.83,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4780738,org.apache.rya.indexing.accumulo.freetext.query.QueryParserTokenManager,0.68,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4792710,org.apache.shardingsphere.core.util.InlineExpressionParser,0.75,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4815345,org.apache.tez.client.TezClientUtils,0.92,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,4816540,org.apache.tez.dag.library.vertexmanager.InputReadyVertexManager,0.61,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,4847579,org.apache.jackrabbit.webdav.version.report.ReportType,0.683,0,False,Extract Class,Extract Class,Extract Class
+blob,4869703,org.apache.jackrabbit.jcr2spi.xml.ImportHandler,0.585,0,False,Move Method,Extract Class,Extract Class
+blob,4982268,org.apache.kafka.common.protocol.types.Schema,0.73,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5027180,org.apache.log4j.Hierarchy,0.733,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5033471,org.apache.jena.rdfxml.xmlinput.states.WantPropertyElement,0.88,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5088331,org.apache.mahout.classifier.naivebayes.NaiveBayesModel,0.52,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5111458,org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo,0.95,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5115838,org.apache.manifoldcf.crawler.connectors.filenet.FilenetConnector,0.67,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5133545,org.eclipse.aether.internal.impl.DefaultUpdatePolicyAnalyzer,0.583,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5141876,org.apache.maven.plugins.pmd.AbstractPmdReport,0.633,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5146683,org.apache.maven.scm.provider.perforce.PerforceScmProvider,0.933,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5161069,org.apache.kylin.dict.TrieDictionaryForestBuilder,0.9,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5180625,org.apache.kylin.engine.spark.SparkCubingMerge,0.77,1,False,Move Method,Extract Class,Extract Class
+blob,5182713,org.apache.kylin.source.datagen.ModelDataGenerator,0.873,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5183069,org.apache.mina.coap.codec.CoapEncoder,0.667,1,False,Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5186444,org.apache.metron.elasticsearch.client.ElasticsearchClientFactory,0.587,1,False,Move Method,Extract Class,Extract Class
+blob,5218642,org.apache.ode.bpel.engine.migration.MigrationHandler,0.767,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5231896,org.apache.oodt.cas.resource.tools.RunDirJobSubmitter,0.693,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5247450,org.apache.oozie.tools.diag.AppInfoCollector,0.56,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5255988,org.apache.oozie.executor.jpa.CoordActionQueryExecutor,0.73,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5323752,org.apache.pdfbox.debugger.fontencodingpane.Type3Font,0.847,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5327402,org.apache.nifi.provenance.lucene.DeleteIndexAction,0.707,1,False,Move Method,Move Method,Extract Class
+blob,5333655,org.apache.nifi.controller.queue.clustered.server.ConnectionLoadBalanceServer,0.61,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5359797,org.apache.openejb.config.AnnotationDeployer.DiscoverAnnotatedBeans,0.617,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5441225,org.apache.pluto.driver.tags.PortletModeDropDownTag,0.813,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5450953,org.apache.pulsar.io.docs.ConnectorDocGenerator,0.59,0,False,Move Method,Extract Class,Extract Class
+blob,5464286,org.apache.qpid.jms.JmsConnectionConsumer,0.727,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5470060,org.apache.qpid.tools.MemoryConsumptionTestClient,0.767,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5475426,org.apache.qpid.server.protocol.v0_8.transport.AMQMethodBodyImpl,0.507,0,False,Move Method,Move Method,Extract Class
+blob,5516476,org.apache.reef.runtime.mesos.driver.REEFScheduler,0.823,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5517044,org.apache.ranger.audit.entity.AuthzAuditEventDbObj,0.6,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5539522,org.apache.sentry.tests.e2e.kafka.KafkaTestServer,0.52,1,False,Extract Class,Move Method,Extract Class
+blob,5554251,org.apache.poi.ss.format.CellFormat,0.807,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5596503,org.apache.royale.compiler.internal.codegen.js.amd.JSAMDEmitter,0.653,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5598779,org.apache.royale.swc.catalog.StAXCatalogWriter,0.573,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5603925,org.apache.poi.hssf.usermodel.HSSFSimpleShape,0.547,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5668344,org.apache.streams.facebook.provider.pagefeed.FacebookPageFeedDataCollector,0.63,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5685504,org.apache.stanbol.entityhub.jersey.grefine.ReconcileQuery,0.903,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5699641,org.apache.struts2.jasper.compiler.PageDataImpl.SecondPassVisitor,0.86,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5735198,org.apache.sysml.runtime.matrix.mapred.MRBaseForCommonInstructions,0.59,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5740146,org.apache.storm.generated.Assignment,0.81,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5786929,org.apache.tez.runtime.library.common.writers.UnorderedPartitionedKVWriter,0.917,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5790359,org.apache.tika.parser.chm.lzx.ChmLzxBlock,0.827,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5805223,org.apache.tapestry5.ioc.internal.ServiceBinderImpl,0.537,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5828468,org.apache.unomi.mailchimp.services.internal.MailChimpServiceImpl,0.573,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5857422,org.apache.uima.cas.impl.CASMgrSerializer,0.697,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5857991,org.apache.uima.tools.AnnotationViewerMain,0.877,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5863439,org.apache.uima.examples.xmi.XmiWriterCasConsumer,0.599,1,False,,Move Method,Extract Class
+blob,5871795,org.apache.uima.tools.cpm.CpmFrame,0.576,0,False,,Extract Class,Extract Class
+blob,5882175,org.apache.usergrid.rest.management.organizations.applications.ApplicationResource,0.727,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,5884892,org.apache.usergrid.batch.service.JobSchedulerService,0.704,1,False,Move Method,Extract Class,Extract Class
+blob,5925637,org.apache.zeppelin.interpreter.RemoteInterpreterEventServer,0.93,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,5997662,software.amazon.kinesis.leases.dynamodb.DynamoDBLeaseSerializer,0.553,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6026896,org.eclipse.buildship.core.internal.CorePlugin,0.507,1,False,Move Method,Move Method,Extract Class
+blob,6035651,org.eclipse.cft.server.standalone.ui.internal.application.JavaCloudFoundryArchiver,0.577,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6075386,org.eclipse.ditto.model.base.exceptions.DittoRuntimeException,0.697,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6079026,org.eclipse.ditto.services.concierge.enforcement.LiveSignalEnforcement,0.557,1,False,Move Method,Extract Class,Extract Class
+blob,6174968,org.eclipse.che.ide.ext.git.client.reset.commit.ResetToCommitViewImpl,0.623,0,False,Move Method,Extract Class,Extract Class
+blob,6216254,org.eclipse.elk.core.meta.metaData.impl.MetaDataFactoryImpl,0.513,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6239751,org.eclipse.elk.alg.mrtree.p2order.NodeOrderer,0.547,1,False,Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6244614,org.eclipse.hono.cli.Commander,0.51,0,False,Move Method,Extract Class,Extract Class
+blob,6246389,org.eclipse.hono.adapter.mqtt.CommandSubscription,0.663,0,False,Extract Class,Extract Class,Extract Class
+blob,6282334,org.eclipse.jetty.servlets.CrossOriginFilter,0.9,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6293245,org.eclipse.jetty.plus.security.DataSourceLoginService,0.667,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6329919,org.eclipse.kapua.service.authentication.credential.shiro.CredentialServiceImpl,0.807,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6454251,org.tukaani.xz.SeekableXZInputStream,0.837,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6470076,com.ibm.j9ddr.corereaders.tdump.zebedee.le.Caa.Cel4rreg,0.673,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6483071,com.ibm.jpp.om.Builder,0.857,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6493712,org.eclipse.reddeer.eclipse.ui.launcher.DialogTextEditor,0.573,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6511935,org.eclipse.triquetrum.workflow.editor.features.ActorAddFeature,0.837,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6512007,org.eclipse.triquetrum.workflow.editor.features.CompositeActorAddFeature,0.5,0,False,Move Method,Move Method,Extract Class
+blob,6531904,org.eclipse.smarthome.automation.core.internal.RuleRegistryImpl,0.947,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6611503,org.eclipse.n4js.validation.validators.utils.MemberMatrix,0.767,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6617747,com.epam.wilma.stubconfig.json.parser.ResponseFormatterDescriptorJsonParser,0.638,0,False,Move Method,Extract Class,Extract Class
+blob,6637734,com.example.rps.MainActivity,0.583,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6661908,com.facebook.ads.sdk.InstagramInsightsValue,0.617,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6703649,com.facebook.litho.sections.ChangeSet,0.513,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6773071,com.facebook.ads.sdk.Targeting,0.557,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6807935,com.google.javascript.jscomp.FunctionInformationMap.Module.Builder,0.793,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6832744,com.google.copybara.git.GerritOptions,0.743,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,6858059,com.google.security.zynamics.binnavi.standardplugins.callresolver.CallResolverDialog,0.703,1,False,Move Method,Extract Class,Extract Class
+blob,6876949,com.google.security.zynamics.binnavi.Database.PostgreSQL.Functions.PostgreSQLDatabaseFunctions,0.623,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,6912423,com.google.android.exoplayer2.extractor.mp4.PsshAtomUtil,0.603,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7047050,sage.miniclient.QuartzGFXCMD,0.733,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7047868,sage.media.format.FormatParser,0.793,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7067326,okio.RealBufferedSink,0.523,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7093849,android.icu.impl.duration.impl.PeriodFormatterData,0.628,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7101859,java.util.logging.Logger,0.543,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7120318,com.microsoft.azure.maven.AbstractAzureMojo,0.677,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7139136,com.linkedin.restli.server.StandaloneLauncher,0.693,0,False,Move Method,Extract Class,Extract Class
+blob,7139571,com.microsoft.java.debug.plugin.internal.ResolveClasspathsHandler,0.823,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7148928,com.microsoft.azuretools.container.ui.DockerRunDialog,0.817,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7152802,com.microsoft.azure.oidc.token.impl.SimpeTokenParser,0.547,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7182108,org.opengrok.indexer.analysis.CtagsReader,0.867,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7274451,org.graalvm.visualvm.jmx.impl.JmxSupport,0.6,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7327189,com.microsoft.tfs.client.common.ui.wit.controls.QueryItemTreeControl,0.557,1,False,Move Method,Extract Class,Extract Class
+blob,7350370,com.microsoft.tfs.core.clients.workitem.internal.wiqlparse.Scanner,0.767,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7357395,com.microsoft.tfs.client.eclipse.ui.wizard.importwizard.support.ImportFolderCollection,0.913,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7372240,org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer,0.527,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7399428,org.graalvm.component.installer.persist.HeaderParser,0.623,1,False,Extract Class,Extract Class,Extract Class
+blob,7413961,com.oracle.truffle.polyglot.PolyglotExceptionImpl,0.743,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7450485,MavenWrapperDownloader,0.897,0,False,,Extract Class,Extract Class
+blob,7496363,org.graalvm.compiler.hotspot.meta.DefaultHotSpotLoweringProvider,0.75,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7563057,org.springframework.validation.DataBinder,0.883,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7563790,org.springframework.expression.spel.support.ReflectivePropertyAccessor,0.977,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7586207,org.springframework.cache.jcache.interceptor.KeyGeneratorAdapter,0.6,0,False,Move Method,Move Method,Extract Class
+blob,7594427,org.springframework.roo.felix.JdkDelegatingLogListener,0.658,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7594784,org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration,0.6,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7631100,org.springframework.ide.eclipse.wizard.template.util.AddEditNameUrlDialog,0.747,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7638207,org.springframework.ide.eclipse.boot.launch.cli.CloudCliServiceLaunchConfigurationDelegate,0.847,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7664957,org.springframework.ws.server.endpoint.adapter.MarshallingMethodEndpointAdapter,0.607,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7677023,org.springframework.xd.documentation.ModuleOptionsReferenceDoc,0.84,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7681481,org.springframework.xd.dirt.integration.bus.rabbit.RabbitBusCleaner,0.547,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7720470,com.vmware.admiral.adapter.pks.service.PKSClusterListService,0.673,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7736145,org.apache.brooklyn.util.http.HttpTool,0.647,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7751163,org.apache.brooklyn.core.mgmt.persist.jclouds.JcloudsBlobStoreBasedObjectStore,0.86,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7754810,org.apache.brooklyn.cli.Main.LaunchCommand,0.627,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7757709,org.apache.druid.query.groupby.epinephelinae.GroupByMergingQueryRunnerV2,0.723,1,False,Move Method,Extract Class,Extract Class
+blob,7777749,org.apache.druid.sql.avatica.AvaticaMonitor,0.553,0,False,Extract Class,Extract Class,Extract Class
+blob,7824709,org.apache.geode.cache.lucene.internal.LuceneIndexForPartitionedRegion,0.853,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,7892253,com.android.dx.dex.file.DebugInfoDecoder,0.77,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7895531,com.facebook.buck.distributed.thrift.MultiGetBuildSlaveLogDirResponse,0.947,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,7899501,com.facebook.buck.intellij.ideabuck.autodeps.BuckAddDependencyIntention,0.713,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8119000,org.eclipse.xtext.util.Strings,0.73,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,8165591,org.apache.activemq.broker.region.TopicSubscription,0.873,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8285514,org.apache.james.rrt.lib.AbstractRecipientRewriteTable,0.54,1,False,Move Method,Extract Class,Extract Class
+blob,8295955,org.apache.james.managesieveserver.netty.ManageSieveServer,0.6,0,False,Move Method,Extract Class,Extract Class
+blob,8312832,org.eclipse.jdt.ls.core.internal.corext.refactoring.reorg.CreateCopyOfCompilationUnitChange,0.533,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8417826,org.apache.camel.component.xmpp.XmppEndpoint,0.743,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8436827,org.apache.camel.component.quickfixj.QuickfixjEndpoint,0.573,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,8497585,com.cloud.user.dao.VmDiskStatisticsDaoImpl,0.56,0,False,Move Method,Move Method,Extract Class
+blob,8507718,com.cloud.hypervisor.kvm.resource.BridgeVifDriver,0.837,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8515776,com.cloud.usage.UsageServiceImpl,0.963,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8528735,com.cloud.network.ExternalLoadBalancerDeviceManagerImpl,0.517,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8538037,com.cloud.network.brocade.BrocadeVcsApi,0.703,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8547261,com.cloud.baremetal.networkservice.BaremetalPingPxeResource,0.907,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8575939,org.apache.hadoop.hbase.master.assignment.SplitTableRegionProcedure,0.99,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8588757,org.apache.hadoop.hbase.thrift2.generated.THBaseService.AsyncProcessor.put,0.687,0,False,,Extract Class,Extract Class
+blob,8604577,org.apache.ignite.ml.clustering.gmm.CovarianceMatricesAggregator,0.582,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,8760562,org.apache.hadoop.examples.WordMedian,0.873,1,False,Move Method,Extract Class,Extract Class
+blob,8768107,org.apache.hadoop.mapreduce.Cluster,0.683,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8779111,org.apache.hadoop.metrics2.impl.MetricsSystemImpl,0.923,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8796174,org.apache.airavata.api.Airavata.createExperiment_result,0.797,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8811340,org.apache.airavata.api.Airavata.isSSHSetupCompleteForUserComputeResourcePreference_args,0.84,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8904606,org.apache.hadoop.hive.serde2.lazybinary.LazyBinaryMap,0.617,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8910909,org.apache.hadoop.hive.metastore.utils.LogUtils,0.553,1,False,Move Method,Extract Class,Extract Class
+blob,8937461,org.apache.hadoop.hive.ql.optimizer.calcite.translator.PlanModifierUtil,0.75,1,False,Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,8962194,org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos.SignableVertexSpec.Builder,0.847,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,8987975,org.apache.lucene.index.DocumentsWriterDeleteQueue,0.513,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9017155,org.apache.lucene.document.IntRange,0.66,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9024840,org.apache.solr.core.TransientSolrCoreCacheDefault,0.677,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,9144201,org.eclipse.birt.core.archive.FolderArchiveFile,0.667,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9199423,org.eclipse.birt.data.engine.api.script.BaseScriptEvalUtil,0.87,1,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9201577,org.eclipse.birt.data.engine.executor.transform.ResultSetWrapper,0.61,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9201619,org.eclipse.birt.report.designer.data.ui.dataset.PropertyHandleInputDialog,0.627,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,9453144,org.apache.hadoop.yarn.server.nodemanager.containermanager.linux.resources.gpu.GpuResourceHandlerImpl,0.507,0,False,Extract Class,Extract Class,Extract Class
+blob,9478878,org.apache.hadoop.crypto.key.kms.KMSClientProvider,0.967,0,False,Move Method | Replace Conditional with Polymorphism,Extract Class,Extract Class
+blob,9535301,org.apache.hadoop.fs.viewfs.NflyFSystem,0.897,1,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+blob,9548458,org.apache.hadoop.metrics2.sink.ganglia.GangliaSink30,0.737,0,False,Move Method | Replace Conditional with Polymorphism,Move Method,Extract Class
+data_class,3705164,com.alibaba.otter.canal.protocol.ClientIdentity,0.653,0,False,,Extract Class,Encapsulate Field
+data_class,3715636,com.taobao.android.builder.tools.bundleinfo.model.BasicBundleInfo,0.953,1,False,,Extract Class,Encapsulate Field
+data_class,3723043,com.taobao.android.builder.extension.MultiDexConfig,0.927,1,False,,Extract Class,Encapsulate Field
+data_class,3757097,com.alibaba.druid.sql.ast.statement.SQLDropTableStatement,0.787,1,False,,Extract Class,Encapsulate Field
+data_class,3763661,com.amazon.pay.request.SetOrderReferenceDetailsRequest,0.867,1,False,,Extract Class,Encapsulate Field
+data_class,3812473,org.apache.activemq.artemis.core.protocol.stomp.StompFrame.Header,0.596,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,3817323,org.apache.accumulo.core.summary.Gatherer.RowRange,0.507,1,False,,Extract Class,Encapsulate Field
+data_class,3820002,org.apache.accumulo.core.clientImpl.OfflineIterator.OfflineIteratorEnvironment,0.753,1,False,,Extract Class,Encapsulate Field
+data_class,3850165,org.apache.ivy.tools.analyser.JarModule,0.957,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,3857472,org.apache.ivy.core.module.descriptor.DefaultArtifact,0.54,1,False,,Extract Class,Encapsulate Field
+data_class,3858066,org.apache.ambari.server.orm.entities.ClusterEntity,0.517,1,False,,Extract Class,Encapsulate Field
+data_class,3898760,org.apache.tools.zip.UnsupportedZipFeatureException,0.553,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,3920625,org.apache.aries.jpa.container.itest.eclipselink.entities.Car2,0.813,1,False,,Move Method,Encapsulate Field
+data_class,3945737,org.apache.aries.cdi.container.internal.model.ExtendedReferenceDTO,0.52,0,False,Encapsulate Field | Move Behavior to Data Class,Extract Class,Encapsulate Field
+data_class,3953485,org.apache.apex.malhar.lib.fs.s3.S3FileMerger,0.5,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,3954827,org.apache.apex.malhar.lib.db.jdbc.JdbcFieldInfo,0.543,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4109372,org.apache.brooklyn.core.sensor.BasicAttributeSensor,0.54,1,False,,Move Method,Encapsulate Field
+data_class,4151146,org.apache.chemistry.opencmis.commons.impl.dataobjects.ObjectInFolderListImpl,0.827,1,False,,Move Method,Encapsulate Field
+data_class,4159543,org.apache.calcite.avatica.proto.Common.Signature,0.55,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,4197096,org.apache.cassandra.cql3.QualifiedName,0.62,0,False,,Move Method,Encapsulate Field
+data_class,4205773,org.apache.cassandra.db.partitions.PartitionUpdate.CounterMark,0.603,1,False,,Extract Class,Encapsulate Field
+data_class,4234040,org.apache.commons.collections4.iterators.TransformIterator,0.6,1,False,,Extract Class,Encapsulate Field
+data_class,4246628,org.apache.commons.jcs.auxiliary.disk.file.FileDiskCacheAttributes,0.567,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,4289354,org.apache.cxf.fediz.service.idp.rest.Roles,0.517,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4322752,org.apache.derby.iapi.services.io.LimitInputStream,0.643,0,False,,Extract Class,Encapsulate Field
+data_class,4329605,org.apache.directory.kerberos.credentials.cache.SampleCredentialsCacheResource,0.55,0,False,,Move Method,Encapsulate Field
+data_class,4357819,org.apache.derbyTesting.functionTests.tests.jdbcapi.AssertEventCatcher,0.867,0,False,,Move Method,Encapsulate Field
+data_class,4373673,org.apache.cxf.rs.security.jose.jws.JwsJsonSignatureEntry,0.643,0,False,,Extract Class,Encapsulate Field
+data_class,4413114,demo.jaxrs.service.Product,0.993,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4431712,org.apache.eagle.jpm.aggregation.common.AggregatorColumns,0.513,1,False,,Extract Class,Encapsulate Field
+data_class,4432196,org.apache.eagle.hadoop.queue.model.scheduler.SchedulerInfo,0.953,1,False,,Extract Class,Encapsulate Field
+data_class,4435545,org.apache.falcon.persistence.BacklogMetricBean,0.75,1,False,,Extract Class,Encapsulate Field
+data_class,4455297,org.apache.drill.exec.proto.UserProtos.GetTablesReq.Builder,0.643,0,False,,Extract Class,Encapsulate Field
+data_class,4465870,org.apache.drill.exec.schema.NamedField,0.576,0,False,,Move Method,Encapsulate Field
+data_class,4486761,org.apache.drill.common.collections.ImmutableEntry,0.82,0,False,,Move Method,Encapsulate Field
+data_class,4493302,org.apache.drill.exec.ssl.SSLConfigClient,0.61,1,False,,Extract Class,Encapsulate Field
+data_class,4503220,org.apache.fluo.core.metrics.MetricNames,0.697,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,4556934,org.apache.fineract.infrastructure.creditbureau.data.CreditBureauData,0.627,1,False,,Move Method,Encapsulate Field
+data_class,4558704,freemarker.core.TemplateConfiguration,0.517,1,False,,Extract Class,Encapsulate Field
+data_class,4580123,org.apache.fop.util.GenerationHelperContentHandler,0.647,0,False,,Encapsulate Field,Encapsulate Field
+data_class,4612586,org.apache.flink.runtime.checkpoint.CheckpointStatsSnapshot,0.577,0,False,,Move Method,Encapsulate Field
+data_class,4616422,org.apache.flink.optimizer.plan.NamedChannel,0.51,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4686609,org.apache.hadoop.mapred.IndexRecord,0.523,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4713471,org.apache.ambari.server.state.fsm.InvalidStateTransitionException,0.667,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4716488,org.apache.atlas.gremlin.optimizer.UpdatedExpressions,0.62,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,4814956,org.apache.taverna.workbench.models.graph.Graph,0.653,1,False,,Encapsulate Field,Encapsulate Field
+data_class,4841390,org.apache.isis.viewer.wicket.ui.components.about.JarManifestAttributes,0.737,0,False,,Move Method,Encapsulate Field
+data_class,4857404,org.apache.jackrabbit.oak.segment.tool.Diff.Builder,0.713,1,False,,Extract Class,Encapsulate Field
+data_class,4865733,org.apache.pinot.common.restlet.resources.RebalanceResult,0.826,0,False,,Move Method,Encapsulate Field
+data_class,4975591,org.apache.kafka.connect.data.SchemaAndValue,0.567,1,False,Encapsulate Field,Move Method,Encapsulate Field
+data_class,5027180,org.apache.log4j.Hierarchy,0.537,0,False,,Extract Class,Encapsulate Field
+data_class,5052296,org.apache.logging.log4j.cassandra.CassandraAppender.Builder,0.853,0,False,,Extract Class,Encapsulate Field
+data_class,5062548,org.apache.jena.iri.impl.Specification,0.713,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5088158,org.apache.mahout.cf.taste.impl.common.WeightedRunningAverage,0.703,0,False,,Extract Class,Encapsulate Field
+data_class,5200864,org.apache.sshd.client.subsystem.sftp.fs.SftpFileSystemInitializationContext,0.933,1,False,,Extract Class,Encapsulate Field
+data_class,5223561,org.apache.ode.bpel.engine.migration.MigrationHandler.MigrationLink,0.51,0,False,,Extract Class,Encapsulate Field
+data_class,5279258,org.apache.webbeans.util.SingleItemSet.SingleItemIterator,0.71,0,False,,Move Method,Encapsulate Field
+data_class,5281568,org.apache.webbeans.reservation.beans.user.UserUpdateBean,0.727,1,False,,Extract Class,Encapsulate Field
+data_class,5299892,org.apache.parquet.cli.HadoopFileSystemURLStreamHandler,0.61,0,False,,Move Method,Encapsulate Field
+data_class,5339993,org.apache.nifi.registry.flow.mapping.InstantiatedVersionedLabel,0.593,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,5354426,org.apache.nifi.web.api.dto.RemoteProcessGroupDTO,0.797,1,False,,Extract Class,Encapsulate Field
+data_class,5354848,org.apache.openejb.jee.was.v6.ecore.EObject,0.873,1,False,,Extract Class,Encapsulate Field
+data_class,5388415,org.apache.phoenix.schema.stats.StatisticsCollectionRunTracker.ColumnFamilyRegionInfo,0.653,1,False,,Move Method,Encapsulate Field
+data_class,5414612,org.apache.openejb.jee.FacesProperty,0.76,1,False,,Extract Class,Encapsulate Field
+data_class,5447313,org.apache.pluto.util.assemble.AssemblerConfig,0.973,1,False,,Extract Class,Encapsulate Field
+data_class,5491608,org.apache.qpid.disttest.message.Response,0.757,0,False,,Extract Class,Encapsulate Field
+data_class,5495116,org.apache.qpid.server.protocol.v0_10.transport.MessageTransfer,0.51,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5514575,org.apache.ranger.view.VXMetricPolicyCount,0.653,0,False,,Move Method,Encapsulate Field
+data_class,5515839,org.apache.rocketmq.broker.transaction.TransactionRecord,0.973,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,5524586,org.apache.ranger.entity.XXTag,0.693,0,False,,Extract Class,Encapsulate Field
+data_class,5586136,org.apache.poi.hssf.record.SupBookRecord,0.52,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5605835,org.apache.royale.swf.types.KerningRecord,0.857,1,False,,Move Method,Encapsulate Field
+data_class,5609190,org.apache.royale.compiler.config.RSLSettings,0.617,0,False,,Extract Class,Encapsulate Field
+data_class,5670026,org.apache.streams.core.StreamsDatum,0.543,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5681626,org.apache.struts.faces.component.MessageComponent,0.533,1,False,,Extract Class,Encapsulate Field
+data_class,5687952,org.apache.struts2.config_browser.ActionNamesAction,0.67,1,False,,Extract Class,Encapsulate Field
+data_class,5702079,org.apache.storm.generated.Nimbus.beginBlobDownload_args,0.783,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5740146,org.apache.storm.generated.Assignment,0.5,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,5769222,org.apache.syncope.common.lib.to.RealmTO,0.747,1,False,,Extract Class,Encapsulate Field
+data_class,5773565,org.apache.syncope.client.ui.commons.wizards.AjaxWizard.NewItemFinishEvent,0.617,1,False,,Move Method,Encapsulate Field
+data_class,5775703,org.apache.syncope.common.lib.to.PagedResult,0.663,1,False,,Extract Class,Encapsulate Field
+data_class,5810647,org.apache.tinkerpop.gremlin.process.traversal.strategy.decoration.SackStrategy.Builder,0.677,0,False,,Move Method,Encapsulate Field
+data_class,5837941,org.apache.tomcat.util.descriptor.web.FilterDef,0.79,0,False,,Extract Class,Encapsulate Field
+data_class,5884892,org.apache.usergrid.batch.service.JobSchedulerService,0.54,0,False,,Extract Class,Encapsulate Field
+data_class,5901667,org.apache.xalan.xsltc.runtime.Attributes,0.717,1,False,,Move Method,Encapsulate Field
+data_class,5946774,org.superbiz.inheritance.Tower,0.91,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,5948040,org.superbiz.rest.Book,0.89,1,False,,Move Method,Encapsulate Field
+data_class,5990255,software.amazon.awssdk.codegen.model.service.Shape,0.93,1,False,,Extract Class,Encapsulate Field
+data_class,5991563,software.amazon.awssdk.codegen.model.intermediate.IntermediateModel,0.563,1,False,,Extract Class,Encapsulate Field
+data_class,5991953,software.amazon.awssdk.codegen.model.intermediate.ShapeMarshaller,0.867,1,False,,Extract Class,Encapsulate Field
+data_class,6009432,com.baidu.jprotobuf.pbrpc.ErrorDataException,0.693,1,False,,Move Method,Encapsulate Field
+data_class,6066851,org.eclipse.ceylon.common.config.ImprovedConfigReaderListenerAdapter.Whitespace,0.653,1,False,,Move Method,Encapsulate Field
+data_class,6078015,org.eclipse.ceylon.compiler.typechecker.analyzer.ModuleSourceMapper.ModuleDependencyAnalysisError,0.643,0,False,,Move Method,Encapsulate Field
+data_class,6164729,org.eclipse.che.plugin.typescript.dto.model.FieldAttributeModel,0.73,1,False,,Extract Class,Encapsulate Field
+data_class,6165395,org.eclipse.che.api.languageserver.shared.model.ExtendedCompletionList,0.87,1,False,,Move Method,Encapsulate Field
+data_class,6166594,org.eclipse.che.plugin.product.info.client.CheProductInfoDataProvider,0.523,1,False,,Extract Class,Encapsulate Field
+data_class,6197424,org.eclipse.che.infrastructure.docker.client.json.network.Ipam,0.577,1,False,,Move Method,Encapsulate Field
+data_class,6207228,org.eclipse.che.ide.api.editor.partition.ConstantPartitioner,0.57,1,False,,Extract Class,Encapsulate Field
+data_class,6210636,org.eclipse.che.ide.command.toolbar.CommandToolbarViewImpl,0.607,0,False,,Extract Class,Encapsulate Field
+data_class,6214208,org.eclipse.che.ide.ui.smartTree.presentation.NewNodePresentation,0.733,1,False,,Move Method,Encapsulate Field
+data_class,6221363,fsmTrace.States.fsm.util.FsmAdapterFactory,0.58,0,False,,Extract Class,Encapsulate Field
+data_class,6229861,org.eclipse.gef.layout.LayoutContext,0.54,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,6245494,org.eclipse.hono.config.SignatureSupportingConfigProperties,0.72,1,False,,Extract Class,Encapsulate Field
+data_class,6254667,org.eclipse.hawkbit.repository.FilterParams,0.847,1,False,,Move Method,Encapsulate Field
+data_class,6255385,org.eclipse.hawkbit.ui.distributions.state.ManageSoftwareModuleFilters,0.677,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,6257015,org.eclipse.hawkbit.HawkbitServerProperties.Build,0.673,1,False,,Move Method,Encapsulate Field
+data_class,6261774,org.eclipse.ice.tests.client.FakeErrorBoxWidget,0.947,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,6263358,org.eclipse.ice.reactor.plant.Subchannel,0.667,1,False,,Extract Class,Encapsulate Field
+data_class,6293245,org.eclipse.jetty.plus.security.DataSourceLoginService,0.52,1,False,,Extract Class,Encapsulate Field
+data_class,6322415,org.eclipse.kura.internal.rest.asset.WriteRequest,0.707,0,False,,Extract Class,Encapsulate Field
+data_class,6328141,org.eclipse.kapua.service.datastore.steps.TestTopic,0.923,0,False,,Move Method,Encapsulate Field
+data_class,6330576,org.eclipse.kapua.service.authorization.access.shiro.AccessRoleCreatorImpl,0.773,1,False,,Move Method,Encapsulate Field
+data_class,6438819,org.eclipse.milo.opcua.stack.core.types.structured.EventFilter,0.587,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,6454251,org.tukaani.xz.SeekableXZInputStream,0.533,0,False,,Extract Class,Encapsulate Field
+data_class,6463026,org.eclipse.packagedrone.repo.utils.osgi.bundle.BundleInformation.RequireCapability,0.56,1,False,,Move Method,Encapsulate Field
+data_class,6480563,org.eclipse.paho.mqttv5.client.internal.MqttConnectionState,0.907,1,False,,Extract Class,Encapsulate Field
+data_class,6522495,org.eclipse.smarthome.core.audio.ByteArrayAudioStream,0.717,0,False,,Move Method,Encapsulate Field
+data_class,6535841,org.eclipse.smarthome.io.net.http.HttpRequestBuilder,0.563,0,False,,Extract Class,Encapsulate Field
+data_class,6538820,org.eclipse.smarthome.core.thing.xml.internal.ChannelTypeXmlResult,0.817,1,False,,Move Method,Encapsulate Field
+data_class,6541523,org.eclipse.xsemantics.example.lambda.typesystem.lambda.rules.UnifyBasicTypeVariableTypeRule,0.747,1,False,,Extract Class,Encapsulate Field
+data_class,6541577,org.eclipse.xsemantics.example.lambda.typesystem.lambda.rules.NotOccurVarInArrowTypeRule,0.7,0,False,,Extract Class,Encapsulate Field
+data_class,6544247,org.eclipse.n4js.ts.services.TypeExpressionsGrammarAccess.TypeRefWithoutModifiersElements,0.953,1,False,,Extract Class,Encapsulate Field
+data_class,6603072,com.epam.catgenome.controller.vo.externaldb.ensemblevo.EnsemblExonVO,0.833,1,False,,Extract Class,Encapsulate Field
+data_class,6634791,com.esri.geoportal.harvester.waf.WafFolderContent,0.917,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,6834927,org.eclipse.n4js.services.N4JSGrammarAccess.BitwiseORExpressionElements,0.977,1,False,,Extract Class,Encapsulate Field
+data_class,7061885,com.jcraft.jzlib.ZStream,0.56,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7101859,java.util.logging.Logger,0.507,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7120318,com.microsoft.azure.maven.AbstractAzureMojo,0.673,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7130702,com.linkedin.restli.server.RestLiServiceException,0.59,0,False,,Extract Class,Encapsulate Field
+data_class,7130892,com.linkedin.jersey.api.uri.UriTemplateParser.StringCharacterIterator,0.52,0,False,,Extract Class,Encapsulate Field
+data_class,7147207,com.microsoft.azure.hdinsight.sdk.rest.yarn.rm.Capability,0.51,1,False,,Move Method,Encapsulate Field
+data_class,7148614,com.microsoft.intellij.ApplicationSettings.State,0.683,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7153322,com.microsoft.frameworklauncher.common.web.WebClientOutput,0.813,0,False,,Move Method,Encapsulate Field
+data_class,7155743,com.microsoft.sqlserver.jdbc.Segment,0.503,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7160761,com.microsoft.azuretools.authmanage.srvpri.step.Status,0.839,1,False,,Move Method,Encapsulate Field
+data_class,7165732,com.microsoft.alm.teamfoundation.workitemtracking.webapi.models.WorkItemTypeTemplate,0.66,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7168076,com.microsoft.alm.teamfoundation.core.webapi.types.TeamContext,0.843,1,False,,Extract Class,Encapsulate Field
+data_class,7168351,com.microsoft.alm.visualstudio.services.security.SetAccessControlEntriesInfo,0.86,0,False,,Move Method,Encapsulate Field
+data_class,7172582,com.microsoft.alm.visualstudio.services.releasemanagement.webapi.ReleaseSettings,0.58,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7247219,org.graalvm.visualvm.lib.jfluid.classfile.BaseClassInfo,0.633,1,False,,Extract Class,Encapsulate Field
+data_class,7260017,org.cloudfoundry.client.lib.tokens.TargetInfos,0.577,0,False,,Extract Class,Encapsulate Field
+data_class,7268617,com.sap.espm.model.Supplier,0.94,1,False,,Extract Class,Encapsulate Field
+data_class,7276572,com.sap.iot.starterkit.cert.type.Device,0.793,1,False,,Move Method,Encapsulate Field
+data_class,7290109,com.vmware.vfabric.ide.eclipse.tcserver.tests.support.TestConfiguration,0.69,0,False,,Extract Class,Encapsulate Field
+data_class,7294947,org.grails.ide.eclipse.ui.internal.inplace.GrailsCompletionUtils.GrailsContentProposal,0.803,1,False,,Extract Class,Encapsulate Field
+data_class,7301167,com.microsoft.tfs.client.common.git.json.TfsGitTreeEntriesJson,0.91,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7303656,com.microsoft.tfs.core.clients.versioncontrol.ResolutionOptions,0.93,1,False,,Extract Class,Encapsulate Field
+data_class,7307441,org.springframework.batch.admin.web.LaunchRequest,0.947,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7307669,org.springframework.batch.admin.web.resources.DefaultResourceService,0.843,1,False,,Move Method,Encapsulate Field
+data_class,7324624,ms.tfs.versioncontrol.clientservices._03._Repository4Soap_QueryPendingSetsWithLocalWorkspaces,0.673,1,False,,Extract Class,Encapsulate Field
+data_class,7330770,ms.tfs.versioncontrol.clientservices._03._RepositorySoap_LabelItem,0.517,1,False,,Extract Class,Encapsulate Field
+data_class,7341316,ms.ws._LocationWebServiceSoap_Connect,0.68,1,False,,Extract Class,Encapsulate Field
+data_class,7341794,com.microsoft.tfs.client.common.git.json.TfsGitBranchJson,0.513,1,False,Move Behavior to Data Class,Extract Class,Encapsulate Field
+data_class,7351641,com.oreilly.springdata.mongodb.core.Customer,0.703,1,False,,Move Method,Encapsulate Field
+data_class,7369780,org.springframework.boot.autoconfigure.web.ServerProperties.Undertow,0.907,1,False,,Extract Class,Encapsulate Field
+data_class,7501187,org.springframework.data.solr.repository.query.BindableSolrParameter,0.883,1,False,,Move Method,Encapsulate Field
+data_class,7503099,org.springframework.data.redis.connection.ReactiveListCommands.PushCommand,0.547,0,False,,Move Method,Encapsulate Field
+data_class,7521109,org.springframework.data.hadoop.fs.FileSystemFactoryBean,0.707,0,False,,Extract Class,Encapsulate Field
+data_class,7548776,org.springframework.integration.mqtt.event.MqttMessageDeliveryEvent,0.847,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7561940,org.springframework.web.context.support.ServletContextAttributeFactoryBean,0.75,1,False,,Move Method,Encapsulate Field
+data_class,7563057,org.springframework.validation.DataBinder,0.543,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7576345,org.springframework.web.context.support.AnnotationConfigWebApplicationContext.BeanRegistration,0.893,0,False,,Move Method,Encapsulate Field
+data_class,7584816,org.springframework.orm.ObjectRetrievalFailureException,0.633,1,False,,Move Method,Encapsulate Field
+data_class,7588520,org.springframework.web.servlet.tags.Param,0.877,1,False,,Move Method,Encapsulate Field
+data_class,7605003,org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor,0.773,1,False,,Move Method,Encapsulate Field
+data_class,7617518,org.springframework.ide.eclipse.wizard.template.infrastructure.ui.WizardUIInfoPage,0.623,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,7625447,org.springframework.security.saml.saml2.authentication.Status,0.947,1,False,,Move Method,Encapsulate Field
+data_class,7652241,org.springframework.social.github.api.GitHubUser,0.873,1,False,,Extract Class,Encapsulate Field
+data_class,7684728,org.springframework.xd.dirt.modules.metadata.FileSinkOptionsMetadata,0.663,1,False,,Extract Class,Encapsulate Field
+data_class,7686388,org.springframework.integration.x.kafka.KafkaZKOptionMixin,0.903,0,False,,Extract Class,Encapsulate Field
+data_class,7763261,org.apache.druid.timeline.partition.LinearPartitionChunk,0.76,0,False,,Move Method,Encapsulate Field
+data_class,7790763,org.apache.wicket.markup.HtmlSpecialTag,0.617,0,False,,Extract Class,Encapsulate Field
+data_class,7799218,org.apache.geode.cache.configuration.CacheConfig.GatewayHub,0.853,1,False,,Extract Class,Encapsulate Field
+data_class,7801178,org.apache.geode.internal.cache.DiskId.PersistenceWithIntOffset,0.813,1,False,,Move Method,Encapsulate Field
+data_class,7805103,org.apache.geode.internal.cache.DistributedPutAllOperation.PutAllEntryData,0.553,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7853333,org.apache.geode.management.internal.NotificationHub.NotificationHubListener,0.73,0,False,,Move Method,Encapsulate Field
+data_class,7895531,com.facebook.buck.distributed.thrift.MultiGetBuildSlaveLogDirResponse,0.64,0,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,7992251,org.eclipse.xtext.generator.parser.antlr.debug.services.SimpleAntlrGrammarAccess.NotExpressionElements,0.913,0,False,,Extract Class,Encapsulate Field
+data_class,8003697,org.eclipse.xtext.ui.tests.editor.contentassist.services.ParametersTestLanguageGrammarAccess.Scenario5BodyElements,0.653,0,False,,Extract Class,Encapsulate Field
+data_class,8049118,org.eclipse.xtext.validation.services.ConcreteSyntaxValidationTestLanguageGrammarAccess.GroupMultiplicitiesElements,0.907,1,False,,Extract Class,Encapsulate Field
+data_class,8065474,org.eclipse.xtext.ui.tests.editor.contentassist.services.TwoContextsTestLanguageGrammarAccess.AnElementElements,0.857,1,False,,Extract Class,Encapsulate Field
+data_class,8109341,org.eclipse.xtext.enumrules.services.EnumRulesTestLanguageGrammarAccess.ExistingEnumElements,0.93,0,False,,Extract Class,Encapsulate Field
+data_class,8132817,org.eclipse.xtext.parser.unorderedGroups.backtrackingBug325745TestLanguage.impl.BacktrackingBug325745TestLanguagePackageImpl,0.517,1,False,,Extract Class,Encapsulate Field
+data_class,8142421,org.eclipse.xtext.serializer.syntacticsequencertest.impl.OptionalManyTransitionImpl,0.727,1,False,,Extract Class,Encapsulate Field
+data_class,8169113,org.apache.activemq.filter.BinaryExpression,0.63,1,False,,Extract Class,Encapsulate Field
+data_class,8169750,org.apache.activemq.store.kahadb.MessageDatabase.LastAck,0.617,1,False,,Move Method,Encapsulate Field
+data_class,8172392,org.apache.activemq.network.NetworkBridgeStatistics,0.64,1,False,,Extract Class,Encapsulate Field
+data_class,8187132,org.apache.activemq.broker.TransportConnectionState,0.863,1,False,,Extract Class,Encapsulate Field
+data_class,8217435,org.eclipse.xtext.idea.sdomain.sDomain.impl.ImportImpl,0.69,1,False,,Extract Class,Encapsulate Field
+data_class,8290693,org.apache.james.mailbox.store.mail.model.impl.SimpleMessage,0.857,1,False,,Extract Class,Encapsulate Field
+data_class,8387845,org.apache.camel.support.dump.MessageDump.Header,0.7,1,False,,Move Method,Encapsulate Field
+data_class,8400746,org.apache.camel.component.slack.helper.SlackMessage.Attachment,0.923,1,False,,Extract Class,Encapsulate Field
+data_class,8403578,org.apache.camel.component.wordpress.api.model.User,0.8,1,False,,Extract Class,Encapsulate Field
+data_class,8417826,org.apache.camel.component.xmpp.XmppEndpoint,0.673,0,False,,Extract Class,Encapsulate Field
+data_class,8423597,org.apache.camel.component.yammer.model.Realtime,0.81,0,False,,Move Method,Encapsulate Field
+data_class,8427386,org.apache.camel.opentracing.starter.OpenTracingConfigurationProperties,0.987,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,8433766,org.apache.camel.component.salesforce.api.dto.analytics.reports.ReportInstance,0.97,1,False,,Extract Class,Encapsulate Field
+data_class,8441008,org.apache.camel.component.mina2.Mina2Configuration,0.787,1,False,,Extract Class,Encapsulate Field
+data_class,8442950,org.apache.camel.spi.RestConfiguration,0.55,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,8516029,com.cloud.servlet.ConsoleProxyClientParam,0.93,1,False,,Extract Class,Encapsulate Field
+data_class,8533645,org.apache.cloudstack.api.command.user.network.UpdateNetworkCmd,0.723,1,False,Encapsulate Field,Extract Class,Encapsulate Field
+data_class,8537138,com.cloud.agent.api.HandleConfigDriveIsoCommand,0.836,1,False,,Move Method,Encapsulate Field
+data_class,8539645,org.apache.cloudstack.api.response.DeploymentPlannersResponse,0.517,1,False,,Move Method,Encapsulate Field
+data_class,8564291,org.apache.hadoop.hbase.io.encoding.BufferedDataBlockEncoder.OnheapDecodedCell,0.737,1,False,,Extract Class,Encapsulate Field
+data_class,8600681,org.apache.hadoop.hbase.master.MetricsAssignmentManagerSourceImpl,0.83,1,False,,Extract Class,Encapsulate Field
+data_class,8618083,org.apache.ignite.internal.pagemem.wal.record.delta.ReplaceRecord,0.75,0,False,,Extract Class,Encapsulate Field
+data_class,8645264,org.apache.ignite.internal.IgnitionEx.IgniteNamedInstance.GridMBeanServerData,0.723,1,False,,Extract Class,Encapsulate Field
+data_class,8669663,org.apache.ignite.ml.inference.storage.model.LocalModelStorageProvider,0.647,0,False,,Extract Class,Encapsulate Field
+data_class,8749806,org.apache.hadoop.mapred.MapOutputCollector.Context,0.776,1,False,,Move Method,Encapsulate Field
+data_class,8804785,org.apache.airavata.testsuite.multitenantedairavata.TestFrameworkProps.Application,0.78,1,False,,Move Method,Encapsulate Field
+data_class,8952223,org.apache.hadoop.hive.ql.hooks.LineageInfo.BaseColumnInfo,0.67,1,False,,Move Method,Encapsulate Field
+data_class,8958780,org.apache.hadoop.hive.accumulo.predicate.compare.Equal,0.52,0,False,,Extract Class,Encapsulate Field
+data_class,8962194,org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos.SignableVertexSpec.Builder,0.693,0,False,,Extract Class,Encapsulate Field
+data_class,8968865,org.apache.hive.hplsql.Signal,0.687,1,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+data_class,9095246,com.oracle.truffle.r.runtime.StableValue,0.753,1,False,,Move Method,Encapsulate Field
+data_class,9114822,org.eclipse.birt.report.designer.internal.ui.views.attributes.section.TextAndButtonSection,0.647,1,False,,Extract Class,Encapsulate Field
+data_class,9120944,org.eclipse.birt.chart.model.attribute.impl.ScriptValueImpl,0.61,0,False,,Extract Class,Encapsulate Field
+data_class,9136234,org.eclipse.birt.report.designer.ui.preferences.ItemContent,0.937,1,False,,Extract Class,Encapsulate Field
+data_class,9171873,org.eclipse.birt.report.engine.emitter.postscript.PostscriptWriter.ImageSource,0.747,1,False,,Move Method,Encapsulate Field
+data_class,9510155,org.apache.hadoop.ozone.om.OMNodeDetails.Builder,0.926,1,False,,Move Method,Encapsulate Field
+data_class,9540354,org.apache.hadoop.yarn.server.nodemanager.containermanager.monitor.ContainersMonitorEvent,0.563,0,False,Move Behavior to Data Class,Move Method,Encapsulate Field
+long_method,3717906,android.taobao.atlas.framework.bundlestorage.BundleArchiveRevision.BundleArchiveRevision String|File|File,0.808,1,False,Extract Method,Extract Method,Extract Method
+long_method,3834247,org.apache.accumulo.proxy.thrift.AccumuloProxy.getNamespaceIteratorSetting_result.getNamespaceIteratorSetting_resultTupleScheme#read org.apache.thrift.protocol.TProtocol|getNamespaceIteratorSetting_result,0.571,1,False,Extract Method,Extract Method,Extract Method
+long_method,3877118,org.apache.ambari.server.controller.AmbariManagementControllerImpl#verifyRepository RepositoryRequest,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,3893413,com.datatorrent.stram.plan.logical.LogicalPlanConfiguration.initialize,0.645,1,False,Extract Method,Extract Method,Extract Method
+long_method,3918943,org.apache.aries.jax.rs.whiteboard.internal.AriesJaxrsServiceRuntime#buildApplicationDTO ApplicationRuntimeInformation,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,3922349,"org.apache.aries.rsa.discovery.endpoint.PropertiesMapper#fromProps Map<String, Object>",0.993,1,False,Extract Method,Extract Method,Extract Method
+long_method,3942097,org.apache.aries.spifly.statictool.Main.weaveDir File|String|String|String,0.997,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,3951549,org.apache.apex.malhar.kudu.AbstractKuduOutputOperator#performCommonProcessing Operation|KuduExecutionContext,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,3986717,org.apache.polygene.api.util.Classes.simpleGenericNameOf StringBuilder|Type,0.979,1,False,Extract Method,Extract Method,Extract Method
+long_method,3992626,org.apache.batik.anim.timing.TimedElement#removeInstanceTime InstanceTime|boolean,0.984,1,False,Extract Method,Extract Method,Extract Method
+long_method,3993831,org.apache.batik.ext.awt.image.rendered.FilterAsAlphaRed#copyData WritableRaster,0.997,0,False,Extract Method,Extract Method,Extract Method
+long_method,4028364,org.apache.beam.sdk.io.synthetic.SyntheticOptions.SamplerDeserializer#deserialize JsonParser|DeserializationContext,0.996,1,False,Extract Method,Extract Method,Extract Method
+long_method,4092105,org.apache.asterix.transaction.management.service.logging.LogManager#getOrderedLogFileIds,0.662,1,False,Extract Method,Extract Method,Extract Method
+long_method,4095482,org.apache.hyracks.dataflow.std.join.NestedLoopJoin.NestedLoopJoin IHyracksTaskContext|FrameTupleAccessor|FrameTupleAccessor|ITuplePairComparator|int|IPredicateEvaluator|boolean|IMissingWriter[],0.896,1,False,Extract Method,Extract Method,Extract Method
+long_method,4110001,org.apache.brooklyn.policy.ha.AbstractFailureDetector#checkHealth,0.854,1,False,Extract Method,Extract Method,Extract Method
+long_method,4139640,org.apache.calcite.schema.impl.ModifiableViewTable.ModifiableViewTableInitializerExpressionFactory#generationStrategy RelOptTable|int,0.547,0,False,Extract Method,Move Method,Extract Method
+long_method,4249533,org.apache.commons.jxpath.ri.model.dom.DOMNodePointer.getNamespaceURI Node,0.99,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,4257893,org.apache.commons.numbers.combinatorics.Combinations.LexicographicComparator#compare int[]|int[],0.831,0,False,Extract Method,Extract Method,Extract Method
+long_method,4264057,org.apache.commons.math4.stat.correlation.KendallsCorrelation#correlation double[]|double[],0.995,1,False,Extract Method,Extract Method,Extract Method
+long_method,4297095,org.apache.directory.fortress.core.rest.DelAccessMgrRestImpl#sessionPermissions Session,0.883,0,False,Extract Method,Extract Method,Extract Method
+long_method,4308723,org.apache.directory.api.ldap.schema.loader.SchemaEntityFactory#classLoadComparator SchemaManager|String|String|Attribute,0.966,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4311186,org.apache.directory.api.ldap.model.schema.syntaxCheckers.DseTypeSyntaxChecker#isValidSyntax Object,0.96,1,False,Extract Method,Extract Method,Extract Method
+long_method,4336814,org.apache.directory.server.core.partition.impl.btree.jdbm.DupsCursor#afterValue K|V,0.987,1,False,Extract Method,Extract Method,Extract Method
+long_method,4352708,org.apache.derby.impl.sql.compile.NormalizeResultSetNode.NormalizeResultSetNode ResultSetNode|ResultColumnList|Properties|boolean|ContextManager,0.849,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4356398,org.apache.derby.impl.sql.compile.SubqueryNode#preprocess int|FromList|SubqueryList|PredicateList,0.992,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4426200,org.apache.eagle.jpm.spark.history.status.JobHistoryZKStateManager#resetApplications,0.852,1,False,Extract Method,Extract Method,Extract Method
+long_method,4447157,org.apache.drill.exec.proto.beans.RunQuery#mergeFrom Input|RunQuery,0.74,0,False,Extract Method,Extract Method,Extract Method
+long_method,4449293,org.apache.drill.exec.physical.impl.project.ProjectRecordBatch#handleRemainder,0.992,1,False,Extract Method,Extract Method,Extract Method
+long_method,4455712,org.apache.drill.exec.store.httpd.HttpdLogRecord#setTimestamp String|String,0.561,0,False,Extract Method,Extract Method,Extract Method
+long_method,4480085,org.apache.drill.exec.proto.UserBitShared.NamePart#equals java.lang.Object,0.851,0,False,Extract Method,Extract Method,Extract Method
+long_method,4490426,org.apache.drill.exec.store.easy.text.compliant.TextReader#parseQuotedValue byte,1.0,1,False,Extract Method,Extract Method,Extract Method
+long_method,4500366,org.apache.flume.channel.MultiplexingChannelSelector#configure Context,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,4549169,org.apache.fineract.portfolio.savings.data.DepositProductDataValidator#validateDepositDetailForUpdate JsonElement|FromJsonHelper|DataValidatorBuilder,0.988,1,False,Extract Method,Extract Method,Extract Method
+long_method,4566202,org.apache.fop.svg.AbstractFOPImageElementBridge#createImageGraphicsNode BridgeContext|Element|ParsedURL,0.994,1,False,Extract Method,Extract Method,Extract Method
+long_method,4568919,org.apache.fop.fonts.truetype.OpenFont#readFont FontFileReader|String|String,0.924,1,False,Extract Method,Extract Method,Extract Method
+long_method,4571455,org.apache.fop.layoutmgr.table.ColumnSetup#computeTableUnit PercentBaseContext|int,0.929,1,False,Extract Method,Extract Method,Extract Method
+long_method,4582889,org.apache.fop.area.AreaTreeParser.Handler#startElement String|String|String|Attributes,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,4679336,org.apache.hadoop.eclipse.view.servers.ServerView#getColumnText Object|int,0.712,1,False,Extract Method,Extract Method,Extract Method
+long_method,4721410,org.apache.batchee.container.impl.controller.chunk.ChunkStepController#positionWriterAtCheckpoint,0.586,1,False,Extract Method,Extract Method,Extract Method
+long_method,4734605,"com.uber.hoodie.HoodieWriteClient#finishRestore Timer.Context|Map<String, List<HoodieRollbackStat>>|List<String>|String|String",0.668,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4782948,org.apache.sentry.binding.hive.v2.authorizer.DefaultSentryAccessController#grantOrRevokeRoleOnGroup List<HivePrincipal>|List<String>|HivePrincipal|boolean,0.975,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4788662,org.apache.sentry.provider.db.service.thrift.TListSentryPrivilegesRequest#equals TListSentryPrivilegesRequest,0.805,1,False,Extract Method,Extract Method,Extract Method
+long_method,4794965,org.apache.shardingsphere.core.execute.sql.execute.result.StreamQueryResult#getValue String|Class<?>,0.908,1,False,Extract Method,Extract Method,Extract Method
+long_method,4809381,org.apache.skywalking.oap.server.core.storage.#extractDataAndSave IBatchDAO,0.989,1,False,Extract Method,Extract Method,Extract Method
+long_method,4847006,org.apache.jackrabbit.spi2davex.RepositoryServiceImpl.RepositoryServiceImpl String|String|BatchReadConfig|int|int,0.578,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,4849361,org.apache.james.mime4j.field.address.Builder#buildAddress ASTaddress|DecodeMonitor,0.971,0,False,Extract Method,Extract Method,Extract Method
+long_method,4866077,org.apache.jackrabbit.oak.segment.scheduler.LockBasedScheduler#removeCheckpoint String,0.5,0,False,Extract Method,Extract Method,Extract Method
+long_method,4874140,org.apache.pinot.core.segment.index.column.PhysicalColumnIndexContainer.loadDictionary PinotDataBuffer|ColumnMetadata|boolean,0.962,1,False,Extract Method,Extract Method,Extract Method
+long_method,4917464,org.apache.jmeter.testbeans.gui.GenericTestBeanCustomizer.PropertyComparator#compare PropertyDescriptor|PropertyDescriptor,0.901,0,False,Extract Method,Extract Method,Extract Method
+long_method,4919602,org.apache.jmeter.protocol.http.config.gui.UrlConfigGui#configure TestElement,0.598,1,False,Extract Method,Extract Method,Extract Method
+long_method,4933953,org.apache.wiki.providers.VersioningFileProvider#getPageInfo String|int,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,4995171,org.apache.karaf.cellar.config.shell.BlockCommand#doExecute,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,5005330,org.apache.knox.examples.WordCount.main String[],0.592,0,False,Extract Method,Move Method,Extract Method
+long_method,5117164,org.apache.manifoldcf.agents.system.AgentsDaemon.AgentsThread#run,0.764,1,False,Extract Method,Extract Method,Extract Method
+long_method,5127922,org.apache.maven.index.context.DefaultIndexingContext#deleteIndexFiles boolean,0.643,0,False,Extract Method,Decompose Conditional,Extract Method
+long_method,5138043,org.apache.maven.plugins.ear.EarModuleFactory.newEarModule Artifact|JavaEEVersion|String|Boolean|ArtifactTypeMappingService,0.986,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,5141485,org.apache.maven.plugins.javadoc.AbstractJavadocMojo#collectTaglets,0.653,0,False,Decompose Conditional,Decompose Conditional,Extract Method
+long_method,5164745,org.apache.metamodel.jdbc.dialects.DefaultQueryRewriter#beforeRewrite Query,0.992,0,False,Extract Method,Decompose Conditional,Extract Method
+long_method,5176784,org.apache.metron.enrichment.stellar.GeoEnrichmentFunctions.GeoGet#apply List<Object>|Context,0.988,0,False,Extract Method,Extract Method,Extract Method
+long_method,5232497,org.apache.oodt.cas.crawl.ProductCrawler#crawl File,0.996,1,False,Extract Method,Extract Method,Extract Method
+long_method,5243521,org.apache.olingo.server.tecsvc.data.DataCreator#createETStreamOnComplexProp Edm|OData,0.743,1,False,Extract Method,Extract Method,Extract Method
+long_method,5278260,org.apache.openjpa.kernel.BrokerImpl#refreshInternal Collection|OpCallbacks,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,5310114,org.apache.openjpa.jdbc.sql.DBDictionary#toBulkOperation ClassMapping|Select|JDBCStore|Object[]|Map,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,5311043,org.apache.openjpa.jdbc.sql.DB2Dictionary#appendXmlComparison1 SQLBuffer|String|FilterValue|FilterValue,0.922,0,False,Extract Method,Extract Method,Extract Method
+long_method,5326926,org.apache.nifi.web.api.dto.DtoFactory#createSystemDiagnosticsDto SystemDiagnostics,0.612,1,False,Extract Method,Extract Method,Extract Method
+long_method,5338990,org.apache.nifi.remote.protocol.http.HttpClientTransaction#writeTransactionResponse ResponseCode|String,0.994,1,False,Extract Method,Extract Method,Extract Method
+long_method,5343588,org.apache.nifi.processors.aws.dynamodb.PutDynamoDB#onTrigger ProcessContext|ProcessSession,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,5355489,org.apache.nifi.processors.media.ExtractMediaMetadata#tika_parse InputStream|String|Integer|Integer,0.986,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,5366640,org.apache.pig.PigServer.PigServer PigContext|boolean,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,5384197,org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer#removeAndReconnect MapReduceOper|MapReduceOper,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,5394056,org.apache.phoenix.end2end.join.HashJoinLocalIndexIT#testJoinWithLocalIndex,0.879,0,False,Extract Method,Extract Method,Extract Method
+long_method,5402098,org.apache.pig.data.DefaultDataBag#spill,0.969,0,False,Extract Method,Extract Method,Extract Method
+long_method,5416350,org.apache.phoenix.end2end.BaseAggregateIT#testGroupByOrderPreservingDescSort,0.558,1,False,Extract Method,Extract Method,Extract Method
+long_method,5422127,org.apache.pivot.wtk.skin.ContainerSkin.IndexFocusTraversalPolicy#getNextComponent Container|Component|FocusTraversalDirection,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,5423009,org.apache.phoenix.coprocessor.generated.MetaDataProtos.ClearCacheResponse.ClearCacheResponse com.google.protobuf.CodedInputStream|com.google.protobuf.ExtensionRegistryLite,0.937,1,False,Extract Method,Extract Method,Extract Method
+long_method,5469798,org.apache.qpid.jms.provider.failover.FailoverProviderFactory#createProvider URI|ProviderFutureFactory,0.989,1,False,Extract Method,Extract Method,Extract Method
+long_method,5470089,org.apache.qpid.server.virtualhost.SynchronousMessageStoreRecoverer#recover QueueManagingVirtualHost<?>,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,5473580,"org.apache.qpid.server.protocol.v1_0.store.jdbc.JDBCLinkStore#performUpdate LinkStoreUpdater|Collection<LinkDefinition<Source, Target>>|ModelVersion|ModelVersion",0.594,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,5480114,org.apache.qpid.server.virtualhost.AbstractVirtualHost#validateNodeAutoCreationPolicy NodeAutoCreationPolicy,0.98,0,False,Extract Method,Extract Method,Extract Method
+long_method,5497076,org.apache.qpid.server.security.access.config.AclFileParser.parse Reader|EventLoggerProvider,1.0,1,False,Extract Method,Extract Method,Extract Method
+long_method,5499603,org.apache.rocketmq.console.service.impl.ConsumerServiceImpl#resetOffset ResetOffsetRequest,0.979,1,False,Extract Method,Extract Method,Extract Method
+long_method,5503308,org.apache.rocketmq.common.UtilAll.getIP,0.989,1,False,Extract Method,Extract Method,Extract Method
+long_method,5573449,org.apache.poi.hslf.usermodel.HSLFFreeformShape#setPath Path2D,0.985,1,False,Extract Method,Extract Method,Extract Method
+long_method,5593437,org.apache.poi.xssf.usermodel.examples.LineChart.main String[],0.865,1,False,Extract Method,Extract Method,Extract Method
+long_method,5602164,org.apache.poi.xssf.model.TestCommentsTable#writeRead,0.677,1,False,Extract Method,Extract Method,Extract Method
+long_method,5615923,org.apache.shindig.common.uri.Uri.normalizePath String,0.981,1,False,Extract Method,Extract Method,Extract Method
+long_method,5625012,org.apache.royale.compiler.internal.config.FlashBuilderConfigurator.RoyaleLibPropertiesHandler#startElement String|String|String|Attributes,0.978,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,5661062,org.apache.sis.metadata.TreeNodeChildren.TreeNodeChildren TreeNode|Object|PropertyAccessor,0.943,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,5671828,org.apache.stanbol.rules.manager.parse.RuleParserImpl#variable,0.988,0,False,Extract Method,Extract Method,Extract Method
+long_method,5700044,org.apache.struts2.jasper.compiler.SmapUtil.SmapGenVisitor#doSmapText Node,0.98,1,False,Extract Method,Extract Method,Extract Method
+long_method,5712776,org.apache.storm.generated.SupervisorInfo#toString,0.947,1,False,Extract Method,Extract Method,Extract Method
+long_method,5717998,org.apache.sysml.utils.Explain.countCompiledInstructions ProgramBlock|ExplainCounts|boolean|boolean|boolean,0.539,1,False,Extract Method,Extract Method,Extract Method
+long_method,5738914,org.apache.storm.messaging.netty.KerberosSaslClientHandler#handleControlMessage ChannelHandlerContext|ControlMessage,0.574,0,False,Extract Method,Extract Method,Extract Method
+long_method,5743113,org.apache.tajo.org.objectweb.asm.MethodWriter#resizeInstructions,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,5769657,org.apache.syncope.core.provisioning.java.MappingManagerImpl#setIntValues Item|Attribute|RealmTO,0.977,0,False,Extract Method,Extract Method,Extract Method
+long_method,5840527,org.apache.el.parser.ELParser#DynamicExpression,0.529,1,False,Extract Method,Extract Method,Extract Method
+long_method,5845283,org.apache.tomcat.util.descriptor.web.WebXml.orderFragments Set<WebXml>|Set<WebXml>,0.625,0,False,Extract Method,Extract Method,Extract Method
+long_method,5854207,org.apache.jasper.compiler.PageDataImpl.SecondPassVisitor#escapeCDATA String,0.746,0,False,Extract Method,Extract Method,Extract Method
+long_method,5894091,org.apache.vxquery.runtime.functions.type.SequenceTypeMatcher#matchesAllInstances SequenceType,0.993,1,False,Extract Method,Extract Method,Extract Method
+long_method,5907756,org.apache.xalan.xsltc.dom.ObjectFactory.findClassLoader,0.687,1,False,Extract Method,Extract Method,Extract Method
+long_method,5922177,org.apache.zeppelin.realm.jwt.KnoxJwtRealm#validateToken String,0.738,0,False,Extract Method,Extract Method,Extract Method
+long_method,5950764,com.amazonaws.kinesisvideo.parser.examples.lambda.KinesisVideoRekognitionLambdaExample#processSingleRecord Record,0.991,1,False,Extract Method,Extract Method,Extract Method
+long_method,5952032,org.apache.openejb.core.interceptor.ReflectionInvocationContext#next,0.838,1,False,Extract Method,Extract Method,Extract Method
+long_method,5972104,org.apache.openejb.loader.IO.copyDirectory File|File,0.975,1,False,Extract Method,Extract Method,Extract Method
+long_method,5982466,com.amazonaws.eclipse.datatools.enablement.simpledb.internal.driver.JdbcStatement#executeUpdate String,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,6052388,org.eclipse.dawnsci.analysis.dataset.roi.fitting.EllipseFitter.generateCoordinates Dataset|double[],0.608,0,False,Extract Method,Extract Method,Extract Method
+long_method,6060474,org.eclipse.ceylon.compiler.java.loader.CeylonEnter#main List<JCCompilationUnit>,0.959,1,False,Extract Method,Extract Method,Extract Method
+long_method,6088559,org.eclipse.ceylon.model.loader.TypeParser.TypeList#asTuple,0.995,1,False,Extract Method,Extract Method,Extract Method
+long_method,6094004,org.eclipse.eavp.viz.datastructures.resource.VisualizationResource#copy VisualizationResource,0.702,0,False,Extract Method,Extract Method,Extract Method
+long_method,6190494,org.eclipse.che.api.languageserver.InitializeParamsProvider#get String,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,6265027,org.eclipse.ice.tests.reactor.plant.HeatExchangerTester#checkEquality,0.715,0,False,Extract Method,Extract Method,Extract Method
+long_method,6323354,org.eclipse.kapua.service.stream.internal.StreamServiceImpl#publish KapuaDataMessage|Long,0.985,0,False,Extract Method,Extract Method,Extract Method
+long_method,6442583,org.eclipse.orion.server.cf.loggregator.LoggregatorMessage.Message.Builder#mergeFrom com.google.protobuf.CodedInputStream|com.google.protobuf.ExtensionRegistryLite,0.985,1,False,Extract Method,Extract Method,Extract Method
+long_method,6515617,org.eclipse.tycho.surefire.osgibooter.AbstractUITestApplication#getApplicationToRun String[],0.536,1,False,Extract Method,Extract Method,Extract Method
+long_method,6529636,org.eclipse.smarthome.model.script.actions.BusEvent.postUpdate String|String,0.839,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,6579602,org.eclipse.xtext.web.example.entities.ide.contentassist.antlr.internal.InternalEntitiesParser.DFA21#specialStateTransition int|IntStream,0.998,0,False,Extract Method,Extract Method,Extract Method
+long_method,6613457,com.esri.arcgisruntime.sample.sketcheditor.MainActivity#onCreate Bundle,0.851,1,False,Extract Method,Extract Method,Extract Method
+long_method,6624215,com.esri.samples.featurelayers.feature_layer_rendering_mode_map.FeatureLayerRenderingModeMapSample#start Stage,0.756,1,False,Extract Method,Extract Method,Extract Method
+long_method,6823557,org.eclipse.n4js.ui.contentassist.antlr.internal.InternalN4JSParser#norm3_RelationalExpression__Group__1__Impl,0.924,0,False,Extract Method,Extract Method,Extract Method
+long_method,6844792,org.eclipse.n4js.ui.binaries.IllegalBinaryStateDialog.createCustomAreaWithLink Composite|Dialog|Binary,0.86,1,False,Extract Method,Extract Method,Extract Method
+long_method,6847017,com.google.security.zynamics.reil.translators.arm.ARMSmlsdTranslator#translateCore ITranslationEnvironment|IInstruction|List<ReilInstruction>,0.775,1,False,Extract Method,Extract Method,Extract Method
+long_method,6857899,com.google.security.zynamics.reil.translators.x86.Helpers.generateSub ITranslationEnvironment|long|OperandSize|String|String|List<ReilInstruction>,0.804,0,False,Extract Method,Extract Method,Extract Method
+long_method,6863919,com.google.errorprone.bugpatterns.inject.InjectOnMemberAndConstructor#matchClass ClassTree|VisitorState,0.936,1,False,Extract Method,Extract Method,Extract Method
+long_method,6873573,org.eclipse.n4js.generator.headless.HeadlessHelper#registerProjectsToFileBasedWorkspace Iterable<URI>|FileBasedWorkspace,0.996,1,False,Extract Method,Extract Method,Extract Method
+long_method,6905182,com.google.android.exoplayer2.text.ttml.TtmlDecoder#parseRegionAttributes XmlPullParser|CellResolution|TtsExtent,0.992,1,False,Extract Method,Extract Method,Extract Method
+long_method,6917981,com.google.gitiles.CommitData.Builder#computeDiffEntries Repository|GitilesView|RevWalk|RevCommit,0.81,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,6920454,com.google.authenticator.blackberry.AuthenticatorScreen#computeAndDisplayPin String|int|boolean,0.981,0,False,Extract Method,Extract Method,Extract Method
+long_method,7026461,sage.Seeker#addManualRecord Airing|UIClient,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,7045316,sage.MetaImage.getMetaImage Vector<Object>,0.795,0,False,Extract Method,Extract Method,Extract Method
+long_method,7056882,sage.LinuxUtils.reconfigureNetworking,0.955,1,False,Extract Method,Extract Method,Extract Method
+long_method,7085407,sun.security.provider.certpath.ReverseState#updateState X509Certificate,0.965,1,False,Extract Method,Extract Method,Extract Method
+long_method,7092657,org.apache.xml.dtm.ref.sax2dtm.SAX2DTM2.TypedDescendantIterator#next,0.993,1,False,Extract Method,Extract Method,Extract Method
+long_method,7094329,android.icu.util.VTimeZone.writeFinalRule Writer|boolean|AnnualTimeZoneRule|int|int|long,0.937,1,False,Extract Method,Extract Method,Extract Method
+long_method,7102262,sun.security.x509.X509CertInfo#toString,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,7108130,java.util.Base64.Encoder#encode0 byte[]|int|int|byte[],0.829,1,False,Extract Method,Extract Method,Extract Method
+long_method,7161584,com.microsoft.connecteddevices.graphnotifications.ConnectedDevicesManager#setNotificationRegistration String,0.923,1,False,Extract Method,Extract Method,Extract Method
+long_method,7184071,oracle.json.parser.PathParser#validateArrayStep String,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,7197581,"com.oracle.bmc.resourcemanager.ResourceManagerAsyncClient#updateStack UpdateStackRequest|com.oracle.bmc.responses.AsyncHandler<UpdateStackRequest, UpdateStackResponse>",0.812,1,False,Extract Method,Extract Method,Extract Method
+long_method,7201768,"com.oracle.bmc.database.DatabaseAsyncClient#generateAutonomousDatabaseWallet GenerateAutonomousDatabaseWalletRequest|com.oracle.bmc.responses.AsyncHandler<GenerateAutonomousDatabaseWalletRequest, GenerateAutonomousDatabaseWalletResponse>",0.783,1,False,Extract Method,Extract Method,Extract Method
+long_method,7291517,org.grails.ide.eclipse.editor.actions.UrlMappingHyperlinkDetector#findLinkComponentsInClosure ClosureExpression|int,0.995,1,False,Extract Method,Extract Method,Extract Method
+long_method,7345031,com.microsoft.tfs.core.clients.framework.location.internal.LocationCacheManager#findServicesByToolID String,0.599,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,7355243,com.microsoft.tfs.client.common.ui.controls.teamexplorer.TeamExplorerControl.ProjectsMenuListener#createAction ProjectInfo|TeamConfiguration,0.662,1,False,Extract Method,Extract Method,Extract Method
+long_method,7356984,com.microsoft.tfs.core.util.TSWAHyperlinkBuilder#formatQueryString String|String[],0.983,1,False,Extract Method,Extract Method,Extract Method
+long_method,7378490,org.springframework.boot.web.embedded.jetty.JettyReactiveWebServerFactory#createJettyServer JettyHttpHandlerAdapter,0.997,0,False,Extract Method,Extract Method,Extract Method
+long_method,7432284,"org.springframework.data.jdbc.config.oracle.PoolingDataSourceBeanDefinitionParser#setOptionalAttribute BeanDefinitionBuilder|Map<String, Object>|String|String|String",0.985,1,False,Replace Method with Method Object | Introduce Parameter Object,Extract Method,Extract Method
+long_method,7467151,com.oracle.truffle.dsl.processor.parser.MethodSpecParser.parseParametersOptional MethodSpec|List<? extends VariableElement>,0.753,0,False,Extract Method,Decompose Conditional,Extract Method
+long_method,7492767,"com.oracle.svm.hosted.NativeImageGenerator#doRun Map<Method, CEntryPointData>|Method|JavaMainSupport|String|AbstractBootImage.NativeImageKind|SubstitutionProcessor|ForkJoinPool|ForkJoinPool",0.995,1,False,Extract Method,Extract Method,Extract Method
+long_method,7542297,org.springsource.loaded.CurrentLiveVersion.CurrentLiveVersion ReloadableType|String|byte[],0.98,1,False,Extract Method,Extract Method,Extract Method
+long_method,7563795,org.springframework.expression.spel.support.ReflectivePropertyAccessor#read EvaluationContext|Object|String,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,7576371,org.springframework.orm.jpa.SharedEntityManagerCreator.SharedEntityManagerInvocationHandler#invoke Object|Method|Object[],0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,7580470,org.springframework.core.ResolvableType.forType Type|TypeProvider|VariableResolver,0.901,1,False,Extract Method,Extract Method,Extract Method
+long_method,7581965,org.springframework.beans.BeanUtils.findEditorByConvention Class<?>,0.959,1,False,Extract Method,Extract Method,Extract Method
+long_method,7588956,org.springframework.web.servlet.support.BindStatus.BindStatus RequestContext|String|boolean,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,7622719,org.springframework.ide.eclipse.quickfix.jdt.copied.StubUtility.suggestArgumentNamesWithProposals IJavaProject|IMethodBinding,0.828,0,False,Extract Method,Decompose Conditional,Extract Method
+long_method,7697841,com.tencent.tinker.loader.shareutil.ShareOatUtil.getOatFileInstructionSet File,0.994,1,False,Extract Method,Extract Method,Extract Method
+long_method,7702332,com.uber.nullaway.handlers.RxNullabilityPropagator#handleChainFromFilter StreamTypeRecord|MethodInvocationTree|Tree|VisitorState,0.874,1,False,Extract Method | Introduce Parameter Object,Decompose Conditional,Extract Method
+long_method,7717190,org.hillview.storage.GenericLogs.LogFileLoader.LogFileLoader String|Instant|Instant,0.616,1,False,Extract Method,Extract Method,Extract Method
+long_method,7730792,org.apache.brooklyn.util.core.task.BasicTask#get Duration,0.888,1,False,Extract Method,Extract Method,Extract Method
+long_method,7749788,"org.apache.brooklyn.util.core.internal.ssh.process.ProcessTool.execSingleProcess List<String>|Map<String, ?>|File|OutputStream|OutputStream|Object",0.988,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,7769131,org.apache.druid.segment.IndexIO#validateTwoSegments IndexableAdapter|IndexableAdapter,0.988,1,False,Extract Method,Extract Method,Extract Method
+long_method,7810274,org.apache.geode.cache.client.internal.AbstractOp#sendMessage Connection,0.937,1,False,Extract Method,Extract Method,Extract Method
+long_method,7810336,org.apache.geode.internal.ObjIdMap#rehash Entry[]|int|int,0.853,0,False,Extract Method,Decompose Conditional,Extract Method
+long_method,7850192,org.apache.geode.internal.cache.Oplog#recoverDrf OplogEntryIdSet|boolean|boolean,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,7870683,org.apache.geode.admin.jmx.internal.MailManager#processEmail EmailData,0.985,1,False,Extract Method,Extract Method,Extract Method
+long_method,7875037,com.facebook.buck.android.agent.AgentMain.doRawReceiveFile File|int|InputStream,0.987,1,False,Extract Method,Extract Method,Extract Method
+long_method,7882655,com.facebook.buck.distributed.thrift.FetchRuleKeyLogsRequest.FetchRuleKeyLogsRequestStandardScheme#read org.apache.thrift.protocol.TProtocol|FetchRuleKeyLogsRequest,0.996,1,False,Extract Method,Extract Method,Extract Method
+long_method,7905552,com.facebook.buck.cli.AuditRulesCommand#runWithoutHelp CommandRunnerParams,0.774,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,7916535,org.apache.xalan.xsltc.runtime.ObjectFactory.findProviderClass String|ClassLoader|boolean,0.98,1,False,Extract Method,Extract Method,Extract Method
+long_method,7934374,org.eclipse.draw2d.graph.ConvertCompoundGraph#visit DirectedGraph,0.818,1,False,Extract Method,Extract Method,Extract Method
+long_method,7957449,org.eclipse.xtext.xbase.annotations.parser.antlr.internal.InternalXbaseWithAnnotationsParser.DFA60#specialStateTransition int|IntStream,0.935,1,False,Extract Method,Extract Method,Extract Method
+long_method,7962366,org.eclipse.xtext.xbase.testlanguages.ide.contentassist.antlr.internal.InternalXImportSectionTestLangParser#ruleXDoWhileExpression,0.872,0,False,Extract Method,Extract Method,Extract Method
+long_method,7964380,org.eclipse.xtext.xbase.testlanguages.parser.antlr.internal.InternalXImportSectionTestLangLexer#mRULE_STRING,0.891,1,False,Extract Method,Extract Method,Extract Method
+long_method,7987571,org.eclipse.xtext.xbase.parser.antlr.internal.InternalXbaseParser#ruleXOtherOperatorExpression,0.936,1,False,Extract Method,Extract Method,Extract Method
+long_method,7992491,org.eclipse.xtext.xbase.validation.XbaseValidator#checkNoForwardReferences XExpression,0.997,1,False,Extract Method,Extract Method,Extract Method
+long_method,8007508,org.eclipse.xtext.ui.tests.editor.contentassist.parser.antlr.internal.InternalParametersTestLanguageExParser#ruleScenario1,0.855,0,False,Extract Method,Extract Method,Extract Method
+long_method,8029682,org.eclipse.xtext.xtext.ecoreInference.Xtext2EcoreTransformer#deriveTypeHierarchyFromOverridden ParserRule|Grammar,0.98,1,False,Extract Method,Extract Method,Extract Method
+long_method,8080847,org.eclipse.xtext.xbase.testlanguages.bug462047.ide.contentassist.antlr.internal.InternalBug462047LangParser#rule__XShortClosure__Group_0__0__Impl,0.911,0,False,Extract Method,Extract Method,Extract Method
+long_method,8123359,org.eclipse.xtext.xtext.generator.serializer.NamedSerializationContextProvider#getNamedContexts SerializationContextMap<T>,0.991,1,False,Extract Method,Extract Method,Extract Method
+long_method,8144651,org.eclipse.xtext.testlanguages.backtracking.ide.contentassist.antlr.internal.InternalExBeeLangTestLanguageParser2#entryRuleCallExpression,0.509,1,False,Extract Method,Extract Method,Extract Method
+long_method,8148121,com.alibaba.cobar.server.parser.ServerParseSet.characterSet String|int|int,0.987,1,False,Extract Method,Extract Method,Extract Method
+long_method,8195539,org.eclipse.xtend.core.macro.AnnotationProcessor.CancellationObserver#monitorUntil ActiveAnnotationContext|CancelIndicator|Function0<? extends Boolean>,0.94,1,False,Extract Method,Extract Method,Extract Method
+long_method,8333384,org.aspectj.util.LangUtil.ProcessController#start,0.507,0,False,Extract Method,Extract Method,Extract Method
+long_method,8348990,org.aspectj.weaver.bcel.AtAjAttributes.handleAspectAnnotation RuntimeAnnos|AjAttributeStruct,0.998,1,False,Extract Method,Extract Method,Extract Method
+long_method,8389037,"org.apache.camel.component.disruptor.DisruptorComponent#createEndpoint String|String|Map<String, Object>",0.857,1,False,Extract Method,Extract Method,Extract Method
+long_method,8443651,org.apache.camel.component.gson.GsonDataFormat#doStart,0.802,0,False,Extract Method,Extract Method,Extract Method
+long_method,8494231,com.cloud.resource.ResourceManagerImpl#discoverHosts AddHostCmd,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,8495850,org.apache.cloudstack.api.command.admin.storage.AddImageStoreS3CMD#execute,0.877,1,False,Extract Method,Extract Method,Extract Method
+long_method,8497990,com.cloud.consoleproxy.ConsoleProxyManagerImpl#getDefaultNetworkForAdvancedZone DataCenter,0.836,1,False,Extract Method,Extract Method,Extract Method
+long_method,8526436,com.cloud.network.manager.NuageVspManagerImpl#executeSyncCmsId NuageVspDeviceVO|SyncType,0.978,1,False,Extract Method,Extract Method,Extract Method
+long_method,8532133,org.apache.cloudstack.network.contrail.management.ServerDBSyncImpl#syncAll short,0.963,1,False,Extract Method,Extract Method,Extract Method
+long_method,8537914,com.cloud.server.ManagementServerImpl#getVMPassword GetVMPasswordCmd,0.958,1,False,Extract Method,Extract Method,Extract Method
+long_method,8560556,org.apache.hadoop.hbase.backup.impl.IncrementalTableBackupClient#handleBulkLoad List<TableName>,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,8618517,org.apache.ignite.internal.processors.cache.transactions.TxLocksResponse#readFrom ByteBuffer|MessageReader,0.609,1,False,Extract Method,Extract Method,Extract Method
+long_method,8636644,org.apache.ofbiz.entity.model.ModelUtil.shortenDbName String|int,0.992,1,False,Extract Method,Extract Method,Extract Method
+long_method,8653310,org.apache.ignite.internal.processors.query.h2.sys.view.SqlSystemViewNodeMetrics#getRows Session|SearchRow|SearchRow,0.626,1,False,Extract Method,Decompose Conditional,Extract Method
+long_method,8660273,"org.apache.ofbiz.widget.model.ModelFormField.EntityOptions#addOptionValues List<OptionValue>|Map<String, Object>|Delegator",0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,8666215,org.apache.ignite.internal.processors.query.h2.H2ResultSetIterator#fetchNext,0.88,1,False,Extract Method,Extract Method,Extract Method
+long_method,8685299,org.apache.ofbiz.party.contact.ContactMechWorker.getFacilityContactMechValueMaps Delegator|String|boolean|String,0.996,1,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,8766133,org.apache.hadoop.security.UserGroupInformation.getOsPrincipalClass,0.734,0,False,Extract Method,Extract Method,Extract Method
+long_method,8791597,org.apache.airavata.registry.api.service.handler.RegistryServerHandler#updateExperiment String|ExperimentModel,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,8856936,org.apache.airavata.api.Airavata.updateApplicationInterface_result#setFieldValue _Fields|Object,0.973,0,False,Extract Method,Extract Method,Extract Method
+long_method,8861277,org.apache.airavata.registry.core.app.catalog.resources.ComputeHostPreferenceResource#isExists Object,0.97,1,False,Extract Method,Extract Method,Extract Method
+long_method,8863382,org.apache.hive.service.rpc.thrift.TCancelOperationResp.TCancelOperationRespStandardScheme#read org.apache.thrift.protocol.TProtocol|TCancelOperationResp,0.56,0,False,Extract Method,Extract Method,Extract Method
+long_method,8873169,org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore.add_check_constraint_result.add_check_constraint_resultStandardScheme#read org.apache.thrift.protocol.TProtocol|add_check_constraint_result,0.958,1,False,Extract Method,Extract Method,Extract Method
+long_method,8895511,org.apache.hadoop.hive.metastore.HiveMetaStore.HMSHandler#alterTableStatsForTruncate RawStore|String|String|String|Table|List<String>|String|long,0.984,1,False,Extract Method,Extract Method,Extract Method
+long_method,8917324,org.apache.hadoop.hive.ql.exec.SMBMapJoinOperator#initializeOp Configuration,0.954,1,False,Extract Method,Extract Method,Extract Method
+long_method,8919445,org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore.alter_table_with_cascade_result.alter_table_with_cascade_resultStandardScheme#read org.apache.thrift.protocol.TProtocol|alter_table_with_cascade_result,0.958,1,False,Extract Method,Extract Method,Extract Method
+long_method,8920121,org.apache.hadoop.hive.ql.exec.TopNHash#tryStoreVectorizedKey HiveKey|boolean|int,0.993,1,False,Extract Method,Extract Method,Extract Method
+long_method,8922371,org.apache.hadoop.hive.metastore.api.WMTrigger.WMTriggerStandardScheme#read org.apache.thrift.protocol.TProtocol|WMTrigger,0.977,1,False,Extract Method,Extract Method,Extract Method
+long_method,8925039,"org.apache.hive.hcatalog.mapreduce.FosterStorageHandler#configureInputJobProperties TableDesc|Map<String, String>",0.982,1,False,Extract Method,Extract Method,Extract Method
+long_method,8928769,org.apache.hadoop.hive.ql.parse.SemanticAnalyzer#initParseCtx ParseContext,0.634,0,False,Extract Method,Move Method,Extract Method
+long_method,8934300,org.apache.hadoop.hive.ql.optimizer.calcite.cost.HiveOnTezCostModel.TezBucketJoinAlgorithm#getCost HiveJoin,0.96,1,False,Extract Method,Extract Method,Extract Method
+long_method,8969767,org.apache.lucene.index.BaseNormsFormatTestCase#testIndependantIterators,0.99,0,False,Extract Method,Extract Method,Extract Method
+long_method,8971411,org.apache.lucene.index.BaseDocValuesFormatTestCase#testSortedSetEnumAdvanceIndependently,0.989,0,False,Extract Method,Extract Method,Extract Method
+long_method,8971685,org.apache.lucene.search.BM25FQuery.BM25FWeight#explain LeafReaderContext|int,0.93,1,False,Extract Method,Extract Method,Extract Method
+long_method,8999751,org.tartarus.snowball.ext.ItalianStemmer#r_prelude,0.968,1,False,Extract Method,Extract Method,Extract Method
+long_method,9006040,org.apache.solr.update.processor.DistributedZkUpdateProcessor#doDefensiveChecks DistribPhase,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,9009111,org.apache.solr.search.join.ScoreJoinQParserPlugin.OtherCoreJoinQuery#createWeight IndexSearcher|org.apache.lucene.search.ScoreMode|float,0.51,0,False,Extract Method,Extract Method,Extract Method
+long_method,9012407,org.apache.lucene.analysis.phonetic.DoubleMetaphoneFilter#incrementToken,0.927,1,False,Extract Method,Extract Method,Extract Method
+long_method,9023034,org.apache.solr.handler.component.SearchHandler#getAndPrepShardHandler SolrQueryRequest|ResponseBuilder,0.999,1,False,Extract Method,Extract Method,Extract Method
+long_method,9024733,org.apache.solr.update.processor.DistributedUpdateProcessor#doDeleteById DeleteUpdateCommand,0.811,0,False,Extract Method,Extract Method,Extract Method
+long_method,9111672,org.eclipse.birt.chart.ui.swt.wizard.format.popup.series.LineSeriesMarkerSheet#createButtonGroup Group,0.583,1,False,Extract Method,Extract Method,Extract Method
+long_method,9142325,org.eclipse.birt.report.designer.ui.dialogs.ColumnBindingDialog#okPressed,0.541,0,False,Extract Method,Extract Method,Extract Method
+long_method,9159804,org.eclipse.birt.data.engine.odaconsumer.PreparedStatement#retrySetNullParamValue ParameterName|int|int|Exception,0.88,0,False,Extract Method | Introduce Parameter Object,Extract Method,Extract Method
+long_method,9469461,org.apache.hadoop.hdfs.tools.offlineImageViewer.OfflineImageReconstructor#expectTag String|boolean,0.831,1,False,Extract Method,Extract Method,Extract Method
+long_method,9490334,org.apache.hadoop.http.HttpServer2.createWebAppContext Builder|AccessControlList|String,0.719,0,False,Extract Method,Extract Method,Extract Method
+feature_envy,3722097,android.taobao.atlas.runtime.newcomponent.IntentResolver#register_mime_types F|String,0.608,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,3730280,com.alibaba.druid.support.monitor.MonitorClient#start,0.901,0,True,Extract Method,Extract Method,Move Method
+feature_envy,3780834,com.google.android.exoplayer2.offline.SegmentDownloadAction#writeToStream DataOutputStream,0.553,0,True,Move Method,Move Method,Move Method
+feature_envy,3807471,"org.apache.activemq.artemis.core.management.impl.AddressControlImpl#sendMessage Map<String, String>|int|String|boolean|String|String",0.756,1,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,3877118,org.apache.ambari.server.controller.AmbariManagementControllerImpl#verifyRepository RepositoryRequest,0.794,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,3922349,"org.apache.aries.rsa.discovery.endpoint.PropertiesMapper#fromProps Map<String, Object>",0.994,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,3933339,org.apache.aries.proxy.impl.common.AbstractWovenProxyMethodAdapter#writePreInvoke,0.664,0,True,Move Method,Move Method,Move Method
+feature_envy,3940072,org.apache.aries.subsystem.core.internal.ResolveContext#processAsSubstitutableExport boolean|Requirement|List<Capability>,0.592,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,3942097,org.apache.aries.spifly.statictool.Main.weaveDir File|String|String|String,0.879,1,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,3951549,org.apache.apex.malhar.kudu.AbstractKuduOutputOperator#performCommonProcessing Operation|KuduExecutionContext,1.0,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,3986050,org.apache.polygene.library.circuitbreaker.service.BreakCircuitConcern#invoke Object|Method|Object[],0.509,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,3986717,org.apache.polygene.api.util.Classes.simpleGenericNameOf StringBuilder|Type,0.891,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,3993831,org.apache.batik.ext.awt.image.rendered.FilterAsAlphaRed#copyData WritableRaster,0.759,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,4005583,org.apache.batik.apps.svgbrowser.DOMViewer.Panel.NodeRenderer#getTreeCellRendererComponent JTree|Object|boolean|boolean|boolean|int|boolean,0.865,0,True,Extract Method,Introduce Parameter Object,Move Method
+feature_envy,4028364,org.apache.beam.sdk.io.synthetic.SyntheticOptions.SamplerDeserializer#deserialize JsonParser|DeserializationContext,0.738,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,4055848,org.apache.beam.runners.fnexecution.wire.LengthPrefixUnknownCoders.addLengthPrefixedCoder String|RunnerApi.Components.Builder|boolean,0.584,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4057866,org.apache.distributedlog.LogRecord#readPayload ByteBuf|boolean,0.617,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,4062999,org.apache.beam.runners.dataflow.worker.AssignWindowsParDoFnFactory.AssignWindowsParDoFn#processElement Object,0.755,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,4068177,org.apache.asterix.hyracks.bootstrap.ApplicationConfigurator.registerConfigOptions IConfigManager,0.865,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4075888,org.apache.bookkeeper.statelib.impl.rocksdb.checkpoint.RocksdbCheckpointTask#finalizeCheckpoint String|File|byte[],0.874,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4081252,org.apache.hyracks.storage.am.lsm.rtree.dataflow.LSMRTreeWithAntiMatterLocalResource#createInstance INCServiceContext,0.604,1,True,Move Method,Move Method,Move Method
+feature_envy,4092105,org.apache.asterix.transaction.management.service.logging.LogManager#getOrderedLogFileIds,0.83,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4095182,org.apache.hyracks.ipc.impl.IPCConnectionManager.NetworkThread#processSelectedKeys,0.845,0,True,Extract Method | Move Method,Move Method,Move Method
+feature_envy,4122935,org.apache.brooklyn.core.network.OnSubnetNetworkEnricher#getMappedEndpoint Entity|MachineLocation|int,0.693,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,4139640,org.apache.calcite.schema.impl.ModifiableViewTable.ModifiableViewTableInitializerExpressionFactory#generationStrategy RelOptTable|int,0.76,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,4222354,org.apache.cassandra.schema.Tables.Builder#add TableMetadata,0.996,0,True,Move Method,Move Method,Move Method
+feature_envy,4257893,org.apache.commons.numbers.combinatorics.Combinations.LexicographicComparator#compare int[]|int[],0.551,0,True,Extract Method,Extract Method,Move Method
+feature_envy,4259369,org.apache.commons.pool2.impl.GenericKeyedObjectPool#getNumWaitersByKey,0.564,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4276035,org.apache.commons.math4.ode.nonstiff.AdamsFieldStepInterpolator.AdamsFieldStepInterpolator T|FieldODEStateAndDerivative<T>|T[]|Array2DRowFieldMatrix<T>|boolean|FieldODEStateAndDerivative<T>|FieldODEStateAndDerivative<T>|FieldEquationsMapper<T>,0.635,0,True,,Introduce Parameter Object,Move Method
+feature_envy,4297095,org.apache.directory.fortress.core.rest.DelAccessMgrRestImpl#sessionPermissions Session,0.851,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,4301341,org.apache.kerby.kerberos.kerb.gss.GssMechFactory#getCredentialElement GSSNameSpi|int|int|int,0.628,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,4301441,org.apache.kerby.kerberos.kerb.common.KrbUtil.pricipalCompareIgnoreRealm PrincipalName|PrincipalName,0.515,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,4303100,org.apache.kerby.kerberos.kerb.response.ApResponse.validate EncryptionKey|ApRep|ApReq,0.533,0,True,Move Method,Move Method,Move Method
+feature_envy,4308723,org.apache.directory.api.ldap.schema.loader.SchemaEntityFactory#classLoadComparator SchemaManager|String|String|Attribute,0.691,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,4311186,org.apache.directory.api.ldap.model.schema.syntaxCheckers.DseTypeSyntaxChecker#isValidSyntax Object,0.959,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4336814,org.apache.directory.server.core.partition.impl.btree.jdbm.DupsCursor#afterValue K|V,0.979,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,4356398,org.apache.derby.impl.sql.compile.SubqueryNode#preprocess int|FromList|SubqueryList|PredicateList,0.619,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,4402431,org.apache.cxf.rs.security.jose.jwk.JwkUtils.fromRSAPrivateKey RSAPrivateKey|String|String,0.937,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4404282,org.apache.directory.studio.templateeditor.view.preferences.TemplateEntryEditorPreferencePage#initListeners,1.0,0,True,Extract Method,Extract Method,Move Method
+feature_envy,4413486,org.apache.cxf.binding.soap.SoapBindingFactory#setupHeaders BindingOperationInfo|BindingMessageInfo|BindingMessageInfo|MessageInfo|SoapBindingConfiguration,0.762,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,4437678,org.apache.falcon.rerun.event.LaterunEvent.LaterunEvent String|String|String|long|long|String|String|String|int|String,0.748,0,True,,Introduce Parameter Object,Move Method
+feature_envy,4462987,org.apache.drill.exec.work.batch.ControlMessageHandler#resumeFragment FragmentHandle,0.508,0,True,Extract Method | Move Method,Move Method,Move Method
+feature_envy,4484891,org.apache.drill.exec.physical.impl.WriterRecordBatch#addOutputContainerData,0.745,1,True,Move Method,Move Method,Move Method
+feature_envy,4572409,org.apache.fop.complexscripts.fonts.GlyphSubstitutionTable.ReverseChainedSingleSubtable.create String|int|int|int|GlyphCoverageTable|List,0.544,0,True,,Introduce Parameter Object,Move Method
+feature_envy,4578782,org.apache.fop.pdf.PDFDocument.CompressedTrailerOutputHelper#outputCrossReferenceObject OutputStream|TrailerDictionary|int|int|int,0.514,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,4582889,org.apache.fop.area.AreaTreeParser.Handler#startElement String|String|String|Attributes,0.98,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4679336,org.apache.hadoop.eclipse.view.servers.ServerView#getColumnText Object|int,0.954,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4734605,"com.uber.hoodie.HoodieWriteClient#finishRestore Timer.Context|Map<String, List<HoodieRollbackStat>>|List<String>|String|String",0.984,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4756088,org.apache.gobblin.util.AvroUtils.removeUncomparableFieldsFromRecord Schema|Set<Schema>,0.984,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4788662,org.apache.sentry.provider.db.service.thrift.TListSentryPrivilegesRequest#equals TListSentryPrivilegesRequest,0.833,0,True,Extract Method,Replace Method with Method Object,Move Method
+feature_envy,4790338,org.apache.shardingsphere.core.rewrite.SQLRewriteEngine#appendSchemaPlaceholder SQLBuilder|SchemaToken|int,0.519,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,4794965,org.apache.shardingsphere.core.execute.sql.execute.result.StreamQueryResult#getValue String|Class<?>,0.892,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,4809381,org.apache.skywalking.oap.server.core.storage.#extractDataAndSave IBatchDAO,0.996,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4901849,org.apache.jackrabbit.oak.security.authentication.token.TokenValidatorProvider.TokenValidator#propertyChanged PropertyState|PropertyState,0.663,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4911266,org.apache.pinot.thirdeye.dashboard.resources.MetricConfigResource#createMetricConfig String|String|String|boolean|boolean|String|String|String|String|boolean|String|Double,0.896,0,True,Move Method | Extract Method,Introduce Parameter Object,Move Method
+feature_envy,4919453,org.apache.jmeter.protocol.http.control.gui.HttpMirrorControlGui#createPortPanel,0.574,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,4919602,org.apache.jmeter.protocol.http.config.gui.UrlConfigGui#configure TestElement,0.998,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,4932887,org.apache.wiki.ui.TemplateManager#listLanguages PageContext,0.807,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,4933953,org.apache.wiki.providers.VersioningFileProvider#getPageInfo String|int,0.61,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5005330,org.apache.knox.examples.WordCount.main String[],0.98,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5102890,com.sun.syndication.io.impl.RSS091UserlandParser#parseItem Element|Element,0.627,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5117164,org.apache.manifoldcf.agents.system.AgentsDaemon.AgentsThread#run,0.733,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5138043,org.apache.maven.plugins.ear.EarModuleFactory.newEarModule Artifact|JavaEEVersion|String|Boolean|ArtifactTypeMappingService,0.841,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5141751,org.apache.maven.plugins.linkcheck.LinkcheckReport#generateReport Locale|LinkcheckModel,0.708,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5176784,org.apache.metron.enrichment.stellar.GeoEnrichmentFunctions.GeoGet#apply List<Object>|Context,0.992,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5184123,org.apache.metron.indexing.dao.HBaseDao#buildPut Document,0.616,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,5186909,org.apache.metron.common.utils.HashUtils.getMessageHash JSONObject|Collection<String>,0.892,0,True,Move Method,Move Method,Move Method
+feature_envy,5207888,org.apache.nifi.registry.provider.flow.git.GitFlowPersistenceProvider#createFlowSnapshotMetdata Flow,0.599,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5226222,org.apache.olingo.odata2.jpa.processor.api.ODataJPADefaultProcessor#executeChangeSet BatchHandler|List<ODataRequest>,0.852,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5232497,org.apache.oodt.cas.crawl.ProductCrawler#crawl File,0.711,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5237277,org.apache.olingo.server.tecsvc.async.TechnicalAsyncService.copy InputStream|OutputStream,0.562,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5250124,org.apache.oozie.sla.SLACalculatorMemory#reloadExpectedTimeAndConfig SLACalcStatus,0.987,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5278260,org.apache.openjpa.kernel.BrokerImpl#refreshInternal Collection|OpCallbacks,0.683,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5310114,org.apache.openjpa.jdbc.sql.DBDictionary#toBulkOperation ClassMapping|Select|JDBCStore|Object[]|Map,0.998,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5311043,org.apache.openjpa.jdbc.sql.DB2Dictionary#appendXmlComparison1 SQLBuffer|String|FilterValue|FilterValue,0.559,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5314620,org.apache.pdfbox.contentstream.operator.state.SetMatrix#process Operator|List<COSBase>,0.726,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5326926,org.apache.nifi.web.api.dto.DtoFactory#createSystemDiagnosticsDto SystemDiagnostics,1.0,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5328888,org.apache.nifi.processors.aws.credentials.provider.factory.strategies.AbstractBooleanCredentialsStrategy#validate ValidationContext|CredentialsStrategy,0.82,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,5331456,org.apache.nifi.web.StandardNiFiServiceFacade#createProcessGroup Revision|String|ProcessGroupDTO,0.999,0,True,Move Method,Move Method,Move Method
+feature_envy,5340257,org.apache.nifi.controller.repository.VolatileContentRepository#exportTo ContentClaim|Path|boolean|long|long,0.528,1,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,5343588,org.apache.nifi.processors.aws.dynamodb.PutDynamoDB#onTrigger ProcessContext|ProcessSession,0.999,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5355489,org.apache.nifi.processors.media.ExtractMediaMetadata#tika_parse InputStream|String|Integer|Integer,0.999,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5366640,org.apache.pig.PigServer.PigServer PigContext|boolean,0.898,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5402098,org.apache.pig.data.DefaultDataBag#spill,0.528,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5416350,org.apache.phoenix.end2end.BaseAggregateIT#testGroupByOrderPreservingDescSort,0.958,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5422127,org.apache.pivot.wtk.skin.ContainerSkin.IndexFocusTraversalPolicy#getNextComponent Container|Component|FocusTraversalDirection,0.727,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5480114,org.apache.qpid.server.virtualhost.AbstractVirtualHost#validateNodeAutoCreationPolicy NodeAutoCreationPolicy,0.94,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5497076,org.apache.qpid.server.security.access.config.AclFileParser.parse Reader|EventLoggerProvider,1.0,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5499603,org.apache.rocketmq.console.service.impl.ConsumerServiceImpl#resetOffset ResetOffsetRequest,0.936,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5516822,org.apache.reef.wake.remote.impl.MultiEncoder#encode T,0.679,0,True,Move Method,Move Method,Move Method
+feature_envy,5542756,org.apache.sentry.api.service.thrift.SentryPolicyService.list_roles_privileges_result.list_roles_privileges_resultTupleScheme#write org.apache.thrift.protocol.TProtocol|list_roles_privileges_result,0.567,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,5548181,org.apache.sentry.provider.db.service.persistent.SentryStore#getMAuthzPaths long|String,0.524,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5573449,org.apache.poi.hslf.usermodel.HSLFFreeformShape#setPath Path2D,1.0,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5585565,org.apache.poi.ss.util.TestSheetUtil#testGetColumnWidthString,0.647,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,5585822,org.apache.poi.ss.usermodel.BaseTestFormulaEvaluator#testBug56655a,0.751,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5591314,org.apache.poi.hssf.converter.TestExcelConverterSuite#testHtml,0.817,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5593437,org.apache.poi.xssf.usermodel.examples.LineChart.main String[],0.952,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5596509,org.apache.royale.compiler.internal.codegen.js.amd.JSAMDEmitter#emitPackageContents IPackageDefinition,0.865,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5602164,org.apache.poi.xssf.model.TestCommentsTable#writeRead,0.912,1,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5618836,org.apache.shiro.subject.SimplePrincipalCollection#fromRealm String,0.501,0,True,Move Method,Move Method,Move Method
+feature_envy,5622695,org.apache.royale.compiler.internal.codegen.js.jx.BindableEmitter#emitBindableImplementsConstructorCode boolean,0.726,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5625012,org.apache.royale.compiler.internal.config.FlashBuilderConfigurator.RoyaleLibPropertiesHandler#startElement String|String|String|Attributes,0.896,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5712776,org.apache.storm.generated.SupervisorInfo#toString,0.811,0,True,Extract Method,Extract Method,Move Method
+feature_envy,5717998,org.apache.sysml.utils.Explain.countCompiledInstructions ProgramBlock|ExplainCounts|boolean|boolean|boolean,0.632,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,5723559,org.apache.storm.blobstore.MigrateBlobs.copyBlobStoreKeys BlobStore|Subject|BlobStore|Subject,0.682,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,5748379,org.apache.tajo.plan.util.ExprFinder#visit Context|Stack<Expr>|Expr,0.862,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,5752009,org.apache.tajo.storage.jdbc.SQLBuilder#visit SQLBuilderContext|LogicalNode|Stack<LogicalNode>,0.644,0,True,Extract Method,Introduce Parameter Object,Move Method
+feature_envy,5762348,org.apache.syncope.core.logic.ReportTemplateLogic#delete String,0.77,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5767507,org.apache.syncope.core.provisioning.java.data.ApplicationDataBinderImpl#getPrivilegeTO Privilege,0.58,0,True,Move Method,Move Method,Move Method
+feature_envy,5769657,org.apache.syncope.core.provisioning.java.MappingManagerImpl#setIntValues Item|Attribute|RealmTO,0.854,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,5799553,org.apache.tapestry5.internal.plastic.AnnotationBuilder.AnnotationValueHandler#invoke Object|Method|Object[],0.605,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,5839980,org.apache.tomcat.util.descriptor.web.ContextResourceLink#equals Object,0.638,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5845274,"org.apache.tomcat.util.descriptor.web.WebXml#mergeResourceMap Map<String, T>|Map<String, T>|Map<String, T>|WebXml",0.841,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,5845283,org.apache.tomcat.util.descriptor.web.WebXml.orderFragments Set<WebXml>|Set<WebXml>,0.72,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5894091,org.apache.vxquery.runtime.functions.type.SequenceTypeMatcher#matchesAllInstances SequenceType,0.763,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5950764,com.amazonaws.kinesisvideo.parser.examples.lambda.KinesisVideoRekognitionLambdaExample#processSingleRecord Record,1.0,1,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,5952032,org.apache.openejb.core.interceptor.ReflectionInvocationContext#next,0.583,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,5972104,org.apache.openejb.loader.IO.copyDirectory File|File,0.685,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,5989938,software.amazon.awssdk.codegen.poet.paginators.PaginatorsClassSpec#resumeMethodBuilder,0.706,0,True,Move Method,Move Method,Move Method
+feature_envy,6173466,org.eclipse.che.ide.maven.tools.Plugin#addConfigPropertyToXML String|String,0.536,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,6174952,"org.eclipse.che.plugin.debugger.ide.configuration.DebugConfigurationsManagerImpl#createConfiguration String|String|String|int|Map<String, String>",0.525,0,True,,Introduce Parameter Object,Move Method
+feature_envy,6207209,org.eclipse.che.ide.command.editor.CommandEditor#initializePages,0.591,0,True,Move Method,Move Method,Move Method
+feature_envy,6234592,org.eclipse.elk.core.meta.ide.contentassist.antlr.internal.InternalMetaDataParser#rule__MdCategory__Group_4_0__1__Impl,0.637,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,6244944,org.eclipse.hono.deviceregistry.FileBasedCredentialsService#get String|String|String|JsonObject|Span|Handler<AsyncResult<CredentialsResult<JsonObject>>>,0.909,0,True,Move Method | Extract Method,Introduce Parameter Object,Move Method
+feature_envy,6265027,org.eclipse.ice.tests.reactor.plant.HeatExchangerTester#checkEquality,0.971,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6266221,org.eclipse.ice.tests.datastructures.MasterDetailsPairTester#checkAlternativeConstructor,0.546,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6296221,org.eclipse.jetty.server.AsyncContextEvent.AsyncContextEvent Context|AsyncContextState|HttpChannelState|Request|ServletRequest|ServletResponse,0.732,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6299837,org.eclipse.jetty.websocket.common.util.ReflectUtils.resolveGenericRef GenericRef|Class<?>|Type,0.767,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6310221,org.eclipse.kura.web.client.ui.firewall.PortForwardingTabUi#setModalFieldsTooltips,0.961,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6318697,org.eclipse.kapua.app.console.module.device.client.device.bundles.DeviceTabBundles#onRender Element|int,0.683,1,True,Extract Method | Move Method,Move Method,Move Method
+feature_envy,6323354,org.eclipse.kapua.service.stream.internal.StreamServiceImpl#publish KapuaDataMessage|Long,0.942,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6329944,org.eclipse.kapua.service.authorization.group.shiro.GroupServiceImpl#delete KapuaId|KapuaId,0.687,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,6430791,org.eclipse.milo.examples.server.ExampleNamespace#addDataAccessNodes UaFolderNode,0.899,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,6444284,org.eclipse.orion.server.logs.servlets.FileAppenderHandler#downloadLog HttpServletRequest|HttpServletResponse|ILogService|String,0.731,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6455346,com.ibm.j9ddr.vm29.tools.ddrinteractive.LinearDumper#addUTF8Region StructurePointer|String|String|AbstractPointer,0.55,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,6458427,org.eclipse.packagedrone.repo.channel.impl.ChannelServiceModify#deleteMapping String|String,0.732,0,True,Move Method,Move Method,Move Method
+feature_envy,6529636,org.eclipse.smarthome.model.script.actions.BusEvent.postUpdate String|String,0.572,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,6537386,org.eclipse.smarthome.automation.internal.core.provider.i18n.ModuleTypeI18nUtil.getInputLabel TranslationProvider|Bundle|String|String|String|Locale,0.751,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,6579602,org.eclipse.xtext.web.example.entities.ide.contentassist.antlr.internal.InternalEntitiesParser.DFA21#specialStateTransition int|IntStream,0.561,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6600350,com.epam.jdi.jditestandroidapp.ui.ServicePickerFragment#onViewCreated View|Bundle,0.509,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,6601584,com.epam.catgenome.dao.reference.BookmarkDao#loadBookmarkItemsByBookmarkIds Collection<Long>,0.989,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,6624215,com.esri.samples.featurelayers.feature_layer_rendering_mode_map.FeatureLayerRenderingModeMapSample#start Stage,1.0,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6633402,com.esri.android.mapsapp.MapFragment#getSuggestions String,0.781,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6782933,com.google.auto.value.processor.TemplateVars.inputStreamFromJar URL,0.721,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6816458,com.google.template.soy.passes.StrictDepsPass#checkBasicCall CallBasicNode|TemplateRegistry,0.674,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,6835472,org.eclipse.n4js.ui.internal.N4JSEclipseProject#getProjectDescriptionLocation,0.571,0,True,Move Method,Move Method,Move Method
+feature_envy,6840071,org.eclipse.n4js.serializer.N4JSSemanticSequencer#sequence_JSXSpreadAttribute ISerializationContext|JSXSpreadAttribute,0.682,0,True,Move Method,Move Method,Move Method
+feature_envy,6847017,com.google.security.zynamics.reil.translators.arm.ARMSmlsdTranslator#translateCore ITranslationEnvironment|IInstruction|List<ReilInstruction>,1.0,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6857899,com.google.security.zynamics.reil.translators.x86.Helpers.generateSub ITranslationEnvironment|long|OperandSize|String|String|List<ReilInstruction>,1.0,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,6863919,com.google.errorprone.bugpatterns.inject.InjectOnMemberAndConstructor#matchClass ClassTree|VisitorState,0.999,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6871109,org.eclipse.n4js.ts.ui.contentassist.antlr.internal.InternalTypesParser#rule__DefaultFormalParameter__HasInitializerAssignmentAssignment_0,0.886,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,6873573,org.eclipse.n4js.generator.headless.HeadlessHelper#registerProjectsToFileBasedWorkspace Iterable<URI>|FileBasedWorkspace,0.637,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,6877863,com.google.security.zynamics.binnavi.Database.PostgreSQL.Notifications.parsers.PostgreSQLTypesNotificationParser#informBaseTypesNotification TypesNotificationContainer|SQLProvider,0.943,0,True,Move Method,Move Method,Move Method
+feature_envy,6905182,com.google.android.exoplayer2.text.ttml.TtmlDecoder#parseRegionAttributes XmlPullParser|CellResolution|TtsExtent,0.839,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6962878,com.google.common.util.concurrent.FakeTimeLimiter#callWithTimeout Callable<T>|long|TimeUnit,0.546,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,6972046,"com.google.common.collect.testing.SortedSetTestSuiteBuilder#createSubsetSuite FeatureSpecificTestSuiteBuilder<?, ? extends OneSizeTestContainerGenerator<Collection<E>, E>>|Bound|Bound",0.873,0,True,Move Method,Move Method,Move Method
+feature_envy,7023392,"com.ibm.og.guice.OGModule#provideRead Function<Map<String, String>, String>|Scheme|Function<Map<String, String>, String>|Integer|String|Function<Map<String, String>, String>|String|Function<Map<String, String>, String>|Map<String, Function<Map<String, String>, String>>|List<Function<Map<String, String>, String>>|Function<Map<String, String>, Credential>|boolean|boolean",0.977,0,True,Move Method | Extract Method,Introduce Parameter Object,Move Method
+feature_envy,7026461,sage.Seeker#addManualRecord Airing|UIClient,0.999,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7044394,sage.FirewireCaptureDevice#activateInput CaptureDeviceInput,0.671,0,True,Extract Method | Move Method,Move Method,Move Method
+feature_envy,7049236,com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector#optimizeForGoal ClusterModel|Goal|GoalViolations|Set<Integer>|Set<Integer>,0.836,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7056433,sage.Agent#getHashes List<Integer>|int,0.985,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7095948,android.icu.util.PersianCalendar#handleComputeFields int,0.754,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7102262,sun.security.x509.X509CertInfo#toString,0.945,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7107337,org.apache.harmony.xml.dom.NodeImpl#namedNodeMapsEqual NamedNodeMap|NamedNodeMap,0.675,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7111061,com.microsoft.applicationinsights.agent.internal.agent.sql.PreparedStatementClassDataProvider#addSqlite,0.836,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7141052,com.microsoft.java.debug.plugin.internal.JdtSourceLookUpProvider.resolveClassFile String,0.618,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7161584,com.microsoft.connecteddevices.graphnotifications.ConnectedDevicesManager#setNotificationRegistration String,0.893,1,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7180104,org.opengrok.indexer.history.FileHistoryCache#storeFile History|File|Repository|boolean,0.657,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7197581,"com.oracle.bmc.resourcemanager.ResourceManagerAsyncClient#updateStack UpdateStackRequest|com.oracle.bmc.responses.AsyncHandler<UpdateStackRequest, UpdateStackResponse>",0.952,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7201768,"com.oracle.bmc.database.DatabaseAsyncClient#generateAutonomousDatabaseWallet GenerateAutonomousDatabaseWalletRequest|com.oracle.bmc.responses.AsyncHandler<GenerateAutonomousDatabaseWalletRequest, GenerateAutonomousDatabaseWalletResponse>",0.95,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7211250,oracle.kubernetes.operator.helpers.AuthorizationProxy#prepareSelfSubjectAccessReview Operation|Resource|String|Scope|String,0.825,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,7228404,reactor.kafka.samples.SampleScenarios.TransactionalSend#flux,0.995,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7233796,org.robolectric.shadows.ShadowSliceManager#checkSlicePermission Uri|int|int,0.5,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,7236664,org.robolectric.internal.bytecode.ShadowMap#checkShadowPickers String|Class<?>,0.683,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7238349,org.robolectric.android.internal.LocalActivityInvoker#finishActivity Activity,0.903,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7245995,org.graalvm.visualvm.lib.profiler.v2.features.ObjectsFeature#notifyActivated,0.512,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7254402,org.graalvm.visualvm.lib.common.integration.IntegrationUtils.fixLibsDirPath String|String|boolean,0.713,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,7291517,org.grails.ide.eclipse.editor.actions.UrlMappingHyperlinkDetector#findLinkComponentsInClosure ClosureExpression|int,0.922,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7337150,ms.sql.reporting.reportingservices._ReportingService2005SoapService#listJobs,0.606,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7355243,com.microsoft.tfs.client.common.ui.controls.teamexplorer.TeamExplorerControl.ProjectsMenuListener#createAction ProjectInfo|TeamConfiguration,0.974,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7356984,com.microsoft.tfs.core.util.TSWAHyperlinkBuilder#formatQueryString String|String[],0.908,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7377189,org.springframework.data.util.NullableUtils.test Annotation|String|String|Predicate<T>,0.883,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,7378490,org.springframework.boot.web.embedded.jetty.JettyReactiveWebServerFactory#createJettyServer JettyHttpHandlerAdapter,0.655,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7379790,org.springframework.data.web.ProxyingHandlerMethodArgumentResolver#supportsParameter MethodParameter,0.927,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7391660,org.springframework.data.release.build.CommandLine.Argument.ArgumentValue#toCommandLine,0.514,0,True,Move Method,Decompose Conditional,Move Method
+feature_envy,7410586,org.graalvm.compiler.truffle.compiler.hotspot.libgraal.HSTruffleCompilerListener#onFailure CompilableTruffleAST|String|boolean|boolean,0.554,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7432284,"org.springframework.data.jdbc.config.oracle.PoolingDataSourceBeanDefinitionParser#setOptionalAttribute BeanDefinitionBuilder|Map<String, Object>|String|String|String",0.814,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7451069,com.oracle.svm.core.posix.PosixVirtualMemoryProvider#mapFile PointerBase|UnsignedWord|WordBase|UnsignedWord|int,0.609,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7475455,org.graalvm.compiler.hotspot.aarch64.AArch64HotSpotLIRGenerator#emitNullCheck Value|LIRFrameState,0.677,0,True,Move Method,Move Method,Move Method
+feature_envy,7502933,MavenWrapperDownloader.downloadFileFromURL String|File,0.839,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7540579,basic.StreamC2.run,0.621,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7563795,org.springframework.expression.spel.support.ReflectivePropertyAccessor#read EvaluationContext|Object|String,0.716,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7576371,org.springframework.orm.jpa.SharedEntityManagerCreator.SharedEntityManagerInvocationHandler#invoke Object|Method|Object[],0.999,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7581965,org.springframework.beans.BeanUtils.findEditorByConvention Class<?>,0.735,1,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7592205,org.springframework.roo.metadata.DefaultMetadataService#bindMetadataProvider MetadataProvider,0.651,0,True,Move Method,Move Method,Move Method
+feature_envy,7602224,org.springframework.ide.eclipse.beans.ui.properties.model.PropertiesConfigSet#moveConfigDown IBeansConfig,0.749,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7604836,org.springframework.ide.eclipse.boot.wizard.FilteredDependenciesSection#onFilter ExpandableSection|CheckBoxesSection<Dependency>|String,0.856,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,7628568,org.springframework.ide.eclipse.boot.wizard.guides.ChooseOneSectionTable.ChoicesFilter#select Viewer|Object|Object,0.566,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,7628757,org.springframework.ide.eclipse.webflow.ui.graph.WebflowEditor#formatElement IProgressMonitor,0.569,0,True,Move Method,Move Method,Move Method
+feature_envy,7697841,com.tencent.tinker.loader.shareutil.ShareOatUtil.getOatFileInstructionSet File,0.714,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7702332,com.uber.nullaway.handlers.RxNullabilityPropagator#handleChainFromFilter StreamTypeRecord|MethodInvocationTree|Tree|VisitorState,0.728,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7728166,com.vmware.xenon.common.OperationProcessingChain#log Operation|OperationProcessingContext|String|Level,0.943,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,7730792,org.apache.brooklyn.util.core.task.BasicTask#get Duration,0.675,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7749788,"org.apache.brooklyn.util.core.internal.ssh.process.ProcessTool.execSingleProcess List<String>|Map<String, ?>|File|OutputStream|OutputStream|Object",0.995,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,7769131,org.apache.druid.segment.IndexIO#validateTwoSegments IndexableAdapter|IndexableAdapter,0.627,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7810274,org.apache.geode.cache.client.internal.AbstractOp#sendMessage Connection,0.818,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7842162,org.apache.geode.internal.cache.execute.PRClientServerTestBase#createClientServerScenarion_SingleConnection ArrayList|int|int|int,0.908,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,7850192,org.apache.geode.internal.cache.Oplog#recoverDrf OplogEntryIdSet|boolean|boolean,0.965,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7875037,com.facebook.buck.android.agent.AgentMain.doRawReceiveFile File|int|InputStream,0.907,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,7882655,com.facebook.buck.distributed.thrift.FetchRuleKeyLogsRequest.FetchRuleKeyLogsRequestStandardScheme#read org.apache.thrift.protocol.TProtocol|FetchRuleKeyLogsRequest,0.645,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7893144,com.facebook.buck.cxx.AbstractPreprocessorFlags#getNonIncludePathFlags SourcePathResolver|Optional<PrecompiledHeaderData>|Preprocessor,0.913,0,True,Move Method,Move Method,Move Method
+feature_envy,7905552,com.facebook.buck.cli.AuditRulesCommand#runWithoutHelp CommandRunnerParams,0.982,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,7916535,org.apache.xalan.xsltc.runtime.ObjectFactory.findProviderClass String|ClassLoader|boolean,0.639,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7944714,org.eclipse.xtext.common.types.access.reflect.ReflectionTypeFactory#createField Field,0.863,1,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7964380,org.eclipse.xtext.xbase.testlanguages.parser.antlr.internal.InternalXImportSectionTestLangLexer#mRULE_STRING,0.992,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7972876,org.eclipse.xtext.ui.tests.editor.contentassist.ide.contentassist.antlr.internal.InternalBug309949TestLanguageParser#rule__Model__NameAssignment_1_9_1,0.716,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,7987571,org.eclipse.xtext.xbase.parser.antlr.internal.InternalXbaseParser#ruleXOtherOperatorExpression,0.996,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,7992491,org.eclipse.xtext.xbase.validation.XbaseValidator#checkNoForwardReferences XExpression,0.984,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8007508,org.eclipse.xtext.ui.tests.editor.contentassist.parser.antlr.internal.InternalParametersTestLanguageExParser#ruleScenario1,0.671,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8029682,org.eclipse.xtext.xtext.ecoreInference.Xtext2EcoreTransformer#deriveTypeHierarchyFromOverridden ParserRule|Grammar,0.973,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8038797,org.eclipse.xtext.EcoreUtil2.getNonDerivedContents EObject,0.715,0,True,Extract Method | Move Method,Decompose Conditional,Move Method
+feature_envy,8049248,org.eclipse.xtext.serializer.serializer.SequencerTestLanguageSemanticSequencer#sequence_Fragment1_FragmentCaller ISerializationContext|FragmentCallerType,0.861,0,True,Move Method,Move Method,Move Method
+feature_envy,8067020,"org.eclipse.xtext.ui.tests.editor.contentassist.ide.contentassist.antlr.Bug377311TestLanguageParser.NameMappings.init ImmutableMap.Builder<AbstractElement, String>|Bug377311TestLanguageGrammarAccess",0.55,0,True,Move Method,Decompose Conditional,Move Method
+feature_envy,8080847,org.eclipse.xtext.xbase.testlanguages.bug462047.ide.contentassist.antlr.internal.InternalBug462047LangParser#rule__XShortClosure__Group_0__0__Impl,0.601,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8082183,org.eclipse.xtext.xbase.testlanguages.bug462047.ide.contentassist.antlr.internal.InternalBug462047LangParser#rule__XBasicForLoopExpression__Group__8__Impl,0.769,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8085059,org.eclipse.xtext.testlanguages.backtracking.ide.contentassist.antlr.internal.InternalSimpleBeeLangTestLanguageParser9#rule__FeatureOfThis__Group__1__Impl,0.973,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8092397,org.eclipse.xtext.valueconverter.serializer.Bug250313SemanticSequencer#sequence ISerializationContext|EObject,0.655,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8097613,org.eclipse.xtext.testlanguages.xtextgrammar.ide.contentassist.antlr.internal.InternalXtextGrammarTestLanguageParser#rule__Action__OperatorAssignment_2_2,0.642,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8102677,org.eclipse.xtext.xtext.ide.contentassist.antlr.internal.InternalXtextParser#rule__GeneratedMetamodel__EPackageAssignment_2,0.816,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8119264,org.eclipse.xtext.testlanguages.backtracking.ide.contentassist.antlr.internal.InternalSimpleBeeLangTestLanguageParser8#rule__WithContextExpression__Group_3__0,0.864,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8144651,org.eclipse.xtext.testlanguages.backtracking.ide.contentassist.antlr.internal.InternalExBeeLangTestLanguageParser2#entryRuleCallExpression,0.952,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8148121,com.alibaba.cobar.server.parser.ServerParseSet.characterSet String|int|int,0.929,0,True,Extract Method,Replace Method with Method Object,Move Method
+feature_envy,8195539,org.eclipse.xtend.core.macro.AnnotationProcessor.CancellationObserver#monitorUntil ActiveAnnotationContext|CancelIndicator|Function0<? extends Boolean>,0.564,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,8224570,org.eclipse.xtext.testlanguages.backtracking.idea.parser.antlr.internal.PsiInternalBeeLangTestLanguageParser#ruleValueLiteral,0.915,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8276759,org.apache.james.mailbox.cassandra.mail.CassandraModSeqProvider#tryUpdateModSeq CassandraId|ModSeq,0.751,0,True,Move Method,Move Method,Move Method
+feature_envy,8295253,org.apache.james.mailbox.elasticsearch.query.CriterionConverter#convertCustomFlagCriterion SearchQuery.CustomFlagCriterion,0.536,1,True,Move Method,Move Method,Move Method
+feature_envy,8309635,org.eclipse.jdt.ls.core.internal.corext.refactoring.reorg.ReorgUtils.setMinus IJavaElement[]|IJavaElement[],0.562,0,True,Move Method,Decompose Conditional,Move Method
+feature_envy,8333384,org.aspectj.util.LangUtil.ProcessController#start,0.641,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8348990,org.aspectj.weaver.bcel.AtAjAttributes.handleAspectAnnotation RuntimeAnnos|AjAttributeStruct,0.938,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8382642,org.apache.camel.maven.RunMojo#addRelevantPluginDependenciesToClasspath Set<URL>,0.643,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,8413074,org.apache.camel.component.salesforce.api.utils.QueryHelper.filteredFieldNamesOf AbstractDescribedSObjectBase|Predicate<SObjectField>,0.565,0,True,Move Method,Move Method,Move Method
+feature_envy,8432784,org.apache.camel.component.redis.AllRedisProcessorsCreator.AllRedisProcessorsCreator RedisClient|ExchangeConverter,0.572,0,True,Move Method,Move Method,Move Method
+feature_envy,8443651,org.apache.camel.component.gson.GsonDataFormat#doStart,0.99,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,8494231,com.cloud.resource.ResourceManagerImpl#discoverHosts AddHostCmd,0.978,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8495850,org.apache.cloudstack.api.command.admin.storage.AddImageStoreS3CMD#execute,0.869,0,True,Extract Method,Extract Method,Move Method
+feature_envy,8497990,com.cloud.consoleproxy.ConsoleProxyManagerImpl#getDefaultNetworkForAdvancedZone DataCenter,0.579,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8510687,com.cloud.utils.db.GenericDaoBase#setField Object|ResultSet|ResultSetMetaData|int,0.787,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,8526436,com.cloud.network.manager.NuageVspManagerImpl#executeSyncCmsId NuageVspDeviceVO|SyncType,0.692,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8537914,com.cloud.server.ManagementServerImpl#getVMPassword GetVMPasswordCmd,0.653,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8548892,org.apache.cloudstack.ha.HAManagerImpl#configureHA Long|HAResource.ResourceType|Boolean|String,0.985,0,True,Extract Method,Extract Method,Move Method
+feature_envy,8560556,org.apache.hadoop.hbase.backup.impl.IncrementalTableBackupClient#handleBulkLoad List<TableName>,0.998,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8618517,org.apache.ignite.internal.processors.cache.transactions.TxLocksResponse#readFrom ByteBuffer|MessageReader,0.679,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,8653310,org.apache.ignite.internal.processors.query.h2.sys.view.SqlSystemViewNodeMetrics#getRows Session|SearchRow|SearchRow,1.0,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,8660273,"org.apache.ofbiz.widget.model.ModelFormField.EntityOptions#addOptionValues List<OptionValue>|Map<String, Object>|Delegator",0.995,1,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,8754073,org.apache.hadoop.yarn.webapp.Router#resolveAction WebApp.HTTP|Dest|String,0.589,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,8841762,org.apache.airavata.sharing.registry.service.cpi.SharingRegistryService.getEntity_result.getEntity_resultTupleScheme#write org.apache.thrift.protocol.TProtocol|getEntity_result,0.831,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,8856936,org.apache.airavata.api.Airavata.updateApplicationInterface_result#setFieldValue _Fields|Object,0.786,0,True,Extract Method,Extract Method,Move Method
+feature_envy,8873169,org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore.add_check_constraint_result.add_check_constraint_resultStandardScheme#read org.apache.thrift.protocol.TProtocol|add_check_constraint_result,0.519,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,8895511,org.apache.hadoop.hive.metastore.HiveMetaStore.HMSHandler#alterTableStatsForTruncate RawStore|String|String|String|Table|List<String>|String|long,0.692,0,True,Move Method | Extract Method,Introduce Parameter Object,Move Method
+feature_envy,8904487,org.apache.hadoop.hive.ql.optimizer.MapJoinProcessor.MapJoinFS#process Node|Stack<Node>|NodeProcessorCtx|Object,0.566,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,8905843,org.apache.hadoop.hive.ql.parse.DruidSqlOperatorConverter.applyTimestampFormat String|String|TimeZone,0.561,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,8919445,org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore.alter_table_with_cascade_result.alter_table_with_cascade_resultStandardScheme#read org.apache.thrift.protocol.TProtocol|alter_table_with_cascade_result,0.517,1,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,8934300,org.apache.hadoop.hive.ql.optimizer.calcite.cost.HiveOnTezCostModel.TezBucketJoinAlgorithm#getCost HiveJoin,1.0,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8953503,org.apache.hadoop.hive.ql.optimizer.calcite.translator.HiveOpConverter.genReduceSinkAndBacktrackSelect Operator<?>|ExprNodeDesc[]|int|ArrayList<ExprNodeDesc>|String|String|int|Operation|HiveConf,0.679,0,True,,Introduce Parameter Object,Move Method
+feature_envy,8954733,org.apache.hadoop.hive.metastore.tools.HMSBenchmarks.benchmarkTableCreate MicroBenchmark|BenchData,0.547,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,8961619,org.apache.hadoop.hive.metastore.messaging.json.gzip.Serializer#serialize EventMessage,0.73,0,True,Move Method | Extract Method,Replace Method with Method Object,Move Method
+feature_envy,8969767,org.apache.lucene.index.BaseNormsFormatTestCase#testIndependantIterators,0.957,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8971411,org.apache.lucene.index.BaseDocValuesFormatTestCase#testSortedSetEnumAdvanceIndependently,0.881,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,8971685,org.apache.lucene.search.BM25FQuery.BM25FWeight#explain LeafReaderContext|int,0.826,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9006040,org.apache.solr.update.processor.DistributedZkUpdateProcessor#doDefensiveChecks DistribPhase,0.994,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9007287,org.apache.solr.client.solrj.io.eval.DivideEvaluator#doWork Object|Object,0.751,0,True,Extract Method | Move Method,Introduce Parameter Object,Move Method
+feature_envy,9012407,org.apache.lucene.analysis.phonetic.DoubleMetaphoneFilter#incrementToken,0.982,0,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,9018110,org.apache.solr.metrics.SolrMetricManager#registerReporter String|String|String|SolrMetricReporter,0.693,0,True,Move Method | Extract Method,Extract Method,Move Method
+feature_envy,9023034,org.apache.solr.handler.component.SearchHandler#getAndPrepShardHandler SolrQueryRequest|ResponseBuilder,0.953,1,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9121203,org.eclipse.birt.report.data.oda.jdbc.ui.editors.JdbcSQLContentAssistProcessor#getRelevantProposals ITextViewer|int,0.626,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9142325,org.eclipse.birt.report.designer.ui.dialogs.ColumnBindingDialog#okPressed,0.614,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,9150816,org.eclipse.birt.report.designer.internal.ui.views.attributes.page.VariablePage#buildContent,0.875,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9158528,org.eclipse.birt.report.engine.layout.pdf.emitter.ConcreteImageLayout#createImageMapContainer int|int|int|int|IHyperlinkAction,0.862,0,True,Move Method,Introduce Parameter Object,Move Method
+feature_envy,9159804,org.eclipse.birt.data.engine.odaconsumer.PreparedStatement#retrySetNullParamValue ParameterName|int|int|Exception,0.529,0,True,Extract Method,Extract Method,Move Method
+feature_envy,9192832,org.eclipse.birt.chart.ui.swt.composites.GanttLineAttributesComposite#widgetSelected SelectionEvent,0.792,1,True,Extract Method | Move Method,Extract Method,Move Method
+feature_envy,9490334,org.apache.hadoop.http.HttpServer2.createWebAppContext Builder|AccessControlList|String,0.94,0,True,Move Method | Extract Method,Move Method,Move Method
+feature_envy,9503296,org.apache.hadoop.hdds.scm.node.states.Node2PipelineMap#removePipeline Pipeline,0.668,0,True,Move Method,Replace Method with Method Object,Move Method
+feature_envy,9517356,org.apache.hadoop.streaming.io.RawBytesInputWriter#writeRawBytes Writable,0.819,0,True,Extract Method | Move Method,Replace Method with Method Object,Move Method
+feature_envy,9517554,org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.UsersManager#activateApplication String|ApplicationId,0.667,0,True,Move Method | Extract Method,Move Method,Move Method

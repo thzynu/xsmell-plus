@@ -1,0 +1,83 @@
+[blob] org.apache.hadoop.hbase.master.assignment.SplitTableRegionProcedure  (detector P=0.99, true label=smelly)
+  evidence: size (SHAP +0.285); strongest metric loc=475 vs median 29
+  evidence: complexity (SHAP +0.099); strongest metric tryCatchQty=8 vs median 0
+  evidence: coupling (SHAP +0.089); strongest metric rfc=183 vs median 5
+  #1 Move Method: score=0.214 (evidence=0.53, feasible, simulated dP=-0.01 [model-based what-if, rho=0.5])
+  #2 Replace Conditional with Polymorphism: score=0.070 (evidence=0.20, feasible, simulated dP=-0.01 [model-based what-if, rho=0.5])
+
+[blob] com.cloud.usage.UsageServiceImpl  (detector P=0.96, true label=smelly)
+  evidence: size (SHAP +0.279); strongest metric loc=276 vs median 29
+  evidence: coupling (SHAP +0.120); strongest metric rfc=69 vs median 5
+  evidence: complexity (SHAP +0.091); strongest metric comparisonsQty=38 vs median 0
+  #1 Move Method: score=0.250 (evidence=0.58, feasible, simulated dP=-0.05 [model-based what-if, rho=0.5])
+  #2 Replace Conditional with Polymorphism: score=0.070 (evidence=0.18, feasible, simulated dP=-0.03 [model-based what-if, rho=0.5])
+
+[blob] org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo  (detector P=0.95, true label=smelly)
+  evidence: size (SHAP +0.236); strongest metric loc=285 vs median 29
+  evidence: coupling (SHAP +0.104); strongest metric rfc=94 vs median 5
+  evidence: complexity (SHAP +0.100); strongest metric loopQty=5 vs median 0
+  #1 Move Method: score=0.218 (evidence=0.51, feasible, simulated dP=-0.03 [model-based what-if, rho=0.5])
+  #2 Replace Conditional with Polymorphism: score=0.072 (evidence=0.21, feasible, simulated dP=-0.01 [model-based what-if, rho=0.5])
+
+[data_class] demo.jaxrs.service.Product  (detector P=0.99, true label=smelly)
+  evidence: coupling (SHAP +0.152); strongest metric rfc=0 vs median 6
+  evidence: size (SHAP +0.145); strongest metric publicMethodsQty=4 vs median 3
+  evidence: state (SHAP +0.093); strongest metric totalFieldsQty=2 vs median 1
+  #1 Move Behavior to Data Class: score=0.130 (evidence=0.21, feasible, simulated dP=-0.12 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Encapsulate Field
+
+[data_class] org.apache.camel.opentracing.starter.OpenTracingConfigurationProperties  (detector P=0.99, true label=smelly)
+  evidence: size (SHAP +0.177); strongest metric publicMethodsQty=4 vs median 3
+  evidence: coupling (SHAP +0.132); strongest metric rfc=0 vs median 6
+  evidence: state (SHAP +0.108); strongest metric totalFieldsQty=2 vs median 1
+  #1 Move Behavior to Data Class: score=0.097 (evidence=0.18, feasible, simulated dP=-0.06 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Encapsulate Field
+
+[data_class] org.apache.rocketmq.broker.transaction.TransactionRecord  (detector P=0.97, true label=smelly)
+  evidence: coupling (SHAP +0.143); strongest metric rfc=0 vs median 6
+  evidence: size (SHAP +0.136); strongest metric publicMethodsQty=4 vs median 3
+  evidence: state (SHAP +0.092); strongest metric totalFieldsQty=2 vs median 1
+  #1 Move Behavior to Data Class: score=0.138 (evidence=0.20, feasible, simulated dP=-0.15 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Encapsulate Field
+
+[long_method] org.apache.qpid.server.security.access.config.AclFileParser.parse Reader|EventLoggerProvider  (detector P=1.00, true label=smelly)
+  evidence: size (SHAP +5.350); strongest metric loc=95 vs median 6
+  evidence: complexity (SHAP +2.815); strongest metric wmc=21 vs median 2
+  evidence: coupling (SHAP +0.953); strongest metric rfc=26 vs median 2
+  #1 Extract Method: score=0.398 (evidence=0.79, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Introduce Parameter Object
+
+[long_method] org.apache.drill.exec.store.easy.text.compliant.TextReader#parseQuotedValue byte  (detector P=1.00, true label=smelly)
+  evidence: size (SHAP +4.514); strongest metric loc=58 vs median 6
+  evidence: complexity (SHAP +3.173); strongest metric wmc=22 vs median 2
+  evidence: coupling (SHAP +0.418); strongest metric rfc=9 vs median 2
+  #1 Extract Method: score=0.414 (evidence=0.82, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Introduce Parameter Object
+
+[long_method] org.apache.qpid.server.virtualhost.SynchronousMessageStoreRecoverer#recover QueueManagingVirtualHost<?>  (detector P=1.00, true label=smelly)
+  evidence: size (SHAP +5.826); strongest metric loc=55 vs median 6
+  evidence: complexity (SHAP +1.429); strongest metric wmc=8 vs median 2
+  evidence: coupling (SHAP +1.084); strongest metric rfc=30 vs median 2
+  #1 Extract Method: score=0.392 (evidence=0.77, feasible, simulated dP=-0.01 [model-based what-if, rho=0.5])
+  rejected (preconditions not met): Decompose Conditional, Introduce Parameter Object
+
+[feature_envy] org.apache.ignite.internal.processors.query.h2.sys.view.SqlSystemViewNodeMetrics#getRows Session|SearchRow|SearchRow  (detector P=1.00, true label=smelly)
+  evidence: coupling (SHAP +25.904); strongest metric rfc=73 vs median 2
+  evidence: size (SHAP +3.450); strongest metric variablesQty=6 vs median 0
+  evidence: complexity (SHAP +0.581); strongest metric wmc=7 vs median 2
+  #1 Move Method: score=0.335 (evidence=0.84, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+  #2 Extract Method: score=0.190 (evidence=0.38, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+
+[feature_envy] org.apache.nifi.web.api.dto.DtoFactory#createSystemDiagnosticsDto SystemDiagnostics  (detector P=1.00, true label=smelly)
+  evidence: coupling (SHAP +20.768); strongest metric rfc=60 vs median 2
+  evidence: size (SHAP +7.816); strongest metric loc=53 vs median 6
+  evidence: complexity (SHAP +0.648); strongest metric wmc=6 vs median 2
+  #1 Move Method: score=0.284 (evidence=0.71, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+  #2 Extract Method: score=0.193 (evidence=0.39, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+
+[feature_envy] org.apache.apex.malhar.kudu.AbstractKuduOutputOperator#performCommonProcessing Operation|KuduExecutionContext  (detector P=1.00, true label=smelly)
+  evidence: size (SHAP +25.004); strongest metric variablesQty=24 vs median 0
+  evidence: coupling (SHAP +6.447); strongest metric rfc=26 vs median 2
+  evidence: complexity (SHAP +1.989); strongest metric wmc=28 vs median 2
+  #1 Extract Method: score=0.186 (evidence=0.37, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])
+  #2 Move Method: score=0.075 (evidence=0.19, feasible, simulated dP=-0.00 [model-based what-if, rho=0.5])

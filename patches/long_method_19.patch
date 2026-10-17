@@ -1,0 +1,61 @@
+diff --git a/solr/core/src/java/org/apache/solr/update/processor/DistributedZkUpdateProcessor.java b/solr/core/src/java/org/apache/solr/update/processor/DistributedZkUpdateProcessor.java
+index abe4754..ff5f22c 100644
+--- a/solr/core/src/java/org/apache/solr/update/processor/DistributedZkUpdateProcessor.java
++++ b/solr/core/src/java/org/apache/solr/update/processor/DistributedZkUpdateProcessor.java
+@@ -960,6 +960,30 @@ public class DistributedZkUpdateProcessor extends DistributedUpdateProcessor {
+     DocCollection docCollection = clusterState.getCollection(collection);
+     Slice mySlice = docCollection.getSlice(cloudDesc.getShardId());
+     boolean localIsLeader = cloudDesc.isLeader();
++    checkFromLeaderRequest(phase, localIsLeader, from, docCollection, mySlice);
++
++    int count = 0;
++    while (((isLeader && !localIsLeader) || (isSubShardLeader && !localIsLeader)) && count < 5) {
++      count++;
++      // re-getting localIsLeader since we published to ZK first before setting localIsLeader value
++      localIsLeader = cloudDesc.isLeader();
++      try {
++        Thread.sleep(500);
++      } catch (InterruptedException e) {
++        Thread.currentThread().interrupt();
++      }
++    }
++
++    if ((isLeader && !localIsLeader) || (isSubShardLeader && !localIsLeader)) {
++      log.error("ClusterState says we are the leader, but locally we don't think so");
++      throw new SolrException(SolrException.ErrorCode.SERVICE_UNAVAILABLE,
++          "ClusterState says we are the leader (" + zkController.getBaseUrl()
++              + "/" + req.getCore().getName() + "), but locally we don't think so. Request came from " + from);
++    }
++  }
++
++  private void checkFromLeaderRequest(DistribPhase phase, boolean localIsLeader, String from,
++                                      DocCollection docCollection, Slice mySlice) {
+     if (DistribPhase.FROMLEADER == phase && localIsLeader && from != null) { // from will be null on log replay
+       String fromShard = req.getParams().get(DISTRIB_FROM_PARENT);
+       if (fromShard != null) {
+@@ -985,25 +1009,6 @@ public class DistributedZkUpdateProcessor extends DistributedUpdateProcessor {
+         }
+       }
+     }
+-
+-    int count = 0;
+-    while (((isLeader && !localIsLeader) || (isSubShardLeader && !localIsLeader)) && count < 5) {
+-      count++;
+-      // re-getting localIsLeader since we published to ZK first before setting localIsLeader value
+-      localIsLeader = cloudDesc.isLeader();
+-      try {
+-        Thread.sleep(500);
+-      } catch (InterruptedException e) {
+-        Thread.currentThread().interrupt();
+-      }
+-    }
+-
+-    if ((isLeader && !localIsLeader) || (isSubShardLeader && !localIsLeader)) {
+-      log.error("ClusterState says we are the leader, but locally we don't think so");
+-      throw new SolrException(SolrException.ErrorCode.SERVICE_UNAVAILABLE,
+-          "ClusterState says we are the leader (" + zkController.getBaseUrl()
+-              + "/" + req.getCore().getName() + "), but locally we don't think so. Request came from " + from);
+-    }
+   }
+ 
+   @Override

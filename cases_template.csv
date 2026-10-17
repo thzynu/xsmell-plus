@@ -1,0 +1,3 @@
+case_id,repo_url,commit_before,commit_after,repo_url_after,path,level,code_name,method_name,refactoring,test_cmd
+c001,https://github.com/OWNER/REPO,<sha_before>,<sha_after>,https://github.com/YOU/REPO,/src/main/java/pkg/Foo.java,method,pkg.Foo,doWork,Extract Method,mvn -q -o test -Dtest=FooTest
+c002,https://github.com/OWNER/REPO,<sha_before>,<sha_after>,https://github.com/YOU/REPO,/src/main/java/pkg/Bar.java,class,pkg.Bar,,Extract Class,

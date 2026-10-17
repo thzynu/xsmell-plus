@@ -1,0 +1,5 @@
+smell,split,n_before_dedup,n,n_projects,n_orgs,n_smelly,smelly_rate,n_features,duplicate_rows_remaining,rows_same_features_conflicting_label
+blob,project_dedup,1964,1932,402,28,214,0.1108,48,0,2
+data_class,project_dedup,1993,1961,403,28,261,0.1331,48,0,0
+feature_envy,project_dedup,2043,1930,392,26,59,0.0306,27,0,2
+long_method,project_dedup,2088,1973,395,26,219,0.111,27,0,0

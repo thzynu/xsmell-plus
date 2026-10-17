@@ -1,0 +1,15 @@
+data/ck_raw/
+data/ck_ba/
+work_ba/
+work_cases*/
+results/cache/
+sonar_in/
+.scannerwork/
+aries-jax-rs-whiteboard/
+tools/
+logs/
+__pycache__/
+*.pyc
+cases_todo_backup.csv
+cases_todo_5seed.csv
+.env

@@ -1,0 +1,64 @@
+cmd: mvn -pl jax-rs.whiteboard -am test
+cwd: work_ba\apache_aries_jax_rs_whiteboard__73ef94bb74
+exit code: 0
+
+[INFO] 
+[INFO] -----< org.apache.aries.jax.rs:org.apache.aries.jax.rs.whiteboard >-----
+[INFO] Building Apache Aries JAX-RS Whiteboard 1.0.5-SNAPSHOT             [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bnd-maven-plugin:4.0.0:bnd-process (bnd-process) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] Unable to determine whether the meta annotation org.apache.aries.blueprint.Namespaces applied to type org.apache.cxf.internal.CXFAPINamespaceHandler provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.beans.factory.annotation.Value applied to type org.apache.cxf.jaxrs.spring.AbstractJaxrsClassesScanServer provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.context.annotation.ComponentScan applied to type org.apache.cxf.jaxrs.spring.AbstractSpringComponentScanServer provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.context.annotation.ImportResource applied to type org.apache.cxf.jaxrs.spring.JaxRsConfig provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.context.annotation.Bean applied to type org.apache.cxf.jaxrs.spring.SpringComponentScanServer provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.beans.factory.annotation.Autowired applied to type org.apache.cxf.jaxrs.client.spring.AbstractJaxRsClientConfiguration provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.springframework.context.annotation.Import applied to type org.apache.cxf.jaxrs.client.spring.AbstractJaxRsClientConfiguration provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.junit.Rule applied to type org.apache.cxf.tools.common.ProcessorTestBase provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.junit.Before applied to type org.apache.cxf.tools.common.ProcessorTestBase provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] Unable to determine whether the meta annotation org.junit.After applied to type org.apache.cxf.tools.common.ProcessorTestBase provides bundle annotations as it is not on the project build path. If this annotation does provide bundle annotations then it must be present on the build path in order to be processed
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\DELL\Downloads\xsmell_mlcq\work_ba\apache_aries_jax_rs_whiteboard__73ef94bb74\jax-rs.whiteboard\src\test\resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ org.apache.aries.jax.rs.whiteboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ org.apache.aries.jax.rs.whiteboard ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.aries.jax.rs.whiteboard.internal.introspection.ClassIntrospectorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.383 sec - in org.apache.aries.jax.rs.whiteboard.internal.introspection.ClassIntrospectorTest
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for JAX-RS Integration Project 1.0.5-SNAPSHOT:
+[INFO] 
+[INFO] JAX-RS Integration Project ......................... SUCCESS [  1.324 s]
+[INFO] Apache Aries JAX-RS Specification API .............. SUCCESS [  3.398 s]
+[INFO] Apache Aries JAX-RS Whiteboard ..................... SUCCESS [  4.897 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.832 s
+[INFO] Finished at: 2026-10-16T13:40:47+07:00
+[INFO] ------------------------------------------------------------------------
+

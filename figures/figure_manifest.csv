@@ -1,0 +1,14 @@
+figure,source,details
+fig2_f1_per_smell.png,res/per_seed_project.csv,"best config per smell, mean±SD over seeds"
+fig_split_comparison.png,results/split_comparison.csv,random / project / org / dedup
+fig_class_distribution.png,results/dataset_audit.csv,smelly vs clean per smell
+fig_confusion_matrices.png,results/confusion_project.csv,"summed over folds, mean over seeds"
+fig4_shap_summary_blob.png,"rf seed=0, 5 project-wise folds","n=1964, positives=214"
+fig5_shap_waterfall_blob.png,rf seed=0,"sample_id=8575939, code_name=org.apache.hadoop.hbase.master.assignment.SplitTableRegionProcedure, p=0.99"
+fig4_shap_summary_data_class.png,"rf seed=0, 5 project-wise folds","n=1993, positives=268"
+fig5_shap_waterfall_data_class.png,rf seed=0,"sample_id=4413114, code_name=demo.jaxrs.service.Product, p=0.99"
+fig4_shap_summary_feature_envy.png,"logreg seed=0, 5 project-wise folds","n=2043, positives=59"
+fig5_shap_waterfall_feature_envy.png,logreg seed=0,"sample_id=8653310, code_name=org.apache.ignite.internal.processors.query.h2.sys.view.SqlSystemViewNodeMetrics#getRows Session|SearchRow|SearchRow, p=1.00"
+fig4_shap_summary_long_method.png,"xgb seed=0, 5 project-wise folds","n=2088, positives=219"
+fig5_shap_waterfall_long_method.png,xgb seed=0,"sample_id=5497076, code_name=org.apache.qpid.server.security.access.config.AclFileParser.parse Reader|EventLoggerProvider, p=1.00"
+fig_correlation_heatmap.png,data/dataset_class.csv,"Pearson, blob subset"

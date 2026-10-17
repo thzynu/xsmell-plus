@@ -1,0 +1,5 @@
+smell,config,n_train,n_features,fit_s_mean,fit_s_sd,peak_python_mem_MB,predict_ms_per_sample,shap_ms_per_sample,recommend_ms_per_sample
+long_method,xgb+SMOTE,2088,27,0.75,0.88,2.4,0.006,0.27,0.04
+data_class,rf+SMOTE,1993,48,2.7,0.11,5.0,0.117,33.78,1.51
+blob,rf+SMOTE,1964,48,2.92,0.1,4.9,0.161,23.12,1.5
+feature_envy,logreg,2043,27,0.03,0.0,1.9,0.002,0.02,0.01

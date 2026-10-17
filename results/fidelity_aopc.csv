@@ -1,0 +1,5 @@
+smell,global_importance,random,shap_local
+blob,0.297,0.108,0.32
+data_class,0.383,0.063,0.403
+feature_envy,0.352,0.11,0.653
+long_method,0.701,0.151,0.721

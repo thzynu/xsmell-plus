@@ -1,0 +1,6 @@
+case_id,sqale_index_before,sqale_index_after,sqale_index_change,cognitive_complexity_before,cognitive_complexity_after,cognitive_complexity_change,complexity_before,complexity_after,complexity_change,ncloc_before,ncloc_after,ncloc_change,violations_before,violations_after,violations_change
+blob_15,0.0,0.0,0.0,12.0,4.0,-8.0,17.0,9.0,-8.0,120.0,79.0,-41.0,0.0,0.0,0.0
+long_method_04,0.0,0.0,0.0,92.0,92.0,0.0,187.0,188.0,1.0,1004.0,1007.0,3.0,0.0,0.0,0.0
+long_method_06,0.0,0.0,0.0,180.0,178.0,-2.0,82.0,83.0,1.0,377.0,380.0,3.0,0.0,0.0,0.0
+long_method_09,0.0,0.0,0.0,763.0,763.0,0.0,531.0,532.0,1.0,2440.0,2443.0,3.0,1.0,1.0,0.0
+long_method_19,5.0,5.0,0.0,420.0,420.0,0.0,241.0,242.0,1.0,947.0,951.0,4.0,4.0,4.0,0.0

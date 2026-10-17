@@ -1,0 +1,26 @@
+diff --git a/server/src/main/java/com/cloud/resource/ResourceManagerImpl.java b/server/src/main/java/com/cloud/resource/ResourceManagerImpl.java
+index 8bc97cb..4afa4d4 100755
+--- a/server/src/main/java/com/cloud/resource/ResourceManagerImpl.java
++++ b/server/src/main/java/com/cloud/resource/ResourceManagerImpl.java
+@@ -588,6 +588,12 @@ public class ResourceManagerImpl extends ManagerBase implements ResourceManager,
+             clusterName = "Standalone-" + url;
+         }
+ 
++        checkClusterIsReadyForDiscovery(clusterId);
++
++        return discoverHostsFull(dcId, podId, clusterId, clusterName, url, username, password, cmd.getHypervisor(), hostTags, cmd.getFullUrlParams(), false);
++    }
++
++    private void checkClusterIsReadyForDiscovery(final Long clusterId) {
+         if (clusterId != null) {
+             final ClusterVO cluster = _clusterDao.findById(clusterId);
+             if (cluster == null) {
+@@ -606,8 +612,6 @@ public class ResourceManagerImpl extends ManagerBase implements ResourceManager,
+                 }
+             }
+         }
+-
+-        return discoverHostsFull(dcId, podId, clusterId, clusterName, url, username, password, cmd.getHypervisor(), hostTags, cmd.getFullUrlParams(), false);
+     }
+ 
+     @Override
