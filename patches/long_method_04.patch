@@ -1,0 +1,62 @@
+diff --git a/jax-rs.whiteboard/src/main/java/org/apache/aries/jax/rs/whiteboard/internal/AriesJaxrsServiceRuntime.java b/jax-rs.whiteboard/src/main/java/org/apache/aries/jax/rs/whiteboard/internal/AriesJaxrsServiceRuntime.java
+index 319797d..6bc8a97 100644
+--- a/jax-rs.whiteboard/src/main/java/org/apache/aries/jax/rs/whiteboard/internal/AriesJaxrsServiceRuntime.java
++++ b/jax-rs.whiteboard/src/main/java/org/apache/aries/jax/rs/whiteboard/internal/AriesJaxrsServiceRuntime.java
+@@ -962,6 +962,30 @@ public class AriesJaxrsServiceRuntime implements JaxrsServiceRuntime {
+                 ExtensionDTO[]::new
+             );
+ 
++        applyNameBindingsToExtensions(applicationDTO);
++
++        CxfJaxrsServiceRegistrator cxfJaxRsServiceRegistrator =
++            ari._cxfJaxRsServiceRegistrator;
++
++        Bus bus = cxfJaxRsServiceRegistrator.getBus();
++        Iterable<Class<?>> resourceClasses =
++            cxfJaxRsServiceRegistrator.getStaticResourceClasses();
++
++        ArrayList<ResourceMethodInfoDTO> resourceMethodInfoDTOS =
++            new ArrayList<>();
++
++        for (Class<?> resourceClass : resourceClasses) {
++            resourceMethodInfoDTOS.addAll(
++                ClassIntrospector.getResourceMethodInfos(resourceClass, bus));
++        }
++
++        applicationDTO.resourceMethods = resourceMethodInfoDTOS.toArray(
++            new ResourceMethodInfoDTO[0]);
++
++        return applicationDTO;
++    }
++
++    private void applyNameBindingsToExtensions(ApplicationDTO applicationDTO) {
+         Map<String, Set<ExtensionDTO>> nameBoundExtensions =
+             new HashMap<>();
+ 
+@@ -1014,26 +1038,6 @@ public class AriesJaxrsServiceRuntime implements JaxrsServiceRuntime {
+                 extensionDTO.filteredByName = resourceDTOS.toArray(
+                     new ResourceDTO[0])
+         );
+-
+-        CxfJaxrsServiceRegistrator cxfJaxRsServiceRegistrator =
+-            ari._cxfJaxRsServiceRegistrator;
+-
+-        Bus bus = cxfJaxRsServiceRegistrator.getBus();
+-        Iterable<Class<?>> resourceClasses =
+-            cxfJaxRsServiceRegistrator.getStaticResourceClasses();
+-
+-        ArrayList<ResourceMethodInfoDTO> resourceMethodInfoDTOS =
+-            new ArrayList<>();
+-
+-        for (Class<?> resourceClass : resourceClasses) {
+-            resourceMethodInfoDTOS.addAll(
+-                ClassIntrospector.getResourceMethodInfos(resourceClass, bus));
+-        }
+-
+-        applicationDTO.resourceMethods = resourceMethodInfoDTOS.toArray(
+-            new ResourceMethodInfoDTO[0]);
+-
+-        return applicationDTO;
+     }
+ 
+     private FailedExtensionDTO buildFailedExtensionDTO(
