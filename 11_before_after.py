@@ -68,14 +68,37 @@ def _rel(b, a, m):
     return d / max(abs(b), 1.0)
 
 
-def find_element(ck, level, path, code_name, method_name, step3):
+def _simple_type(t):
+    t = str(t).strip().split("<")[0]                     # drop generics
+    return t.split(".")[-1].split("$")[-1].replace("[]", "").strip()
+
+
+def find_element(ck, level, path, code_name, method_name, step3, start_line=None):
+    """Locate the CK row of the target. Classes: by name. Methods: by file and name; when the method is overloaded
+    (several CK rows share the name) the overload is chosen by (1) the parameter types of code_name, if they identify
+    one, and (2) the start line closest to the selected start line."""
     row = {"path": path, "code_name": code_name, "start_line": 0, "end_line": 10 ** 9}
     if level == "class":
         return step3.match_class(ck, row)
     c = ck[ck["_file"].map(lambda x: step3.same_file(x, path))]
     if method_name:
         c = c[c["method"].astype(str).str.startswith(method_name + "/")]
-    return None if c.empty else c.iloc[0]
+    if c.empty:
+        return None
+    if len(c) > 1:
+        cn = str(code_name)
+        if " " in cn:                                    # "pkg.Cls#name T1|T2"
+            want = [_simple_type(x) for x in cn.split(" ", 1)[1].split("|") if x.strip()]
+            def types(m):
+                inner = str(m).split("[", 1)[1].rsplit("]", 1)[0] if "[" in str(m) else ""
+                return [_simple_type(x) for x in inner.split(",") if x.strip()]
+            f = c[c["method"].map(lambda m: types(m) == want)]
+            if len(f) >= 1:
+                c = f
+        if len(c) > 1 and start_line not in (None, 0) and "line" in c.columns:
+            d = (c["line"].astype(float) - float(start_line)).abs().values
+            c = c.iloc[[int(d.argmin())]]
+    return c.iloc[0]
 
 
 def ck_for(repo_url, sha, a, s02, tmp):
@@ -191,6 +214,7 @@ def main():
     ap.add_argument("--workdir", default="work_ba"); ap.add_argument("--out-ck", default="data/ck_ba")
     ap.add_argument("--score-detector", action="store_true"); ap.add_argument("--run-tests", action="store_true")
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--only", default="", help="comma-separated case_ids to (re)measure; the other rows of results/before_after.csv are kept")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
@@ -199,12 +223,16 @@ def main():
                  "See cases_template.csv for the columns. To only check the logic, run:  python 11_before_after.py --self-test")
     s02 = _load("s02", "02_fetch_and_run_ck.py"); s03 = _load("s03", "03_build_dataset.py")
     cases = pd.read_csv(a.cases)
+    all_ids = list(cases["case_id"]) if "case_id" in cases.columns else []
     if "commit_after" in cases.columns:                    # cases_todo.csv from 11a: only rows already refactored
         n0 = len(cases)
         cases = cases[cases["commit_after"].notna() & (cases["commit_after"].astype(str).str.strip() != "")]
         if "status" in cases.columns:
             cases = cases[~cases["status"].astype(str).str.lower().str.startswith("skip")]
         print(f"{len(cases)} of {n0} rows have a commit_after and are not skipped")
+    if a.only:
+        keep = [x.strip() for x in a.only.split(",") if x.strip()]
+        cases = cases[cases["case_id"].isin(keep)]
     if cases.empty:
         sys.exit("No case to measure yet: fill commit_after (and repo_url_after) for at least one row of the cases file "
                  "after applying the refactoring, then run this again.")
@@ -225,7 +253,8 @@ def main():
                     url = ua.strip()
                 out, repo = ck_for(url, sha, a, s02, None)
                 ck = s03.load_ck(out, kind)
-                el = find_element(ck, c.level, c.path, c.code_name, getattr(c, "method_name", None), s03)
+                el = find_element(ck, c.level, c.path, c.code_name, getattr(c, "method_name", None), s03,
+                                  start_line=getattr(c, "start_line", None))
                 if el is None:
                     raise RuntimeError(f"element not found {tag}")
                 sides[tag] = el
@@ -258,7 +287,14 @@ def main():
     if df.empty or "verdict" not in df:
         sys.exit("No case was processed.")
     os.makedirs("results", exist_ok=True)
-    df.to_csv("results/before_after.csv", index=False)
+    prev = os.path.join("results", "before_after.csv")
+    if os.path.exists(prev):
+        import shutil; shutil.copy(prev, os.path.join("results", "before_after_backup.csv"))      # never lose the old table
+        if a.only:                                                                                  # merge: keep the other rows
+            old = pd.read_csv(prev)
+            df = pd.concat([old[~old["case_id"].isin(df["case_id"])], df], ignore_index=True)
+            df["_o"] = df["case_id"].map({k: i for i, k in enumerate(all_ids)}); df = df.sort_values("_o").drop(columns="_o")
+    df.to_csv(prev, index=False)
     summarize(df[df.verdict != "failed"])
     print(f"\nfailed cases: {(df.verdict == 'failed').sum()} / {len(df)}  (report them; do not drop silently)")
 

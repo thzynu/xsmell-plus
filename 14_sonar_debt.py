@@ -80,7 +80,8 @@ def locate(a, row, tag, s02, s03, q, f11):
     out, repo = f11.ck_for(url, sha, a, s02, None)           # reuses data/ck_ba and work_ba, fetches only if missing
     kind = "class" if row.level == "class" else "method"
     ck = s03.load_ck(out, kind)
-    el = f11.find_element(ck, row.level, row.path, row.code_name, getattr(row, "method_name", None), s03)
+    el = f11.find_element(ck, row.level, row.path, row.code_name, getattr(row, "method_name", None), s03,
+                          start_line=getattr(row, "start_line", None))
     if el is None:
         raise RuntimeError(f"element not found ({tag})")
     path = os.path.join(repo, el["_file"])
