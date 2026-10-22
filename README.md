@@ -20,11 +20,11 @@ recommendations, and checks a small set of real refactorings before/after.
 ## 1. Prerequisites
 
 - Python 3.10+ and `pip install -r requirements.txt` (includes `javalang` for steps 13, 14 and `xs_quality.py`)
-- `git`, Java **17+**, Maven (`mvn`) in PATH
+- `git`, Java **21** (used for the reported results), Maven (`mvn`) in PATH
 - **CK jar.** The GitHub `ck-master.zip` is source code, not a jar. Build it once:
   `unzip ck-master.zip && cd ck-master && mvn clean compile package -DskipTests`, then copy
   `target/ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar` to `tools/ck.jar`
-- **MLCQ**: `MLCQCodeSmellSamples.csv` from https://doi.org/10.5281/zenodo.3666840 (Madeyski & Lewowski, EASE 2020)
+- **MLCQ**: download `MLCQCodeSmellSamples.csv` from https://doi.org/10.5281/zenodo.3666840 (Madeyski & Lewowski, EASE 2020) and place it in the repository root. The file is not redistributed in this repository.
 - 10–30 GB of free disk and a stable connection; step 02 clones hundreds of repositories (sources are deleted after metrics
   are computed unless you pass `--keep`)
 - Only for step 14: a SonarQube server (Section 5.4)
