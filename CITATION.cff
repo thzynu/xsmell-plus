@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "XSmell+: code and data for explainable, quality-aware code smell detection and refactoring recommendation"
+authors:
+  - family-names: Nguyen
+    given-names: Quoc Hung
+    orcid: "https://orcid.org/0000-0002-6363-0160"
+  - family-names: Nguyen
+    given-names: Tran Thanh Vy
+    orcid: "https://orcid.org/0009-0008-7876-1666"
+version: 1.0.0
+date-released: "2026-10-22"
+license: MIT
+repository-code: "https://github.com/thzynu/xsmell-plus"
