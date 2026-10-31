@@ -253,7 +253,7 @@ def feasibility_cv(cols, pre, res):
     n = len(next(iter(cols.values())))
     F = np.zeros(n, dtype=bool)
     for (te, _), tr in zip(res["folds"], res["train_idx"]):
-        q = {f: {p: float(np.nanquantile(c[tr], p)) for p in (.25, .5, .75)} for f, c in cols.items()}
+        q = {f: {p: float(np.nanquantile(c[tr], min(0.99, max(0.01, p + float(os.environ.get("XS_QSHIFT", "0")))))) for p in (.25, .5, .75)} for f, c in cols.items()}
         F[te] = feasibility(cols, pre, q)[te]
     return F
 

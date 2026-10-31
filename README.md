@@ -275,3 +275,16 @@ Figures are generated from code (replacing the four incorrect figures of the con
 8. **Splits and tuning.** Hyper-parameters are fixed; no cross-dataset evaluation; the best configuration is selected on the reported folds. In `org` the SD reflects model randomness only.
 9. **Comparators.** Only LogReg, RF and XGBoost are run. A CNN-on-AST baseline or a user study (e.g. 30 developers) has no data here; cite other work as non-comparable or omit.
 10. **Patches** were checked to apply cleanly on the original commit with valid Java syntax; apart from `long_method_04`, they were not compiled (missing dependencies).
+
+
+## Notes added in v1.1.0
+
+- `05b_nested.py` runs nested group cross-validation: the configuration (model, SMOTE) is chosen on an inner 3-fold group CV
+  inside each training partition, so the reported scores are not selected on the reported folds. It must run before
+  `06`, `07`, `08`-`10` (`run_all.py` does this). Output: `results/per_seed_nested.csv`, `results/per_fold_nested.csv`.
+- Feasibility thresholds (quantiles) and medians in the recommender are computed on the training partition of each fold.
+- `07_stats_tests.py` also writes `results/stats_seed_level.csv` (SMOTE vs none with seeds as units).
+- Sensitivity to kappa and to the threshold quantiles: `results/sensitivity_kappa_threshold.csv`
+  (`XS_QSHIFT` shifts the threshold quantiles in `08_recommender.py`).
+- CK (`tools/ck.jar`) needs Java >= 11. The target repositories may need an older JDK to build.
+- `11_before_after.py` reports element-level and touched-file metrics (`touched_*`, `verdict_touched`).

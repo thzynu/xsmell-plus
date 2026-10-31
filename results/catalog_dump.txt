@@ -1,0 +1,28 @@
+R (rho) = 0.5
+
+[class] Extract Class | cost=3 | pre=[[('totalMethodsQty', '>=', 'q', 0.75)], [('lcom', '>=', 'q', 0.5), ('tcc', '<=', 'q', 0.5)]]
+[class] Move Method | cost=2 | pre=[[('cbo', '>=', 'q', 0.5), ('fanout', '>=', 'q', 0.5)], [('totalMethodsQty', '>=', 'q', 0.5)]]
+[class] Replace Conditional with Polymorphism | cost=3 | pre=[[('comparisonsQty', '>=', 'q', 0.75)], [('wmc', '>=', 'q', 0.75)]]
+[class] Encapsulate Field | cost=1 | pre=[[('publicFieldsQty', '>=', 'abs', 1)]]
+[class] Move Behavior to Data Class | cost=2 | pre=[[('totalMethodsQty', '<=', 'q', 0.5)], [('fanin', '>=', 'q', 0.5)]]
+[method] Extract Method | cost=1 | pre=[[('loc', '>=', 'q', 0.75)]]
+[method] Decompose Conditional | cost=1 | pre=[[('comparisonsQty', '>=', 'q', 0.75)], [('maxNestedBlocksQty', '>=', 'abs', 2)]]
+[method] Introduce Parameter Object | cost=1 | pre=[[('parametersQty', '>=', 'abs', 4)]]
+[method] Replace Method with Method Object | cost=2 | pre=[[('variablesQty', '>=', 'q', 0.75)], [('loc', '>=', 'q', 0.75)]]
+[method] Move Method | cost=2 | pre=[[('foreign_calls', '>=', 'q', 0.5)], [('foreign_ratio', '>', 'abs', 1.0)]]
+
+WEIGHTS
+('blob', 'Extract Class'): [('cohesion', 'bad', 1.0), ('size', 'high', 0.8), ('state', 'high', 0.5), ('complexity', 'high', 0.5)]
+('blob', 'Move Method'): [('coupling', 'high', 1.0), ('size', 'high', 0.6), ('cohesion', 'bad', 0.6)]
+('blob', 'Replace Conditional with Polymorphism'): [('complexity', 'high', 1.0)]
+('data_class', 'Encapsulate Field'): [('state', 'high', 1.0)]
+('data_class', 'Move Behavior to Data Class'): [('size', 'low', 0.8), ('complexity', 'low', 0.6), ('state', 'high', 0.4)]
+('long_method', 'Extract Method'): [('size', 'high', 1.0), ('complexity', 'high', 0.8)]
+('long_method', 'Decompose Conditional'): [('complexity', 'high', 1.0)]
+('long_method', 'Introduce Parameter Object'): [('parameters', 'high', 1.0)]
+('long_method', 'Replace Method with Method Object'): [('size', 'high', 0.7), ('complexity', 'high', 0.7)]
+('feature_envy', 'Move Method'): [('coupling', 'high', 1.0)]
+('feature_envy', 'Extract Method'): [('size', 'high', 0.4), ('coupling', 'high', 0.4)]
+
+CONFLICTS: {'class': [('Extract Class', 'Move Method'), ('Extract Class', 'Replace Conditional with Polymorphism'), ('Encapsulate Field', 'Extract Class')], 'method': [('Extract Method', 'Replace Method with Method Object'), ('Decompose Conditional', 'Replace Method with Method Object'), ('Extract Method', 'Decompose Conditional')]}
+STATIC_RULE: {'blob': 'Extract Class', 'data_class': 'Encapsulate Field', 'long_method': 'Extract Method', 'feature_envy': 'Move Method'}
