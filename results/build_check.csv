@@ -1,5 +1,5 @@
 ﻿case,build,tests,note
-blob_03,pass,"27 run, 0 fail, 0 error","clean test, JDK 8 / Maven 3.9.9; suite passes; no test calls the moved method ignore() directly; it is reached only indirectly through the Mojo"
+blob_03,pass,"27 run, 0 fail, 0 error","clean test, JDK 8 / Maven 3.9.9; suite passes; no test calls the moved method ignore() directly; whether the Mojo tests reach it was not checked"
 long_method_04,pass,"6 run, 0 fail, 0 error (module Whiteboard)","identical before and after; no test calls buildApplicationDTO, so behaviour not exercised"
 data_class_06,fail,"292 run in Manager, 21 error, 3 skipped","same 21 failing tests before (9e3ad8b) and after (d281cb9), all in LocalFileService*; inconclusive"
 long_method_09,fail,not_run,"same error before and after: HTTP snapshot repo blocked by Maven 3.9.9, cloud-api tests jar unresolved"
