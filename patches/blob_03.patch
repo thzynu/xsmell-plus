@@ -1,0 +1,54 @@
+diff --git a/src/main/java/org/apache/maven/plugins/checkstyle/CheckstyleViolationCheckMojo.java b/src/main/java/org/apache/maven/plugins/checkstyle/CheckstyleViolationCheckMojo.java
+index 8c50001..9804675 100644
+--- a/src/main/java/org/apache/maven/plugins/checkstyle/CheckstyleViolationCheckMojo.java
++++ b/src/main/java/org/apache/maven/plugins/checkstyle/CheckstyleViolationCheckMojo.java
+@@ -636,7 +636,7 @@ public class CheckstyleViolationCheckMojo
+ 
+                 String source = xpp.getAttributeValue( "", "source" );
+ 
+-                if ( ignore( ignores, source ) )
++                if ( RuleUtil.ignore( ignores, source ) )
+                 {
+                     ignoreCount++;
+                 }
+@@ -711,18 +711,6 @@ public class CheckstyleViolationCheckMojo
+         }
+     }
+ 
+-    private boolean ignore( List<RuleUtil.Matcher> ignores, String source )
+-    {
+-        for ( RuleUtil.Matcher ignore : ignores )
+-        {
+-            if ( ignore.match( source ) )
+-            {
+-                return true;
+-            }
+-        }
+-        return false;
+-    }
+-
+     private DefaultLogger getConsoleListener()
+         throws MojoExecutionException
+     {
+diff --git a/src/main/java/org/apache/maven/plugins/checkstyle/RuleUtil.java b/src/main/java/org/apache/maven/plugins/checkstyle/RuleUtil.java
+index 3f136ed..95b9872 100644
+--- a/src/main/java/org/apache/maven/plugins/checkstyle/RuleUtil.java
++++ b/src/main/java/org/apache/maven/plugins/checkstyle/RuleUtil.java
+@@ -208,4 +208,17 @@ public final class RuleUtil
+             return !eventSrcName.startsWith( CHECKSTYLE_PACKAGE );
+         }
+     }
++
++    public static boolean ignore( List<Matcher> ignores, String source )
++    {
++        for ( Matcher ignore : ignores )
++        {
++            if ( ignore.match( source ) )
++            {
++                return true;
++            }
++        }
++        return false;
++    }
++
+ }
