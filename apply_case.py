@@ -70,7 +70,7 @@ def main():
     run(["git", "checkout", "-q", "-b", f"xsmell-{a.case}", "FETCH_HEAD"], d)
     run(["git", "apply", "--whitespace=nowarn", patch], d)
     run(["git", "add", "-A"], d)
-    run(["git", "commit", "-q", "-m", f"{NOTES[a.case][0]} ({a.case})"], d)
+    run(["git", "commit", "-q", "-m", f"{NOTES.get(a.case, (r.refactoring, ''))[0]} ({a.case})"], d)
     sha = run(["git", "rev-parse", "HEAD"], d)
     print("commit_after =", sha)
     if not a.no_push:
@@ -79,7 +79,9 @@ def main():
     i = df.index[df.case_id == a.case][0]
     df.at[i, "repo_url_after"] = fork if not a.fork_url else r.repo_url
     df.at[i, "commit_after"] = sha; df.at[i, "status"] = "done"
-    df.at[i, "refactoring"] = NOTES[a.case][0]; df.at[i, "notes"] = NOTES[a.case][1]; df.at[i, "test_cmd"] = ""
+    if a.case in NOTES:
+        df.at[i, "refactoring"] = NOTES[a.case][0]; df.at[i, "notes"] = NOTES[a.case][1]; df.at[i, "test_cmd"] = ""
+    # new cases: keep the refactoring, notes and test_cmd already typed in cases_todo.csv
     df.to_csv(a.cases, index=False, lineterminator="\n")
     print(a.cases, "updated")
 

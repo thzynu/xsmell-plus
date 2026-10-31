@@ -1,0 +1,39 @@
+diff --git a/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/JobController.java b/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/JobController.java
+index 911f2ae..17a0d76 100644
+--- a/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/JobController.java
++++ b/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/JobController.java
+@@ -123,9 +123,7 @@ public class JobController {
+ 			@RequestParam(defaultValue = "execution") String origin) {
+ 
+ 		launchRequest.setJobName(jobName);
+-		String params = launchRequest.jobParameters;
+-
+-		JobParameters jobParameters = jobParametersExtractor.fromString(params);
++                JobParameters jobParameters = launchRequest.toJobParameters(jobParametersExtractor);
+ 
+ 		try {
+ 			JobExecution jobExecution = jobService.launch(jobName, jobParameters);
+diff --git a/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/LaunchRequest.java b/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/LaunchRequest.java
+index 31c4e20..bca8965 100644
+--- a/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/LaunchRequest.java
++++ b/spring-batch-admin-manager/src/main/java/org/springframework/batch/admin/web/LaunchRequest.java
+@@ -18,6 +18,9 @@
+  */
+ package org.springframework.batch.admin.web;
+ 
++import org.springframework.batch.admin.domain.support.JobParametersExtractor;
++import org.springframework.batch.core.JobParameters;
++
+ public class LaunchRequest {
+ 	private String jobName;
+ 
+@@ -39,4 +42,8 @@ public class LaunchRequest {
+ 		this.jobParameters = jobParameters;
+ 	}
+ 
++        public JobParameters toJobParameters(JobParametersExtractor extractor) {
++                return extractor.fromString(jobParameters);
++        }
++
+ }
+\ No newline at end of file
