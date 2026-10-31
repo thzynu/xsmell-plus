@@ -1,0 +1,9 @@
+case_id,smell,code_name,refactoring,status,xsmell_top1,rule_only_top1,shap_only_top1,verdict,verdict_touched,applied_matches_xsmell,applied_matches_rule,tests_run
+blob_03,blob,org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo,Move Method,done,Move Method,Extract Class,Move Method,neutral,neutral,True,False,no
+blob_15,blob,org.apache.hadoop.examples.WordMedian,Extract Class,done,Move Method,Extract Class,Extract Class,improved,degraded,False,True,no
+data_class_04,data_class,org.apache.ivy.tools.analyser.JarModule,Move Behavior to Data Class,done,Move Behavior to Data Class,Encapsulate Field,Move Method,degraded,degraded,True,False,no
+data_class_06,data_class,org.springframework.batch.admin.web.LaunchRequest,Move Behavior to Data Class,done,Move Behavior to Data Class,Encapsulate Field,Move Method,degraded,degraded,True,False,no
+long_method_04,long_method,org.apache.aries.jax.rs.whiteboard.internal.AriesJaxrsServiceRuntime#buildApplicationDTO ApplicationRuntimeInformation,Extract Method,done,Extract Method,Extract Method,Extract Method,improved,neutral,True,True,no
+long_method_06,long_method,org.apache.solr.handler.component.SearchHandler#getAndPrepShardHandler SolrQueryRequest|ResponseBuilder,Extract Method,done,Extract Method,Extract Method,Extract Method,improved,neutral,True,True,no
+long_method_09,long_method,com.cloud.resource.ResourceManagerImpl#discoverHosts AddHostCmd,Extract Method,done,Extract Method,Extract Method,Extract Method,improved,neutral,True,True,no
+long_method_19,long_method,org.apache.solr.update.processor.DistributedZkUpdateProcessor#doDefensiveChecks DistribPhase,Extract Method,done,Extract Method,Extract Method,Extract Method,improved,neutral,True,True,no
