@@ -1,9 +1,9 @@
-"case","build","note"
-"blob_03","pass","see results\build_blob_03.log"
-"blob_15","no_pom","no pom.xml at root"
-"data_class_04","no_pom","no pom.xml at root"
-"data_class_06","pass","see results\build_data_class_06.log"
-"long_method_04","no_pom","no pom.xml at root"
-"long_method_06","no_pom","no pom.xml at root"
-"long_method_09","no_pom","no pom.xml at root"
-"long_method_19","no_pom","no pom.xml at root"
+﻿case,build,tests,note
+blob_03,pass,"27 run, 0 fail, 0 error",clean test on JDK 8 / Maven 3.9.9; existing suite passes
+data_class_06,fail,"292 run in Manager, 21 error, 3 skipped","identical counts before (9e3ad8b) and after (d281cb9); errors pre-exist"
+data_class_04,not_maven,,ant-ivy uses Ant/Ivy; not attempted
+blob_15,not_attempted,,heavy multi-module project
+long_method_04,not_attempted,,
+long_method_06,not_attempted,,
+long_method_09,not_attempted,,heavy multi-module project
+long_method_19,not_attempted,,heavy multi-module project
