@@ -1,0 +1,59 @@
+diff --git a/src/java/org/apache/ivy/tools/analyser/JarJarDependencyAnalyser.java b/src/java/org/apache/ivy/tools/analyser/JarJarDependencyAnalyser.java
+index 6ba2466..0092971 100644
+--- a/src/java/org/apache/ivy/tools/analyser/JarJarDependencyAnalyser.java
++++ b/src/java/org/apache/ivy/tools/analyser/JarJarDependencyAnalyser.java
+@@ -45,11 +45,11 @@ public class JarJarDependencyAnalyser implements DependencyAnalyser {
+         Map<ModuleRevisionId, DefaultModuleDescriptor> mds = new HashMap<>();
+ 
+         for (JarModule jarModule : modules) {
+-            jarModulesMap.put(jarModule.getJar().getAbsolutePath(), jarModule);
++            jarModulesMap.put(jarModule.getJarPath(), jarModule);
+             DefaultModuleDescriptor md = DefaultModuleDescriptor.newBasicInstance(
+-                    jarModule.getMrid(), new Date(jarModule.getJar().lastModified()));
++                    jarModule.getMrid(), jarModule.getLastModified());
+             mds.put(jarModule.getMrid(), md);
+-            jarjarCmd.append("\"").append(jarModule.getJar().getAbsolutePath()).append("\"");
++            jarjarCmd.append("\"").append(jarModule.getJarPath()).append("\"");
+             jarjarCmd.append(File.pathSeparator);
+         }
+ 
+@@ -68,7 +68,7 @@ public class JarJarDependencyAnalyser implements DependencyAnalyser {
+                 JarModule module = jarModulesMap.get(deps[0]);
+                 JarModule dependency = jarModulesMap.get(deps[1]);
+ 
+-                if (module.getMrid().getModuleId().equals(dependency.getMrid().getModuleId())) {
++                if (module.hasSameModuleId(dependency)) {
+                     continue;
+                 }
+                 Message.verbose(module.getMrid() + " depends on " + dependency.getMrid());
+diff --git a/src/java/org/apache/ivy/tools/analyser/JarModule.java b/src/java/org/apache/ivy/tools/analyser/JarModule.java
+index 35605fe..06755b7 100644
+--- a/src/java/org/apache/ivy/tools/analyser/JarModule.java
++++ b/src/java/org/apache/ivy/tools/analyser/JarModule.java
+@@ -18,6 +18,7 @@
+ package org.apache.ivy.tools.analyser;
+ 
+ import java.io.File;
++import java.util.Date;
+ 
+ import org.apache.ivy.core.module.id.ModuleRevisionId;
+ 
+@@ -39,6 +40,18 @@ public class JarModule {
+         return mrid;
+     }
+ 
++    public String getJarPath() {
++        return jar.getAbsolutePath();
++    }
++
++    public Date getLastModified() {
++        return new Date(jar.lastModified());
++    }
++
++    public boolean hasSameModuleId(JarModule other) {
++        return mrid.getModuleId().equals(other.mrid.getModuleId());
++    }
++
+     public String toString() {
+         return jar + " " + mrid;
+     }
