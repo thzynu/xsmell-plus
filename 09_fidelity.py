@@ -27,26 +27,28 @@ def run(res, rng, n_random=10):
     flagged = np.where(P >= 0.5)[0]
     if len(flagged) < 10:
         return []
-    med = np.nanmedian(X, axis=0)
+    MED = np.zeros_like(X)
+    for (te, _), tr in zip(res['folds'], res['train_idx']):
+        MED[te] = np.nanmedian(X[tr], axis=0)
     glob = np.argsort(-np.abs(V).mean(0))
     order_local = np.argsort(-V, axis=1)                  # most smell-increasing features first
     rows = []
     for k in KS:
         k = min(k, len(feats))
         variants = {}
-        Xd = X.copy(); Xi = np.tile(med, (len(X), 1))
+        Xd = X.copy(); Xi = MED.copy()
         for i in flagged:
             top = order_local[i, :k]
-            Xd[i, top] = med[top]; Xi[i, top] = X[i, top]
+            Xd[i, top] = MED[i, top]; Xi[i, top] = X[i, top]
         variants["shap_local"] = (Xd, Xi)
-        Xd = X.copy(); Xi = np.tile(med, (len(X), 1)); Xi[:, glob[:k]] = X[:, glob[:k]]; Xd[:, glob[:k]] = med[glob[:k]]
+        Xd = X.copy(); Xi = MED.copy(); Xi[:, glob[:k]] = X[:, glob[:k]]; Xd[:, glob[:k]] = MED[:, glob[:k]]
         variants["global_importance"] = (Xd, Xi)
         drops_r, ins_r, flips_r = [], [], []
         for _ in range(n_random):
-            Xd = X.copy(); Xi = np.tile(med, (len(X), 1))
+            Xd = X.copy(); Xi = MED.copy()
             for i in flagged:
                 top = rng.choice(len(feats), k, replace=False)
-                Xd[i, top] = med[top]; Xi[i, top] = X[i, top]
+                Xd[i, top] = MED[i, top]; Xi[i, top] = X[i, top]
             pd_, pi_ = xc.repredict(res, Xd)[flagged], xc.repredict(res, Xi)[flagged]
             drops_r.append((P[flagged] - pd_).mean()); flips_r.append((pd_ < 0.5).mean())
             ins_r.append((pi_ / np.maximum(P[flagged], 1e-9)).mean())

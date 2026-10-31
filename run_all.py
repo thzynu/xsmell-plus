@@ -25,6 +25,7 @@ if not a.skip_05:
         ("project-wise, duplicates removed", ["05_run_experiments.py", "--split", "project", "--dedup"] + extra),
     ]
 steps += [
+    ("nested group CV (unbiased performance + config selection)", ["05b_nested.py"]),
     ("statistical tests + split comparison + organisation breakdown", ["07_stats_tests.py"]),
     ("figures + SHAP", ["06_make_figures.py"]),
     ("XSmell+ recommender + ablation + sensitivity (rho, lambda)", ["08_recommender.py", "--sensitivity"] + quick08),

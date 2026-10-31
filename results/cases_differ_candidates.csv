@@ -1,0 +1,17 @@
+smell,code_name,p_smelly,top1,rule_only_top1
+data_class,demo.jaxrs.service.Product,0.993,Move Behavior to Data Class,Encapsulate Field
+blob,org.apache.hadoop.hbase.master.assignment.SplitTableRegionProcedure,0.99,Move Method,Extract Class
+data_class,org.apache.camel.opentracing.starter.OpenTracingConfigurationProperties,0.987,Move Behavior to Data Class,Encapsulate Field
+data_class,org.apache.rocketmq.broker.transaction.TransactionRecord,0.973,Move Behavior to Data Class,Encapsulate Field
+blob,com.cloud.usage.UsageServiceImpl,0.963,Move Method,Extract Class
+data_class,org.apache.ivy.tools.analyser.JarModule,0.957,Move Behavior to Data Class,Encapsulate Field
+blob,org.apache.maven.plugins.checkstyle.CheckstyleViolationCheckMojo,0.95,Move Method,Extract Class
+blob,org.eclipse.smarthome.automation.core.internal.RuleRegistryImpl,0.947,Move Method,Extract Class
+data_class,org.eclipse.ice.tests.client.FakeErrorBoxWidget,0.947,Move Behavior to Data Class,Encapsulate Field
+data_class,org.springframework.batch.admin.web.LaunchRequest,0.947,Move Behavior to Data Class,Encapsulate Field
+blob,org.apache.maven.scm.provider.perforce.PerforceScmProvider,0.933,Move Method,Extract Class
+blob,org.apache.zeppelin.interpreter.RemoteInterpreterEventServer,0.93,Move Method,Extract Class
+blob,org.apache.hadoop.metrics2.impl.MetricsSystemImpl,0.923,Move Method,Extract Class
+blob,org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor,0.923,Move Method,Extract Class
+data_class,com.esri.geoportal.harvester.waf.WafFolderContent,0.917,Move Behavior to Data Class,Encapsulate Field
+data_class,com.microsoft.tfs.client.common.git.json.TfsGitTreeEntriesJson,0.91,Move Behavior to Data Class,Encapsulate Field

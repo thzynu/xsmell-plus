@@ -1,5 +1,5 @@
 figure,source,details
-fig2_f1_per_smell.png,res/per_seed_project.csv,"best config per smell, mean±SD over seeds"
+fig2_f1_per_smell.png,results/per_seed_nested.csv,"best config per smell, mean±SD over seeds"
 fig_split_comparison.png,results/split_comparison.csv,random / project / org / dedup
 fig_class_distribution.png,results/dataset_audit.csv,smelly vs clean per smell
 fig_confusion_matrices.png,results/confusion_project.csv,"summed over folds, mean over seeds"

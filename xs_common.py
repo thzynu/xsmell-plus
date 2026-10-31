@@ -22,13 +22,17 @@ TASKS = exp.TASKS
 CACHE = os.path.join("results", "cache")
 
 
-def best_configs(path="results/per_seed_project.csv"):
-    """smell -> dict(model, smote, mcc) with the highest mean Macro-F1 over seeds."""
+def best_configs(path="results/per_fold_nested.csv"):
+    """smell -> modal (model, smote) chosen by inner CV across outer folds and seeds."""
     r = pd.read_csv(path)
-    g = r.groupby(["smell", "model", "smote"])[["macro_f1", "mcc"]].mean().reset_index()
-    g = g.sort_values("macro_f1", ascending=False).groupby("smell").head(1)
-    return {row.smell: {"model": row.model, "smote": bool(row.smote), "mcc": float(row.mcc),
-                        "macro_f1": float(row.macro_f1)} for row in g.itertuples()}
+    out = {}
+    for smell, d in r.groupby("smell"):
+        c = d.groupby(["model", "smote"]).size().sort_values(ascending=False)
+        (model, smote), _ = next(iter(c.items()))
+        sub = d[(d.model == model) & (d.smote == smote)]
+        out[smell] = {"model": model, "smote": bool(smote),
+                      "mcc": float(sub["mcc"].mean()), "macro_f1": float(sub["macro_f1"].mean())}
+    return out
 
 
 def _prep(pipe, A):
@@ -62,15 +66,16 @@ def oof_explain(smell, seed=0, data="data", folds=5, cache=True):
     y = df["label"].astype(int).values
     X = df[feats].values.astype(float)
     g = df["project"].values
-    V = np.zeros(X.shape); B = np.zeros(len(y)); P = np.zeros(len(y)); fold_models = []
+    V = np.zeros(X.shape); B = np.zeros(len(y)); P = np.zeros(len(y)); fold_models = []; train_idx = []
     for tr, te in StratifiedGroupKFold(n_splits=folds, shuffle=True, random_state=seed).split(X, y, g):
         pipe = exp.make_model(cfg["model"], seed, cfg["smote"])
         pipe.fit(X[tr], y[tr])
         V[te], B[te] = explain(pipe, cfg["model"], X[tr], X[te])
         P[te] = pipe.predict_proba(X[te])[:, 1]
         fold_models.append((te, pipe))
+        train_idx.append(tr)
     out = dict(smell=smell, seed=seed, cfg=cfg, df=df, feats=feats, X=X, y=y, groups=g,
-               V=V, B=B, P=P, folds=fold_models)
+               V=V, B=B, P=P, folds=fold_models, train_idx=train_idx)
     if cache:
         with open(cf, "wb") as f:
             pickle.dump(out, f)

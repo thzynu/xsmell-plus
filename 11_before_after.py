@@ -136,6 +136,38 @@ def tests_pass(repo, cmd, log_path=None):
     return float(code == 0)
 
 
+def touched_paths(case_id, patches="patches"):
+    """(paths before, paths after) of the .java files touched by patches/<case_id>.patch, or None if no patch."""
+    f = os.path.join(patches, case_id + ".patch")
+    if not os.path.exists(f):
+        return None
+    lines = open(f, encoding="utf-8", errors="replace").read().splitlines()
+    before, after = set(), set()
+    for i, ln in enumerate(lines):
+        if not ln.startswith("diff --git a/") or " b/" not in ln:
+            continue
+        pa, pb = ln[len("diff --git a/"):].split(" b/", 1)
+        if not (pa.endswith(".java") or pb.endswith(".java")):
+            continue
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
+        if not nxt.startswith("new file mode"):
+            before.add(pa)
+        if not nxt.startswith("deleted file mode"):
+            after.add(pb)
+    return before, after
+
+
+def touched_sums(ckc, paths, s03):
+    """Sum of LOC, WMC, CBO, RFC over all classes (incl. nested) in the touched files."""
+    out = {k: 0.0 for k in ("loc", "wmc", "cbo", "rfc")}
+    if paths:
+        m = ckc[ckc["_file"].map(lambda x: any(s03.same_file(x, "/" + p) for p in paths))]
+        for k in out:
+            if k in m.columns:
+                out[k] = float(m[k].astype(float).sum())
+    return out
+
+
 def detector_scorer(smell_by_level):
     """Train the best configuration per smell on ALL data (for scoring unseen before/after code)."""
     xc = _load("xs_common", "xs_common.py")
@@ -148,7 +180,7 @@ def detector_scorer(smell_by_level):
 
 
 def _metric_table(df):
-    mets = [c.replace("_before", "") for c in df.columns if c.endswith("_before") and not c.startswith("tests")]
+    mets = [c.replace("_before", "") for c in df.columns if c.endswith("_before") and not c.startswith(("tests", "build"))]
     rows = []
     for m in mets:
         b, a = df[m + "_before"], df[m + "_after"]
@@ -166,6 +198,9 @@ def summarize(df):
         df = df.assign(level="all")
     s = df.groupby(["level", "verdict"]).size().rename("n_cases").reset_index()
     print("\n=== Verdicts by level ===\n", s.to_string(index=False))
+    if "verdict_touched" in df:
+        print("\n=== Verdict on touched files (sum over all classes in the files changed by the patch) ===\n",
+              df.groupby(["level", "verdict_touched"]).size().rename("n_cases").reset_index().to_string(index=False))
     tables = []
     for lvl, g in df.groupby("level"):
         t = _metric_table(g)
@@ -188,7 +223,7 @@ def summarize(df):
 
 
 def _lower_is_better(m):
-    return m in LOWER or m.startswith("p_") or m == "debt"
+    return m.replace("touched_", "") in LOWER or m.startswith("p_") or m == "debt"
 
 
 def _better_series(b, a, m):
@@ -258,6 +293,14 @@ def main():
                 if el is None:
                     raise RuntimeError(f"element not found {tag}")
                 sides[tag] = el
+                tp = touched_paths(c.case_id)
+                if tp is not None:
+                    for k, v in touched_sums(s03.load_ck(out, "class"), tp[0] if tag == "before" else tp[1], s03).items():
+                        rec[f"touched_{k}_{tag}"] = v
+                    rec["n_touched_files"] = len(tp[0] | tp[1])
+                bc = getattr(c, "build_cmd", None)
+                if a.run_tests and isinstance(bc, str) and bc.strip():
+                    rec[f"build_{tag}"] = tests_pass(repo, bc, os.path.join("results", "test_logs", f"{c.case_id}_{tag}_build.log"))
                 if a.run_tests:
                     rec[f"tests_{tag}"] = tests_pass(repo, getattr(c, "test_cmd", None),
                                                  os.path.join("results", "test_logs", f"{c.case_id}_{tag}.log"))
@@ -279,6 +322,9 @@ def main():
                         v = np.array([[sides[tag].get(f, np.nan) for f in feats]], dtype=float)
                         rec[f"p_{sm}_{tag}"] = float(m.predict_proba(v)[0, 1])
             rec["verdict"] = verdict(delta)
+            dt = {m: (rec[f"touched_{m}_before"], rec[f"touched_{m}_after"]) for m in ("wmc", "cbo", "rfc", "loc")
+                  if f"touched_{m}_before" in rec and f"touched_{m}_after" in rec}
+            rec["verdict_touched"] = verdict(dt) if dt else ""
         except Exception as e:                               # keep going; report failures in the summary
             rec["verdict"] = "failed"; rec["error"] = str(e)[:200]
         rows.append(rec)

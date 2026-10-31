@@ -56,7 +56,7 @@ BAD_DIR = {"tcc": -1, "lcc": -1}
 # ----------------------------------------------------------------------------------------------
 # 2. Refactoring catalogue per level: preconditions, effect model, cost
 #    precondition = list of clauses (AND); a clause = list of (feature, op, kind, value) alternatives (OR)
-#    kind "q": value is a quantile of the feature over ALL samples of the level (no labels used); "abs": absolute value
+#    kind "q": value is a quantile of the feature over the TRAINING partition of the fold that holds the sample out (no labels used); "abs": absolute value
 #    effect = list of (target, op, value); target = feature or group; ops: mul, set, add, improve, transfer, add_prop
 # ----------------------------------------------------------------------------------------------
 R = 0.5   # default rho = fraction of the code affected by the transformation (--rho)
@@ -248,14 +248,33 @@ def best_conflict_free(scores, names, conflicts, k):
     return sorted(best, key=lambda i: -scores[i])
 
 
+def feasibility_cv(cols, pre, res):
+    """Feasibility with quantile thresholds computed on the TRAINING partition of the fold that holds each row out."""
+    n = len(next(iter(cols.values())))
+    F = np.zeros(n, dtype=bool)
+    for (te, _), tr in zip(res["folds"], res["train_idx"]):
+        q = {f: {p: float(np.nanquantile(c[tr], p)) for p in (.25, .5, .75)} for f, c in cols.items()}
+        F[te] = feasibility(cols, pre, q)[te]
+    return F
+
+
+def evidence_cv(smell, rname, res, gidx, use_dir=True):
+    """Evidence with the 'high/low side' median computed on the TRAINING partition of each fold."""
+    V, X, feats = res["V"], res["X"], res["feats"]
+    E = np.zeros(len(X))
+    for (te, _), tr in zip(res["folds"], res["train_idx"]):
+        med = np.nanmedian(X[tr], axis=0)
+        E[te] = evidence(smell, rname, V, X, med, feats, gidx, use_dir)[te]
+    return E
+
+
 def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
     smell, level = res["smell"], xc.TASKS[res["smell"]]
     X, V, P, feats = res["X"], res["V"], res["P"], res["feats"]
     cat = CATALOG[level]
     names = list(cat)
     cols = derived(X, feats)
-    quant = {f: {q: float(np.nanquantile(c, q)) for q in (.25, .5, .75)} for f, c in cols.items()}
-    med = np.nanmedian(X, axis=0)
+    # thresholds and medians: per fold, training partition only (feasibility_cv, evidence_cv)
     gidx = group_index(feats)
     n = len(X)
     cand_mask = np.array([(smell, r) in WEIGHTS for r in names])
@@ -263,12 +282,12 @@ def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
     F = np.zeros((n, len(names))); I = np.zeros((n, len(names)))
     E = np.zeros((n, len(names))); Edir0 = np.zeros((n, len(names)))
     for j, r in enumerate(names):
-        F[:, j] = feasibility(cols, cat[r]["pre"], quant)
+        F[:, j] = feasibility_cv(cols, cat[r]["pre"], res)
         Xm = apply_effect(X, feats, gidx, cat[r]["eff"](rho))
         I[:, j] = np.maximum(0, P - xc.repredict(res, Xm))
         if (smell, r) in WEIGHTS:
-            E[:, j] = evidence(smell, r, V, X, med, feats, gidx, use_dir=True)
-            Edir0[:, j] = evidence(smell, r, V, X, med, feats, gidx, use_dir=False)
+            E[:, j] = evidence_cv(smell, r, res, gidx, use_dir=True)
+            Edir0[:, j] = evidence_cv(smell, r, res, gidx, use_dir=False)
     cost = np.array([cat[r]["cost"] for r in names], dtype=float)
     pen = 1 + kappa * (cost - 1)
     flagged = P >= tau
@@ -318,7 +337,8 @@ def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
 def explain_text(res, out, i, rho):
     smell, feats, X, V = res["smell"], res["feats"], res["X"], res["V"]
     gidx = group_index(feats)
-    med = np.nanmedian(X, axis=0)
+    tr_i = next(tr for (te, _), tr in zip(res["folds"], res["train_idx"]) if i in te)
+    med = np.nanmedian(X[tr_i], axis=0)
     names = out["names"]
     lines = [f"[{smell}] {res['df'].iloc[i]['code_name']}  (detector P={res['P'][i]:.2f}, "
              f"true label={'smelly' if res['y'][i] else 'clean'})"]

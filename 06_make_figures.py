@@ -28,8 +28,15 @@ manifest = []
 WEAK_MCC = 0.30          # same threshold as the recommender's abstention rule (08 --mcc-min)
 
 # ---- best configuration per smell (by mean Macro-F1 over seeds) ----
-best = (res.groupby(["smell", "model", "smote"])["macro_f1"].mean().reset_index()
-        .sort_values("macro_f1", ascending=False).groupby("smell").head(1).set_index("smell"))
+nest = pd.read_csv("results/per_seed_nested.csv")
+_nf = pd.read_csv("results/per_fold_nested.csv")
+_rows = []
+for _sm, _d in _nf.groupby("smell"):
+    _c = _d.groupby(["model", "smote"]).size().sort_values(ascending=False)
+    (_mo, _so), _ = next(iter(_c.items()))
+    _n = nest[nest.smell == _sm]
+    _rows.append(dict(smell=_sm, model=_mo, smote=bool(_so), macro_f1=_n.macro_f1.mean(), mcc=_n.mcc.mean()))
+best = pd.DataFrame(_rows).set_index("smell")
 print(best)
 
 # ---- Fig. 2 replacement: F1 per smell (mean +- SD over seeds) ----
@@ -40,15 +47,15 @@ for i, (col, lab) in enumerate([("macro_f1", "Macro-F1"), ("f1_smelly", "F1 (sme
     m, s = [], []
     for sm in smells:
         b = best.loc[sm]
-        d = res[(res.smell == sm) & (res.model == b["model"]) & (res.smote == b["smote"])][col]
+        d = nest[nest.smell == sm][col]
         m.append(d.mean()); s.append(d.std())
     ax.bar(xs + (i - 0.5) * w, m, w, yerr=s, capsize=3, label=lab)
 ax.set_xticks(xs)
 ax.set_xticklabels([f"{sm}\n({best.loc[sm,'model']}{'+SMOTE' if best.loc[sm,'smote'] else ''})" for sm in smells], fontsize=8)
 ax.set_ylabel("Score (mean ± SD, 5 seeds)"); ax.set_ylim(0, 1); ax.legend(fontsize=8)
-ax.set_title("Per-smell detection performance (project-wise split)")
+ax.set_title("Per-smell detection performance (project-wise split, nested CV)")
 fig.tight_layout(); fig.savefig(f"{OUT}/fig2_f1_per_smell.png", dpi=200); plt.close(fig)
-manifest.append(("fig2_f1_per_smell.png", "res/per_seed_project.csv", "best config per smell, mean±SD over seeds"))
+manifest.append(("fig2_f1_per_smell.png", "results/per_seed_nested.csv", "best config per smell, mean±SD over seeds"))
 
 # ---- evaluation-protocol comparison (random vs project-wise vs leave-one-organisation-out) ----
 if os.path.exists("results/split_comparison.csv"):

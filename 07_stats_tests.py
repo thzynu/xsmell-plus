@@ -46,7 +46,32 @@ def paired(a, b):
         return np.nan, d.mean(), len(d)
 
 
+def seed_level():
+    """SMOTE vs none at the SEED level: average the folds inside each seed first, so the units are seeds (not seed x fold)."""
+    rows = []
+    for split in ["project", "org", "random", "project_dedup"]:
+        f = os.path.join(R, f"per_fold_{split}.csv")
+        if not os.path.exists(f):
+            continue
+        d = pd.read_csv(f)
+        ps = d.groupby(["smell", "model", "smote", "seed"])[METRICS].mean().reset_index()
+        for (smell, model), g in ps.groupby(["smell", "model"]):
+            a = g[g.smote].set_index("seed"); b = g[~g.smote].set_index("seed")
+            for m in METRICS:
+                diff = (a[m] - b[m]).dropna()
+                if len(diff) == 0:
+                    continue
+                rows.append(dict(split=split, smell=smell, model=model, metric=m, n_seeds=len(diff),
+                                 mean_diff=diff.mean(), sd_diff=diff.std(), min_diff=diff.min(), max_diff=diff.max(),
+                                 seeds_smote_better=int((diff > 0).sum())))
+    t = pd.DataFrame(rows)
+    t.to_csv(os.path.join(R, "stats_seed_level.csv"), index=False)
+    print("\nSMOTE - none, Macro-F1, per-seed means (descriptive; units = seeds):")
+    print(t[t.metric == "macro_f1"].round(4).to_string(index=False))
+
+
 def main():
+    seed_level()
     out = []
     for split in ["project", "org", "random", "project_dedup"]:
         f = os.path.join(R, f"per_fold_{split}.csv")
@@ -92,8 +117,7 @@ def main():
     # split comparison: best configuration (chosen under the project split) evaluated under every split
     rows = []
     ref = pd.read_csv(os.path.join(R, "per_seed_project.csv"))
-    best = (ref.groupby(["smell", "model", "smote"])["macro_f1"].mean().reset_index()
-            .sort_values("macro_f1", ascending=False).groupby("smell").head(1))
+    best = _modal_best()
     for split in ["random", "project", "org", "project_dedup"]:
         f = os.path.join(R, f"per_seed_{split}.csv")
         if not os.path.exists(f):
@@ -112,11 +136,30 @@ def main():
             rows.append(dict(smell=b.smell, config=b.model + ("+SMOTE" if b.smote else ""), split=split,
                              macro_f1_mean=x.macro_f1.mean(), macro_f1_sd=x.macro_f1.std(),
                              mcc_mean=x.mcc.mean(), pr_auc_mean=x.pr_auc.mean(), n_seeds=len(x)))
+    nf = os.path.join(R, "per_seed_nested.csv")
+    if os.path.exists(nf):
+        dn = pd.read_csv(nf)
+        for smell, x in dn.groupby("smell"):
+            rows.append(dict(smell=smell, config="nested-CV", split="project_nested",
+                             macro_f1_mean=x.macro_f1.mean(), macro_f1_sd=x.macro_f1.std(),
+                             mcc_mean=x.mcc.mean(), pr_auc_mean=x.pr_auc.mean() if "pr_auc" in x else float("nan"),
+                             n_seeds=len(x)))
     sc = pd.DataFrame(rows)
     sc.to_csv(os.path.join(R, "split_comparison.csv"), index=False)
     print("\nBest configuration per smell under each evaluation protocol (Macro-F1 mean ± SD):")
     sc["macro_f1"] = sc.macro_f1_mean.round(3).astype(str) + " ± " + sc.macro_f1_sd.fillna(0).round(3).astype(str)
     print(sc.pivot(index=["smell", "config"], columns="split", values="macro_f1").to_string())
+
+
+def _modal_best(path="results/per_fold_nested.csv"):
+    """Configuration chosen most often by the inner CV (not picked on the reported folds)."""
+    r = pd.read_csv(path)
+    rows = []
+    for smell, d in r.groupby("smell"):
+        c = d.groupby(["model", "smote"]).size().sort_values(ascending=False)
+        (model, smote), _ = next(iter(c.items()))
+        rows.append(dict(smell=smell, model=model, smote=bool(smote)))
+    return pd.DataFrame(rows)
 
 
 def org_breakdown(min_pos):
@@ -125,8 +168,7 @@ def org_breakdown(min_pos):
     if not (os.path.exists(f_org) and os.path.exists(f_ref)):
         print("\nskip org breakdown (needs per_fold_org.csv and per_seed_project.csv)"); return
     ref, d = pd.read_csv(f_ref), pd.read_csv(f_org)
-    best = (ref.groupby(["smell", "model", "smote"])["macro_f1"].mean().reset_index()
-            .sort_values("macro_f1", ascending=False).groupby("smell").head(1))
+    best = _modal_best()
     rows, summ = [], []
     for _, b in best.iterrows():
         x = d[(d.smell == b.smell) & (d.model == b.model) & (d.smote == b.smote)]
