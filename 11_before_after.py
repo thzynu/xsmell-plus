@@ -208,7 +208,7 @@ def summarize(df):
         tables.append(t)
         print(f"\n=== Metric change, {lvl}-level cases (n={len(g)}) ===\n", t.drop(columns="level").to_string(index=False))
     t = pd.concat(tables) if tables else pd.DataFrame()
-    if "tests_before" in df and df["tests_after"].notna().any():
+    if "tests_before" in df and "tests_after" in df and df["tests_after"].notna().any():
         ran = df[df.tests_after.notna() | df.tests_before.notna()]
         both = int(((ran.tests_before == 1) & (ran.tests_after == 1)).sum())
         print(f"\nUnit tests: {len(ran)} case(s) with a test command; pass before: {int((ran.tests_before == 1).sum())}, "

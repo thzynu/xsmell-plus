@@ -1,0 +1,12 @@
+case_id,refactoring,files_before,files_after,methods_before,methods_after,loc_before,loc_after,mi_touched_before,mi_touched_after,mi_touched_change
+blob_03,Move Method,2,2,19,19,416,416,44.87,44.87,0.0
+blob_12,Move Method,2,2,34,34,478,477,47.04,47.09,0.05
+blob_15,Extract Class,1,2,4,4,70,70,46.54,46.53,-0.01
+data_class_04,Move Behavior to Data Class,2,2,7,10,64,73,51.89,55.07,3.17
+data_class_06,Move Behavior to Data Class,2,2,11,12,124,126,52.95,53.69,0.74
+long_method_04,Extract Method,1,1,81,82,833,836,57.05,57.81,0.76
+long_method_06,Extract Method,1,1,10,11,329,332,32.93,33.9,0.97
+long_method_09,Extract Method,1,1,96,97,2205,2208,40.0,40.15,0.15
+long_method_19,Extract Method,1,1,34,35,880,884,39.68,40.23,0.54
+blob_03_rule,Extract Class,1,2,13,14,340,349,42.99,43.47,0.48
+blob_12_rule,Extract Class,1,2,19,19,324,324,45.75,45.71,-0.04

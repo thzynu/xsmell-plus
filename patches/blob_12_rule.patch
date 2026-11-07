@@ -1,0 +1,293 @@
+diff --git a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/PropertyElementErrorMessages.java b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/PropertyElementErrorMessages.java
+new file mode 100644
+index 0000000..e0487ab
+--- /dev/null
++++ b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/PropertyElementErrorMessages.java
+@@ -0,0 +1,142 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.jena.rdfxml.xmlinput.states;
++
++import java.util.ArrayList;
++
++import org.apache.jena.rdfxml.xmlinput.impl.AttributeLexer;
++
++/**
++ * Error-message construction for property elements.
++ * Extracted from {@link WantPropertyElement}.
++ */
++class PropertyElementErrorMessages {
++
++    static String descriptionOfCases(AttributeLexer ap, int nextStateCode,
++            String propAttrs) {
++        return ((propAttrs == null && ap.type == null)
++                || (ap.nodeID == null && ap.resource == null && ap.type == null) || (ap.nodeID == null
++                && ap.resource == null && propAttrs == null)) ? pairwiseIncompatibleErrorMessage(
++                nextStateCode, ap, propAttrs)
++                : complicatedErrorMessage(nextStateCode, ap, propAttrs);
++    }
++
++    private static String pairwiseIncompatibleErrorMessage(int nextStateCode,
++            AttributeLexer ap, String propAttrs) {
++        ArrayList<String> cases = new ArrayList<>();
++        if ((nextStateCode & WantPropertyElement.PARSETYPE) != 0)
++            cases.add("rdf:parseType");
++        if ((nextStateCode & WantPropertyElement.TYPEDLITERAL) != 0)
++            cases.add("rdf:datatype");
++        if (ap.nodeID != null)
++            cases.add("rdf:nodeID");
++        if (ap.resource != null)
++            cases.add("rdf:resource");
++        if (ap.type != null)
++            cases.add("rdf:type");
++
++        if (cases.size() == 1) {
++            if (propAttrs == null)
++                throw new IllegalStateException("Shouldn't happen.");
++            return "The attribute " + cases.get(0) + " is not permitted with "
++                    + propAttrs + " on a property element.";
++        }
++        String rslt = "On a property element, only one of the ";
++        if (propAttrs == null)
++            rslt += "attributes ";
++        for (int i = 0; i < cases.size(); i++) {
++            rslt += cases.get(i);
++            switch (cases.size() - i) {
++            case 1:
++                break;
++            case 2:
++                rslt += " or ";
++                break;
++            default:
++                rslt += ", ";
++                break;
++            }
++        }
++        if (propAttrs != null) {
++            rslt += " attributes or " + propAttrs;
++        }
++        rslt += " is permitted.";
++        return rslt;
++    }
++
++    private static String complicatedErrorMessage(int nextStateCode,
++            AttributeLexer ap, String propAttrs) {
++        String subjectIs;
++
++        if (ap.nodeID == null && ap.resource == null
++                && (ap.type == null || propAttrs == null))
++            throw new IllegalStateException("precondition failed.");
++
++        switch (nextStateCode & (WantPropertyElement.TYPEDLITERAL | WantPropertyElement.PARSETYPE)) {
++        case WantPropertyElement.TYPEDLITERAL | WantPropertyElement.PARSETYPE:
++            subjectIs = "the mutually incompatible attributes rdf:datatype and rdf:parseType are";
++            break;
++        case WantPropertyElement.TYPEDLITERAL:
++            subjectIs = "the attribute rdf:datatype is";
++            break;
++        case WantPropertyElement.PARSETYPE:
++            subjectIs = "the attribute rdf:parseType is";
++            break;
++        default:
++            throw new IllegalStateException("precondition failed");
++        }
++
++        String nodeIDResource = null;
++        if (ap.nodeID != null && ap.resource != null) {
++            nodeIDResource = "the mutually incompatible attributes rdf:nodeID and rdf:resource";
++        } else if (ap.nodeID != null) {
++            nodeIDResource = "the attribute rdf:nodeID";
++        } else if (ap.resource != null) {
++            nodeIDResource = "the attribute rdf:resource";
++        }
++
++        int otherAttCount = nodeIDResource == null ? 0 : 1;
++        String otherAtts;
++        if (ap.type != null)
++            otherAttCount++;
++        if (propAttrs != null)
++            otherAttCount++;
++        if (otherAttCount < 2)
++            throw new IllegalStateException("logic error");
++        otherAtts = otherAttCount == 2 ? "both " : "each of ";
++
++        if (ap.type != null && propAttrs != null) {
++            if (nodeIDResource == null)
++                otherAtts += "the attribute rdf:type and the " + propAttrs;
++            else 
++                otherAtts += "the attribute rdf:type, the " + propAttrs;
++        } else if (ap.type != null) {
++            otherAtts += "the attribute rdf:type";
++        } else {
++            otherAtts = "the " + propAttrs;
++        }
++        
++        if (nodeIDResource != null)
++            otherAtts += " and "+nodeIDResource;
++
++        return "On a property element, " + subjectIs + " incompatible with "
++                + otherAtts +".";
++    }
++
++}
+diff --git a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
+index dc60f30..4e12e40 100644
+--- a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
++++ b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
+@@ -41,11 +41,11 @@ public class WantPropertyElement extends Frame implements WantsObjectFrameI,
+     }
+ 
+     // These three are used as bitfields
+-    static final private int TYPEDLITERAL = 1;
++    static final int TYPEDLITERAL = 1;
+ 
+-    static final private int EMPTYWITHOBJ = 2;
++    static final int EMPTYWITHOBJ = 2;
+ 
+-    static final private int PARSETYPE = 4;
++    static final int PARSETYPE = 4;
+ 
+     @Override
+     public FrameI startElement(String uri, String localName, String rawName,
+@@ -87,7 +87,7 @@ public class WantPropertyElement extends Frame implements WantsObjectFrameI,
+                 | (mustBeEmpty(ap, atts, cnt) ? EMPTYWITHOBJ : 0);
+ 
+         if (this.badStateCode(nextStateCode)) {
+-            warning(errorNumber(nextStateCode), descriptionOfCases(ap,
++            warning(errorNumber(nextStateCode), PropertyElementErrorMessages.descriptionOfCases(ap,
+                     nextStateCode, propertyAttributeDescription(atts, ap, cnt)));
+         }
+ 
+@@ -273,116 +273,6 @@ public class WantPropertyElement extends Frame implements WantsObjectFrameI,
+      * ERROR MESSAGES
+      * 
+      **************************************************************************/
+-   private String descriptionOfCases(AttributeLexer ap, int nextStateCode,
+-            String propAttrs) {
+-        return ((propAttrs == null && ap.type == null)
+-                || (ap.nodeID == null && ap.resource == null && ap.type == null) || (ap.nodeID == null
+-                && ap.resource == null && propAttrs == null)) ? pairwiseIncompatibleErrorMessage(
+-                nextStateCode, ap, propAttrs)
+-                : complicatedErrorMessage(nextStateCode, ap, propAttrs);
+-    }
+-
+-    private String pairwiseIncompatibleErrorMessage(int nextStateCode,
+-            AttributeLexer ap, String propAttrs) {
+-        ArrayList<String> cases = new ArrayList<>();
+-        if ((nextStateCode & PARSETYPE) != 0)
+-            cases.add("rdf:parseType");
+-        if ((nextStateCode & TYPEDLITERAL) != 0)
+-            cases.add("rdf:datatype");
+-        if (ap.nodeID != null)
+-            cases.add("rdf:nodeID");
+-        if (ap.resource != null)
+-            cases.add("rdf:resource");
+-        if (ap.type != null)
+-            cases.add("rdf:type");
+-
+-        if (cases.size() == 1) {
+-            if (propAttrs == null)
+-                throw new IllegalStateException("Shouldn't happen.");
+-            return "The attribute " + cases.get(0) + " is not permitted with "
+-                    + propAttrs + " on a property element.";
+-        }
+-        String rslt = "On a property element, only one of the ";
+-        if (propAttrs == null)
+-            rslt += "attributes ";
+-        for (int i = 0; i < cases.size(); i++) {
+-            rslt += cases.get(i);
+-            switch (cases.size() - i) {
+-            case 1:
+-                break;
+-            case 2:
+-                rslt += " or ";
+-                break;
+-            default:
+-                rslt += ", ";
+-                break;
+-            }
+-        }
+-        if (propAttrs != null) {
+-            rslt += " attributes or " + propAttrs;
+-        }
+-        rslt += " is permitted.";
+-        return rslt;
+-    }
+-
+-    private String complicatedErrorMessage(int nextStateCode,
+-            AttributeLexer ap, String propAttrs) {
+-        String subjectIs;
+-
+-        if (ap.nodeID == null && ap.resource == null
+-                && (ap.type == null || propAttrs == null))
+-            throw new IllegalStateException("precondition failed.");
+-
+-        switch (nextStateCode & (TYPEDLITERAL | PARSETYPE)) {
+-        case TYPEDLITERAL | PARSETYPE:
+-            subjectIs = "the mutually incompatible attributes rdf:datatype and rdf:parseType are";
+-            break;
+-        case TYPEDLITERAL:
+-            subjectIs = "the attribute rdf:datatype is";
+-            break;
+-        case PARSETYPE:
+-            subjectIs = "the attribute rdf:parseType is";
+-            break;
+-        default:
+-            throw new IllegalStateException("precondition failed");
+-        }
+-
+-        String nodeIDResource = null;
+-        if (ap.nodeID != null && ap.resource != null) {
+-            nodeIDResource = "the mutually incompatible attributes rdf:nodeID and rdf:resource";
+-        } else if (ap.nodeID != null) {
+-            nodeIDResource = "the attribute rdf:nodeID";
+-        } else if (ap.resource != null) {
+-            nodeIDResource = "the attribute rdf:resource";
+-        }
+-
+-        int otherAttCount = nodeIDResource == null ? 0 : 1;
+-        String otherAtts;
+-        if (ap.type != null)
+-            otherAttCount++;
+-        if (propAttrs != null)
+-            otherAttCount++;
+-        if (otherAttCount < 2)
+-            throw new IllegalStateException("logic error");
+-        otherAtts = otherAttCount == 2 ? "both " : "each of ";
+-
+-        if (ap.type != null && propAttrs != null) {
+-            if (nodeIDResource == null)
+-                otherAtts += "the attribute rdf:type and the " + propAttrs;
+-            else 
+-                otherAtts += "the attribute rdf:type, the " + propAttrs;
+-        } else if (ap.type != null) {
+-            otherAtts += "the attribute rdf:type";
+-        } else {
+-            otherAtts = "the " + propAttrs;
+-        }
+-        
+-        if (nodeIDResource != null)
+-            otherAtts += " and "+nodeIDResource;
+-
+-        return "On a property element, " + subjectIs + " incompatible with "
+-                + otherAtts +".";
+-    }
+ 
+     private String propertyAttributeDescription(Attributes atts,
+             AttributeLexer ap, int cnt) {

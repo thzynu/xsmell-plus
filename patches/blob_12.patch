@@ -1,0 +1,126 @@
+diff --git a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/impl/AttributeLexer.java b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/impl/AttributeLexer.java
+index 01a79e2..15f4073 100644
+--- a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/impl/AttributeLexer.java
++++ b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/impl/AttributeLexer.java
+@@ -233,6 +233,54 @@ public class AttributeLexer extends QNameLexer implements ARPErrorNumbers {
+         return done.get(i);
+     }
+ 
++    public String propertyAttributeDescription(Attributes atts, int cnt) {
++        String propAttrs = "";
++        int propAttrCount = atts.getLength() - cnt;
++        int found = 0;
++        if (propAttrCount == 0)
++            return null;
++        switch (propAttrCount) {
++        case 0:
++            break;
++        case 1:
++        case 2:
++        case 3:
++            for (int i = 0; i < atts.getLength(); i++)
++                if (!done(i)) {
++                    propAttrs += atts.getQName(i);
++                    found++;
++                    switch (propAttrCount - found) {
++                    case 0:
++                        break;
++                    case 1:
++                        propAttrs += " and ";
++                        break;
++                    default:
++                        propAttrs += ", ";
++                    }
++                }
++            break;
++        default:
++            if (propAttrCount < 0)
++                throw new IllegalStateException("Shouldn't happen.");
++            for (int i = 0; i < atts.getLength(); i++)
++                if (!done(i)) {
++                    found++;
++                    switch (found) {
++                    case 1:
++                        propAttrs += atts.getQName(i) + ", ";
++                        break;
++                    case 2:
++                        propAttrs += atts.getQName(i) + ", ...";
++                        break;
++                    default:
++                    // ignore
++                    }
++                }
++        }
++        return "property attributes (" + propAttrs + ")";
++    }
++
+     @Override
+     void bagIDAttribute(Taint taintMe, int rslt) throws SAXParseException  {
+         deprecatedAttribute(null,rslt);
+diff --git a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
+index dc60f30..31b7b8b 100644
+--- a/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
++++ b/jena-core/src/main/java/org/apache/jena/rdfxml/xmlinput/states/WantPropertyElement.java
+@@ -88,7 +88,7 @@ public class WantPropertyElement extends Frame implements WantsObjectFrameI,
+ 
+         if (this.badStateCode(nextStateCode)) {
+             warning(errorNumber(nextStateCode), descriptionOfCases(ap,
+-                    nextStateCode, propertyAttributeDescription(atts, ap, cnt)));
++                    nextStateCode, ap.propertyAttributeDescription(atts, cnt)));
+         }
+ 
+         AbsXMLContext x = ap.xml(xml);
+@@ -384,53 +384,4 @@ public class WantPropertyElement extends Frame implements WantsObjectFrameI,
+                 + otherAtts +".";
+     }
+ 
+-    private String propertyAttributeDescription(Attributes atts,
+-            AttributeLexer ap, int cnt) {
+-        String propAttrs = "";
+-        int propAttrCount = atts.getLength() - cnt;
+-        int found = 0;
+-        if (propAttrCount == 0)
+-            return null;
+-        switch (propAttrCount) {
+-        case 0:
+-            break;
+-        case 1:
+-        case 2:
+-        case 3:
+-            for (int i = 0; i < atts.getLength(); i++)
+-                if (!ap.done(i)) {
+-                    propAttrs += atts.getQName(i);
+-                    found++;
+-                    switch (propAttrCount - found) {
+-                    case 0:
+-                        break;
+-                    case 1:
+-                        propAttrs += " and ";
+-                        break;
+-                    default:
+-                        propAttrs += ", ";
+-                    }
+-                }
+-            break;
+-        default:
+-            if (propAttrCount < 0)
+-                throw new IllegalStateException("Shouldn't happen.");
+-            for (int i = 0; i < atts.getLength(); i++)
+-                if (!ap.done(i)) {
+-                    found++;
+-                    switch (found) {
+-                    case 1:
+-                        propAttrs += atts.getQName(i) + ", ";
+-                        break;
+-                    case 2:
+-                        propAttrs += atts.getQName(i) + ", ...";
+-                        break;
+-                    default:
+-                    // ignore
+-                    }
+-                }
+-        }
+-        return "property attributes (" + propAttrs + ")";
+-    }
+-
+ }

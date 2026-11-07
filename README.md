@@ -11,7 +11,7 @@ recommendations, and checks a small set of real refactorings before/after.
 | 3. Effectiveness | Before/after case study: CK metrics, Maintainability Index, SonarQube debt, unit tests | 11a, apply_case, 11, 13, 14 |
 
 > **Scope statement (read before citing any number).** MLCQ has one snapshot per repository, so it contains no "after refactoring"
-> data. Contribution 2's impact numbers are model-based simulations, and Contribution 3 is a 5-case study in which the author applied
+> data. Contribution 2's impact numbers are model-based simulations, and Contribution 3 is an 8-case study in which the author applied
 > the refactorings (not blinded). Neither is evidence that XSmell+ recommends better than a static rule or SHAP alone. See
 > [Limitations](#limitations-to-report).
 
@@ -24,7 +24,7 @@ recommendations, and checks a small set of real refactorings before/after.
 - **CK jar.** The GitHub `ck-master.zip` is source code, not a jar. Build it once:
   `unzip ck-master.zip && cd ck-master && mvn clean compile package -DskipTests`, then copy
   `target/ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar` to `tools/ck.jar`
-- **MLCQ**: download `MLCQCodeSmellSamples.csv` from https://doi.org/10.5281/zenodo.3666840 (Madeyski & Lewowski, EASE 2020) and place it in the repository root. The file is not redistributed in this repository.
+- **MLCQ**: download `MLCQCodeSmellSamples.csv` from https://doi.org/10.5281/zenodo.3666840 (Madeyski & Lewowski, EASE 2020) and place it in the repository root. A copy is included in the review package only; check its licence on Zenodo before republishing.
 - 10–30 GB of free disk and a stable connection; step 02 clones hundreds of repositories (sources are deleted after metrics
   are computed unless you pass `--keep`)
 - Only for step 14: a SonarQube server (Section 5.4)
@@ -222,16 +222,9 @@ start `bin\windows-x86-64\StartSonar.bat`, open http://localhost:9000 (admin/adm
 Troubleshooting: "project not found" → create the project by hand with exactly the `sonar.projectKey` in that folder's `sonar-project.properties`;
 scanner needs Java 17+ (use a JDK 17/21 `JAVA_HOME` in that window, not JDK 8); if `collect` prints `WARNING whole-file sum != sqale_index`, check that line.
 
-### 6.5 Results on the 5 cases
+### 6.5 Results on the 8 cases
 
-| Level | n | WMC | LOC | MI | Detector P (before → after) |
-|---|---|---|---|---|---|
-| class (Extract Class) | 1 | 13 → 5 | 91 → 55 | 46.5 → 51.5 | p_blob 0.98 → 0.31 |
-| method (Extract Method) | 4 | 10.5 → 5.25 | 33 → 17.75 | 38.8 → 47.8 | p_long_method 0.75 → 0.56 |
-
-Verdicts: 4 improved, 1 neutral (`long_method_09`, 5 → 5 LOC, WMC unchanged). CBO is unchanged for the class case. Technical debt is 0 min before and after in every case.
-Full per-case table: `results/before_after.csv`; summary by level: `results/before_after_summary.csv`.
-
+See results/before_after.csv and results/before_after_summary.csv (2 Blob, 2 Data Class and 4 Long Method cases; element level and touched-file level). The paper tables are generated from these files.
 ### 6.6 Cleaning disk space
 
 | Folder | Safe to delete? |
@@ -267,8 +260,8 @@ Figures are generated from code (replacing the four incorrect figures of the con
 
 1. **Feature Envy** has 59 positives; RF/XGBoost recall ≈ 0, only logistic regression shows weak signal (MCC ≈ 0.27). Do not draw conclusions from its SHAP plots or present its recommendations as working.
 2. **No "after refactoring" in MLCQ.** SHAP explains the model's prediction; it is not evidence that a refactoring removes the smell.
-3. **Recommendation quality is not shown to beat baselines.** Simulated impact favours the static rule in some settings; feasibility is 1.0 by construction. The 5 cases do not discriminate XSmell+ from rule-only or SHAP-only: the four Extract Method cases match what a static rule would also output, and for `blob_15` the algorithm recommends Move Method while Extract Class was applied.
-4. **Case study is thin.** 5 cases, refactored by the author (not blinded); data_class has 0 cases; LCOM\* and TCC exist for one class-level case only; Extract Method moves complexity rather than removing it (file-level SonarQube Cognitive Complexity stays about the same, Complexity rises by 1).
+3. **Recommendation quality is not shown to beat baselines.** Simulated impact favours the static rule in some settings; feasibility is 1.0 by construction. The 8 cases do not discriminate XSmell+ from rule-only or SHAP-only: the four Extract Method cases match what a static rule would also output, and for `blob_15` the algorithm recommends Move Method while Extract Class was applied.
+4. **Case study is thin.** 8 cases, refactored by the author (not blinded); only two data_class cases, both minimal; LCOM\* and TCC exist for one class-level case only; Extract Method moves complexity rather than removing it (file-level SonarQube Cognitive Complexity stays about the same, Complexity rises by 1).
 5. **Technical debt is 0 everywhere** (profile "Sonar way", single file, no libraries), so it does not discriminate. Single-file scans also cannot compare the Extract Class case (code moved to a new file); use CK class-level metrics there. Absolute minutes are not those of a full-project scan. Report the date and ruleset.
 6. **Tests.** Only `long_method_04` has a test run (before and after, see `results/test_logs/`); it does not cover the edited method, so it shows the build still works, not behaviour preservation. The other four repos build with ant/ivy or are too large. A test that fails *before* the refactoring too is a build/Java problem, not evidence.
 7. **Structural validity** of recommendations is checked as conditions on CK metrics, not by AST analysis or a refactoring engine. Change cost is an ordinal 1–3 convention.

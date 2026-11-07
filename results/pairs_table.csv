@@ -1,0 +1,5 @@
+pair,role,case_id,action,class WMC,class LOC,class RFC,class CBO,touched LOC,touched WMC,touched CBO,touched RFC,P(Blob) detector,MI touched,verdict class,verdict touched,tests before/after (1 = pass)
+blob_03,XSmell+,blob_03,Move Method,63 -> 60,285 -> 277,94 -> 93,24 -> 24,398 -> 398,87 -> 87,34 -> 34,117 -> 117,0.997 -> 0.997,44.87 -> 44.87,neutral,neutral,1.0/1.0
+blob_03,rule,blob_03_rule,Extract Class,63 -> 40,285 -> 212,94 -> 79,24 -> 23,285 -> 298,63 -> 64,24 -> 28,94 -> 97,0.997 -> 0.943,42.99 -> 43.47,improved,degraded,1.0/1.0
+blob_12,XSmell+,blob_12,Move Method,126 -> 111,245 -> 214,37 -> 35,23 -> 23,370 -> 370,178 -> 178,31 -> 31,59 -> 58,0.970 -> 0.947,47.04 -> 47.09,improved,neutral,1.0/1.0
+blob_12,rule,blob_12_rule,Extract Class,126 -> 80,245 -> 172,37 -> 32,23 -> 24,245 -> 247,126 -> 126,23 -> 26,37 -> 37,0.970 -> 0.797,45.75 -> 45.71,improved,degraded,1.0/1.0

@@ -98,3 +98,18 @@ def bootstrap_ci(v, n=1000, seed=0):
     rng = np.random.default_rng(seed)
     m = [rng.choice(v, len(v), replace=True).mean() for _ in range(n)]
     return float(v.mean()), float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))
+
+
+def bootstrap_ci_cluster(v, groups, n=1000, seed=0):
+    """Percentile bootstrap that resamples whole groups (repositories), not single instances."""
+    v = np.asarray(v, dtype=float); groups = np.asarray(groups)
+    if len(v) == 0:
+        return (np.nan, np.nan, np.nan)
+    ug, inv = np.unique(groups, return_inverse=True)
+    sums = np.bincount(inv, weights=v); cnt = np.bincount(inv)
+    rng = np.random.default_rng(seed); k = len(ug)
+    est = []
+    for _ in range(n):
+        s = rng.integers(0, k, k)
+        est.append(sums[s].sum() / cnt[s].sum())
+    return (float(v.mean()), float(np.percentile(est, 2.5)), float(np.percentile(est, 97.5)))

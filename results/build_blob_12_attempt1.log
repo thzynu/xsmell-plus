@@ -1,0 +1,82 @@
+[ERROR] COMPILATION ERROR : 
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[27,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[29,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[30,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[37,56] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[114,12] cannot find symbol
+  symbol:   class CacheStats
+  location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[28,50] package org.apache.jena.ext.com.google.common.base does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[29,53] package org.apache.jena.ext.com.google.common.collect does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheInfo.java:[21,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheInfo.java:[31,37] cannot find symbol
+  symbol:   class CacheStats
+  location: class org.apache.jena.atlas.lib.cache.CacheInfo
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[41,9] cannot find symbol
+  symbol:   class RemovalListener
+  location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[41,37] lambda expression not expected here
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[47,17] cannot find symbol
+  symbol:   variable CacheBuilder
+  location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[50,16] cannot find symbol
+  symbol:   variable Objects
+  location: class org.apache.jena.atlas.lib.Lib
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[62,17] cannot find symbol
+  symbol:   variable Objects
+  location: class org.apache.jena.atlas.lib.Lib
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[40,16] cannot find symbol
+  symbol:   variable ImmutableSet
+  location: interface org.apache.jena.atlas.lib.IdentityFinishCollector<T,A>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[47,20] cannot find symbol
+  symbol:   variable ImmutableSet
+  location: interface org.apache.jena.atlas.lib.IdentityFinishCollector.UnorderedIdentityFinishCollector<T,A>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[55,20] cannot find symbol
+  symbol:   variable ImmutableSet
+  location: interface org.apache.jena.atlas.lib.IdentityFinishCollector.ConcurrentUnorderedIdentityFinishCollector<T,A>
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project jena-base: Compilation failure: Compilation failure: 
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[27,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[29,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[30,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[37,56] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[114,12] cannot find symbol
+[ERROR]   symbol:   class CacheStats
+[ERROR]   location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[28,50] package org.apache.jena.ext.com.google.common.base does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[29,53] package org.apache.jena.ext.com.google.common.collect does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheInfo.java:[21,51] package org.apache.jena.ext.com.google.common.cache does not exist
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheInfo.java:[31,37] cannot find symbol
+[ERROR]   symbol:   class CacheStats
+[ERROR]   location: class org.apache.jena.atlas.lib.cache.CacheInfo
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[41,9] cannot find symbol
+[ERROR]   symbol:   class RemovalListener
+[ERROR]   location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[41,37] lambda expression not expected here
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/cache/CacheGuava.java:[47,17] cannot find symbol
+[ERROR]   symbol:   variable CacheBuilder
+[ERROR]   location: class org.apache.jena.atlas.lib.cache.CacheGuava<K,V>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[50,16] cannot find symbol
+[ERROR]   symbol:   variable Objects
+[ERROR]   location: class org.apache.jena.atlas.lib.Lib
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/Lib.java:[62,17] cannot find symbol
+[ERROR]   symbol:   variable Objects
+[ERROR]   location: class org.apache.jena.atlas.lib.Lib
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[40,16] cannot find symbol
+[ERROR]   symbol:   variable ImmutableSet
+[ERROR]   location: interface org.apache.jena.atlas.lib.IdentityFinishCollector<T,A>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[47,20] cannot find symbol
+[ERROR]   symbol:   variable ImmutableSet
+[ERROR]   location: interface org.apache.jena.atlas.lib.IdentityFinishCollector.UnorderedIdentityFinishCollector<T,A>
+[ERROR] /C:/w/blob_12/jena-base/src/main/java/org/apache/jena/atlas/lib/IdentityFinishCollector.java:[55,20] cannot find symbol
+[ERROR]   symbol:   variable ImmutableSet
+[ERROR]   location: interface org.apache.jena.atlas.lib.IdentityFinishCollector.ConcurrentUnorderedIdentityFinishCollector<T,A>
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :jena-base

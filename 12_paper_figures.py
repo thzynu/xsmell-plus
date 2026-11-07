@@ -54,7 +54,7 @@ def ablation_bars(col, ylabel, fname, title, times_coverage=False):
     if not os.path.exists(f):
         print("skip", fname, "(run 08 first)"); return
     d = pd.read_csv(f)
-    d = d[(d.rho == d.rho.iloc[0]) & (d.lam == d.lam.iloc[0])].copy()
+    d = d[(d.rho == 0.5) & (d.lam == 0.5)].copy(); assert d.groupby(["smell", "config"]).size().max() == 1
     if times_coverage:      # feasible_top1 is measured among samples that RECEIVE a recommendation; coverage is the share that do
         d[col] = d[col] * d["coverage"]
     fig, ax = plt.subplots(figsize=(9, 4)); n = len(ORDER); w = 0.8 / n

@@ -268,6 +268,17 @@ def evidence_cv(smell, rname, res, gidx, use_dir=True):
     return E
 
 
+def evidence_cv_global(smell, rname, res, gidx):
+    """Like evidence_cv, but phi(x) is replaced by the global mean|phi| of the training partition."""
+    V, X, feats = res["V"], res["X"], res["feats"]
+    E = np.zeros(len(X))
+    for (te, _), tr in zip(res["folds"], res["train_idx"]):
+        med = np.nanmedian(X[tr], axis=0)
+        Vg = np.tile(np.abs(V[tr]).mean(0), (len(X), 1))
+        E[te] = evidence(smell, rname, Vg, X, med, feats, gidx, True)[te]
+    return E
+
+
 def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
     smell, level = res["smell"], xc.TASKS[res["smell"]]
     X, V, P, feats = res["X"], res["V"], res["P"], res["feats"]
@@ -280,7 +291,7 @@ def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
     cand_mask = np.array([(smell, r) in WEIGHTS for r in names])
 
     F = np.zeros((n, len(names))); I = np.zeros((n, len(names)))
-    E = np.zeros((n, len(names))); Edir0 = np.zeros((n, len(names)))
+    E = np.zeros((n, len(names))); Edir0 = np.zeros((n, len(names))); Eg = np.zeros((n, len(names)))
     for j, r in enumerate(names):
         F[:, j] = feasibility_cv(cols, cat[r]["pre"], res)
         Xm = apply_effect(X, feats, gidx, cat[r]["eff"](rho))
@@ -288,6 +299,7 @@ def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
         if (smell, r) in WEIGHTS:
             E[:, j] = evidence_cv(smell, r, res, gidx, use_dir=True)
             Edir0[:, j] = evidence_cv(smell, r, res, gidx, use_dir=False)
+            Eg[:, j] = evidence_cv_global(smell, r, res, gidx)
     cost = np.array([cat[r]["cost"] for r in names], dtype=float)
     pen = 1 + kappa * (cost - 1)
     flagged = P >= tau
@@ -303,6 +315,9 @@ def run_smell(res, rho, lam, kappa, tau, topk, mcc_min):
 
     S = {"xsmell_full": score(lam), "xsmell_E": score(1.0), "xsmell_noF": score(lam, use_F=False),
          "xsmell_noDir": score(lam, use_dir=False)}
+    Sg = (lam * Eg + (1 - lam) * I) / pen * F
+    Sg[:, ~cand_mask] = -1
+    S["xsmell_global"] = Sg
     top1 = {k: np.where(flagged & (v.max(1) > 0), v.argmax(1), -1) for k, v in S.items()}
 
     # baselines
@@ -401,8 +416,12 @@ def main():
                 m = o["flagged"] & (t1 >= 0)
                 feas = o["F"][np.arange(len(t1))[m], t1[m]]
                 dp = o["I"][np.arange(len(t1))[m], t1[m]]
-                mf, lo_f, hi_f = xc.bootstrap_ci(feas)
-                md, lo_d, hi_d = xc.bootstrap_ci(dp)
+                mf, lo_f, hi_f = xc.bootstrap_ci_cluster(feas, res["groups"][m])
+                md, lo_d, hi_d = xc.bootstrap_ci_cluster(dp, res["groups"][m])
+                if cfg == "xsmell_full" and "xsmell_global" in tops:
+                    fl = o["flagged"]
+                    dis = np.mean(tops["xsmell_full"][0][fl] != tops["xsmell_global"][0][fl])
+                    print(f"DISAGREE {smell} rho={rho} lam={lam}: {dis:.3f} of {int(fl.sum())} flagged")
                 if a.seeds > 1 and all_flag.any():
                     ag = np.mean([np.mean(tops[cfg][s1][all_flag] == tops[cfg][s2][all_flag])
                                   for s1, s2 in itertools.combinations(range(a.seeds), 2)])
@@ -416,7 +435,8 @@ def main():
                     sim_dp_top1=round(md, 3), sim_dp_ci=f"[{lo_d:.3f},{hi_d:.3f}]",
                     top1_agreement_across_seeds=round(float(ag), 3) if not np.isnan(ag) else np.nan,
                     conflict_rate_naive_top3=round(float(np.nanmean(nc)), 3) if cfg == "xsmell_full" and len(nc) else np.nan,
-                    detector_mcc=round(res["cfg"]["mcc"], 3), abstained=bool(o["abstain_detector"])))
+                    detector_mcc=round(res["cfg"]["mcc"], 3), abstained=bool(o["abstain_detector"]),
+                    top1_differs_from_full=round(float(np.mean(t1[o["flagged"]] != o["top1"]["xsmell_full"][o["flagged"]])), 3)))
         # per-sample output for the main setting
         res, o = outs[(0, a.rho, a.lam)]
         for i in np.where(o["flagged"])[0]:
@@ -425,7 +445,17 @@ def main():
                                  true_label=int(res["y"][i]), abstained=bool(o["abstain_detector"]),
                                  recommended=" | ".join(o["names"][j] for j in o["sets"][i]),
                                  shap_only_top1=o["names"][o["top1"]["shap_only"][i]],
-                                 rule_only_top1=o["names"][o["top1"]["rule_only"][i]]))
+                                 rule_only_top1=o["names"][o["top1"]["rule_only"][i]],
+                                 rule_feasible=bool(o["F"][i, o["top1"]["rule_only"][i]]),
+                                 shap_feasible=bool(o["F"][i, o["top1"]["shap_only"][i]]),
+                                 xsmell_top1=(o["names"][o["top1"]["xsmell_full"][i]] if o["top1"]["xsmell_full"][i] >= 0 else "none"),
+                                 global_top1=(o["names"][o["top1"]["xsmell_global"][i]] if o["top1"]["xsmell_global"][i] >= 0 else "none"),
+                                 F_extract_class=(float(o["F"][i, o["names"].index("Extract Class")]) if "Extract Class" in o["names"] else np.nan),
+                                 F_move_method=(float(o["F"][i, o["names"].index("Move Method")]) if "Move Method" in o["names"] else np.nan),
+                                 S_extract_class=(float(o["S"]["xsmell_full"][i, o["names"].index("Extract Class")]) if "Extract Class" in o["names"] else np.nan),
+                                 S_move_method=(float(o["S"]["xsmell_full"][i, o["names"].index("Move Method")]) if "Move Method" in o["names"] else np.nan),
+                                 I_extract_class=(float(o["I"][i, o["names"].index("Extract Class")]) if "Extract Class" in o["names"] else np.nan),
+                                 I_move_method=(float(o["I"][i, o["names"].index("Move Method")]) if "Move Method" in o["names"] else np.nan)))
         tp = [i for i in np.where(o["flagged"] & (res["y"] == 1))[0] if o["sets"][i]]
         for i in sorted(tp, key=lambda i: -res["P"][i])[:3]:
             examples.append(explain_text(res, o, i, a.rho))

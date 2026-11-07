@@ -1,0 +1,5 @@
+cmd: mvn -B -q package -pl jena-core -am "-Dtest=TestPropEltErrorMsg,TestErrorMsg" "-DfailIfNoTests=false" "-Dmaven.javadoc.skip=true" "-Drat.skip=true" "-Dcheckstyle.skip=true"
+cwd: work_ba\apache_jena__1cca775bbf
+exit code: 0
+
+

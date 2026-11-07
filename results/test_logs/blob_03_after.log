@@ -1,0 +1,33 @@
+cmd: mvn -q test
+cwd: work_ba\thzynu_maven_checkstyle_plugin__a96fc12273
+exit code: 0
+
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] Starting audit...
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:21: 'method def modifier' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:23: 'method def rcurly' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:25: 'method def modifier' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:27: 'method def rcurly' have incorrect indentation level 4, expected level should be 2. [Indentation]
+Audit done.
+[INFO] Starting audit...
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:21: 'method def modifier' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:23: 'method def rcurly' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:25: 'method def modifier' have incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] C:\Users\DELL\OneDrive\Documents\Data\Journal Q3_SQJ\xsmell_mlcq\work_ba\thzynu_maven_checkstyle_plugin__a96fc12273\src\test\test-sources\TestJavaObject.java:27: 'method def rcurly' have incorrect indentation level 4, expected level should be 2. [Indentation]
+Audit done.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 6.18 with sun_checks.xml ruleset.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] Unable to perform checkstyle:check, unable to find checkstyle:checkstyle outputFile.
+
