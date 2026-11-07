@@ -1,0 +1,26 @@
+
+=== blob: n=1964, positives=214 (10.9%), repositories=402, features=48
+A  repositories shared between train and test (outer+inner, 5 seeds): 0  -> OK
+B  imputer = training medians: True; training medians differ from whole-data medians: False; scaler mean = training mean: True
+C  positives per outer test fold: min=42, median=43, max=44; folds with 0 positives: 0/25; with <5: 0/25
+D  MCC with shuffled labels (logreg+SMOTE, 3 repeats): mean=-0.013 (|MCC|<0.1 expected)  -> OK
+
+=== data_class: n=1993, positives=268 (13.4%), repositories=404, features=48
+A  repositories shared between train and test (outer+inner, 5 seeds): 0  -> OK
+B  imputer = training medians: True; training medians differ from whole-data medians: False; scaler mean = training mean: True
+C  positives per outer test fold: min=52, median=53, max=57; folds with 0 positives: 0/25; with <5: 0/25
+D  MCC with shuffled labels (logreg+SMOTE, 3 repeats): mean=+0.007 (|MCC|<0.1 expected)  -> OK
+
+=== feature_envy: n=2043, positives=59 (2.9%), repositories=393, features=27
+A  repositories shared between train and test (outer+inner, 5 seeds): 0  -> OK
+B  imputer = training medians: True; training medians differ from whole-data medians: True; scaler mean = training mean: True
+C  positives per outer test fold: min=11, median=12, max=12; folds with 0 positives: 0/25; with <5: 0/25
+D  MCC with shuffled labels (logreg+SMOTE, 3 repeats): mean=+0.034 (|MCC|<0.1 expected)  -> OK
+
+=== long_method: n=2088, positives=219 (10.5%), repositories=396, features=27
+A  repositories shared between train and test (outer+inner, 5 seeds): 0  -> OK
+B  imputer = training medians: True; training medians differ from whole-data medians: True; scaler mean = training mean: True
+C  positives per outer test fold: min=43, median=44, max=45; folds with 0 positives: 0/25; with <5: 0/25
+D  MCC with shuffled labels (logreg+SMOTE, 3 repeats): mean=-0.006 (|MCC|<0.1 expected)  -> OK
+
+RESULT: all checks passed
