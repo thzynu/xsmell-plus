@@ -1,0 +1,34 @@
+case_id,refactoring,metric,kind,before,after,assumed,observed
+blob_03,Move Method,wmc,ratio,63.0,60.0,0.75,0.952
+blob_03,Move Method,loc,ratio,285.0,277.0,0.75,0.972
+blob_03,Move Method,cbo,ratio,24.0,24.0,0.75,1.0
+blob_12,Move Method,wmc,ratio,126.0,111.0,0.75,0.881
+blob_12,Move Method,loc,ratio,245.0,214.0,0.75,0.873
+blob_12,Move Method,cbo,ratio,23.0,23.0,0.75,1.0
+blob_15,Extract Class,wmc,ratio,13.0,5.0,0.5,0.385
+blob_15,Extract Class,loc,ratio,91.0,55.0,0.5,0.604
+blob_15,Extract Class,cbo,ratio,13.0,13.0,0.75,1.0
+data_class_04,Move Behavior to Data Class,wmc,difference,4.0,7.0,3.0,3.0
+data_class_04,Move Behavior to Data Class,rfc,difference,0.0,4.0,3.0,4.0
+data_class_04,Move Behavior to Data Class,loc,difference,17.0,26.0,20.0,9.0
+data_class_06,Move Behavior to Data Class,wmc,difference,4.0,5.0,3.0,1.0
+data_class_06,Move Behavior to Data Class,rfc,difference,0.0,1.0,3.0,1.0
+data_class_06,Move Behavior to Data Class,loc,difference,16.0,19.0,20.0,3.0
+long_method_04,Extract Method,wmc,ratio,11.0,2.0,0.5,0.182
+long_method_04,Extract Method,loc,ratio,47.0,20.0,0.5,0.426
+long_method_04,Extract Method,cbo,ratio,11.0,8.0,0.75,0.727
+long_method_06,Extract Method,wmc,ratio,8.0,5.0,0.5,0.625
+long_method_06,Extract Method,loc,ratio,33.0,21.0,0.5,0.636
+long_method_06,Extract Method,cbo,ratio,8.0,6.0,0.75,0.75
+long_method_09,Extract Method,wmc,ratio,7.0,3.0,0.5,0.429
+long_method_09,Extract Method,loc,ratio,33.0,16.0,0.5,0.485
+long_method_09,Extract Method,cbo,ratio,7.0,3.0,0.75,0.429
+long_method_19,Extract Method,wmc,ratio,22.0,13.0,0.5,0.591
+long_method_19,Extract Method,loc,ratio,47.0,25.0,0.5,0.532
+long_method_19,Extract Method,cbo,ratio,7.0,7.0,0.75,1.0
+blob_03_rule,Extract Class,wmc,ratio,63.0,40.0,0.5,0.635
+blob_03_rule,Extract Class,loc,ratio,285.0,212.0,0.5,0.744
+blob_03_rule,Extract Class,cbo,ratio,24.0,23.0,0.75,0.958
+blob_12_rule,Extract Class,wmc,ratio,126.0,80.0,0.5,0.635
+blob_12_rule,Extract Class,loc,ratio,245.0,172.0,0.5,0.702
+blob_12_rule,Extract Class,cbo,ratio,23.0,24.0,0.75,1.043

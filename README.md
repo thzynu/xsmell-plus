@@ -11,7 +11,7 @@ recommendations, and checks a small set of real refactorings before/after.
 | 3. Effectiveness | Before/after case study: CK metrics, Maintainability Index, SonarQube debt, unit tests | 11a, apply_case, 11, 13, 14 |
 
 > **Scope statement (read before citing any number).** MLCQ has one snapshot per repository, so it contains no "after refactoring"
-> data. Contribution 2's impact numbers are model-based simulations, and Contribution 3 is an 8-case study in which the author applied
+> data. Contribution 2's impact numbers are model-based simulations, and Contribution 3 is an 9-element (11 measured versions) study in which the author applied
 > the refactorings (not blinded). Neither is evidence that XSmell+ recommends better than a static rule or SHAP alone. See
 > [Limitations](#limitations-to-report).
 
@@ -281,3 +281,42 @@ Figures are generated from code (replacing the four incorrect figures of the con
   (`XS_QSHIFT` shifts the threshold quantiles in `08_recommender.py`).
 - CK (`tools/ck.jar`) needs Java >= 11. The target repositories may need an older JDK to build.
 - `11_before_after.py` reports element-level and touched-file metrics (`touched_*`, `verdict_touched`).
+
+## Round 3 additions: paired refactoring evaluation and final checks
+
+Environment of the build/test runs: Windows 11; Maven 3.9.9 with Temurin JDK 8.0.504 (JAVA_HOME) for Maven/Gradle builds;
+Temurin JDK 21 on PATH for the CK tool. Existing unit tests were run before and after each change; tests written by us exist only for blob_03 (RuleUtil.ignore) and blob_03_rule (ViolationCounter), after the refactoring (patches/blob_03_tests.patch, patches/blob_03_rule_tests.patch).
+
+Cases (`cases_todo.csv`, 58 rows = 55 candidates + 3 paired/derived rows). 11 cases have a measured before/after:
+blob_03 + blob_03_rule and blob_12 + blob_12_rule are PAIRS (the XSmell+ action and the static-rule action applied to
+the same code on separate branches); blob_15, data_class_04, data_class_06, long_method_04/06/09/19 are the earlier cases.
+Not measured: blob_15_xs (XSmell+ action Move Method not executable: no project class can receive the method);
+blob_10 (Gradle plugin repository returned HTTP 401), blob_04 (Tycho target platform not resolved when building one module),
+blob_07 (protoc not installed) were skipped because the project did not build; reasons are in the `status` column and
+in results/build_<case>_before.log.
+Candidate order was fixed beforehand by `random.Random(2026).shuffle` over the seven Blob cases whose XSmell+ top-1 differs
+from the static rule, the SHAP-only baseline and the global-importance variant: blob_10, blob_04, blob_07, blob_12,
+blob_08, blob_06, blob_02 (blob_08, blob_06, blob_02 were not tried). Refactorings were made by the first author without blinding;
+patches/ contains every patch.
+
+New scripts
+- `13b_mi_touched.py`  MI over all files touched by a patch -> results/mi_touched.csv (13_mi_metrics.py measures the original class only).
+- `14_pair_table.py`   paired comparison table -> results/pairs_table.csv.
+- `15_leakage_checks.py` design checks -> results/design_checks.txt: no repository shared by train and test (outer and inner folds),
+  imputer/scaler fitted on the training part, positives per outer test fold (Feature Envy: about 12), label-permutation MCC close to 0.
+- `08_recommender.py` now also reports the `xsmell_global` variant (local SHAP replaced by the global mean |phi| of the training
+  part of each fold), `top1_differs_from_full`, `rule_feasible`, `shap_feasible`, repository-cluster bootstrap intervals
+  (`xs_common.bootstrap_ci_cluster`) and accepts --tau, --mcc-min and --kappa.
+- results/final_sens/ holds the final runs for tau in {0.3, 0.7}, m in {0.2, 0.5} and kappa in {0, 0.5} (summary.csv).
+- results/cache (fitted models) is not included; `python run_all.py` regenerates it.
+
+Reproduce the pair rows:  python apply_case.py --case blob_12 --user <fork owner>   (needs a fork of the upstream repository);
+python 11_before_after.py --cases cases_todo.csv --ck-jar tools/ck.jar --score-detector --run-tests --only blob_12,blob_12_rule;
+python 13_mi_metrics.py ... ; python 13b_mi_touched.py ... ; python 14_pair_table.py
+## Round 3 final checks
+- patches/ holds 11 measured versions plus two test patches: blob_03_rule_tests.patch (8 tests for ViolationCounter, suite 27 -> 35) and blob_03_tests.patch (3 tests for RuleUtil.ignore, suite 27 -> 30). The tests were written after the refactoring.
+- results/test_counts_*.log: number of tests (134, TestErrorMsg + TestPropEltErrorMsg) of the Jena pair (blob_12, blob_12_rule) and original commit.
+- jacoco_methods.py prints line/branch coverage per method from target/site/jacoco/jacoco.xml.
+## Not included in this package
+- data/ck_ba (raw CK output, about 266 MB) and tools/ck.jar (CK, third-party): put the CK jar in tools/ck.jar and run 11_before_after.py to regenerate the raw output; the measured values are in results/before_after.csv, results/mi_touched.csv and results/pairs_table.csv.
+- results/cache (fitted models): regenerated by run_all.py.

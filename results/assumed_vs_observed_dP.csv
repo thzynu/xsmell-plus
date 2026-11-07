@@ -1,0 +1,6 @@
+case_id,refactoring,simulated_dP,observed_dP
+blob_03,Move Method,0.03,0.0
+blob_12,Move Method,0.017,0.023
+blob_15,Extract Class,0.32,0.667
+blob_03_rule,Extract Class,0.05,0.053
+blob_12_rule,Extract Class,0.063,0.173

@@ -1,0 +1,5 @@
+ViolationCounter.<init>                                                lines   7/  7  branches   0/  0
+ViolationCounter.countViolations                                       lines  28/ 28  branches  22/ 24
+ViolationCounter.log                                                   lines   6/  6  branches   4/  4
+ViolationCounter.isViolation                                           lines   8/  8  branches  15/ 16
+ViolationCounter.ignore                                                lines   5/  5  branches   4/  4

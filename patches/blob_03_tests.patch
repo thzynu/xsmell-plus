@@ -1,0 +1,65 @@
+diff --git a/src/test/java/org/apache/maven/plugins/checkstyle/RuleUtilIgnoreTest.java b/src/test/java/org/apache/maven/plugins/checkstyle/RuleUtilIgnoreTest.java
+new file mode 100644
+index 0000000..92c908d
+--- /dev/null
++++ b/src/test/java/org/apache/maven/plugins/checkstyle/RuleUtilIgnoreTest.java
+@@ -0,0 +1,58 @@
++package org.apache.maven.plugins.checkstyle;
++
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++
++import java.util.Collections;
++import java.util.List;
++
++import org.junit.Test;
++
++import static org.junit.Assert.assertFalse;
++import static org.junit.Assert.assertTrue;
++
++/** Tests for RuleUtil.ignore, the method moved from CheckstyleViolationCheckMojo (case blob_03). */
++public class RuleUtilIgnoreTest
++{
++    private static final String LINE_LENGTH = "com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck";
++
++    private static final String FINAL_CLASS = "com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck";
++
++    @Test
++    public void emptyListIgnoresNothing()
++    {
++        assertFalse( RuleUtil.ignore( Collections.<RuleUtil.Matcher>emptyList(), LINE_LENGTH ) );
++    }
++
++    @Test
++    public void ruleNameMatchesItsCheckOnly()
++    {
++        List<RuleUtil.Matcher> ignores = RuleUtil.parseMatchers( new String[] { "LineLength" } );
++        assertTrue( RuleUtil.ignore( ignores, LINE_LENGTH ) );
++        assertFalse( RuleUtil.ignore( ignores, FINAL_CLASS ) );
++    }
++
++    @Test
++    public void anyMatchingMatcherIsEnough()
++    {
++        List<RuleUtil.Matcher> ignores = RuleUtil.parseMatchers( new String[] { "FinalClass", "LineLength" } );
++        assertTrue( RuleUtil.ignore( ignores, LINE_LENGTH ) );
++        assertTrue( RuleUtil.ignore( ignores, FINAL_CLASS ) );
++    }
++}
+\ No newline at end of file

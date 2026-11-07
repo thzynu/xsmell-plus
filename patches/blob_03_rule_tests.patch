@@ -1,0 +1,186 @@
+diff --git a/src/test/java/org/apache/maven/plugins/checkstyle/ViolationCounterTest.java b/src/test/java/org/apache/maven/plugins/checkstyle/ViolationCounterTest.java
+new file mode 100644
+index 0000000..dc7fea4
+--- /dev/null
++++ b/src/test/java/org/apache/maven/plugins/checkstyle/ViolationCounterTest.java
+@@ -0,0 +1,179 @@
++package org.apache.maven.plugins.checkstyle;
++
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++
++import java.io.File;
++import java.io.StringReader;
++import java.util.ArrayList;
++import java.util.List;
++
++import org.apache.maven.plugin.logging.SystemStreamLog;
++import org.codehaus.plexus.util.xml.pull.MXParser;
++import org.codehaus.plexus.util.xml.pull.XmlPullParser;
++import org.junit.Test;
++
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertTrue;
++
++/**
++ * Tests written for the class ViolationCounter, which was extracted from CheckstyleViolationCheckMojo
++ * by the Extract Class refactoring of case blob_03_rule.
++ */
++public class ViolationCounterTest
++{
++    private static final String LINE_LENGTH = "com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck";
++
++    private static final String FINAL_CLASS = "com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck";
++
++    private static class RecordingLog
++        extends SystemStreamLog
++    {
++        final List<String> infos = new ArrayList<String>();
++
++        final List<String> warns = new ArrayList<String>();
++
++        final List<String> errors = new ArrayList<String>();
++
++        @Override
++        public void info( CharSequence content )
++        {
++            infos.add( content.toString() );
++        }
++
++        @Override
++        public void warn( CharSequence content )
++        {
++            warns.add( content.toString() );
++        }
++
++        @Override
++        public void error( CharSequence content )
++        {
++            errors.add( content.toString() );
++        }
++    }
++
++    private static String basedir()
++    {
++        return new File( "" ).getAbsolutePath();
++    }
++
++    private static String error( String severity, String source, String line, String column )
++    {
++        return "<error line=\"" + line + "\"" + ( column == null ? "" : " column=\"" + column + "\"" )
++            + " severity=\"" + severity + "\" message=\"msg\" source=\"" + source + "\"/>";
++    }
++
++    private static String report( String... errors )
++    {
++        StringBuilder sb = new StringBuilder( "<checkstyle version=\"6.18\"><file name=\"" );
++        sb.append( new File( basedir(), "A.java" ).getPath() ).append( "\">" );
++        for ( String e : errors )
++        {
++            sb.append( e );
++        }
++        return sb.append( "</file></checkstyle>" ).toString();
++    }
++
++    private static int count( String xml, String ignore, String severity, boolean logToConsole, RecordingLog log )
++        throws Exception
++    {
++        XmlPullParser xpp = new MXParser();
++        xpp.setInput( new StringReader( xml ) );
++        return new ViolationCounter( log, ignore, severity, logToConsole, basedir() ).countViolations( xpp );
++    }
++
++    @Test
++    public void emptyReportHasNoViolations()
++        throws Exception
++    {
++        assertEquals( 0, count( report(), null, "error", false, new RecordingLog() ) );
++    }
++
++    @Test
++    public void severityErrorCountsOnlyErrors()
++        throws Exception
++    {
++        String xml = report( error( "error", LINE_LENGTH, "1", "1" ), error( "warning", LINE_LENGTH, "2", "1" ),
++                             error( "info", LINE_LENGTH, "3", "1" ) );
++        assertEquals( 1, count( xml, null, "error", false, new RecordingLog() ) );
++    }
++
++    @Test
++    public void severityWarningCountsErrorsAndWarnings()
++        throws Exception
++    {
++        String xml = report( error( "error", LINE_LENGTH, "1", "1" ), error( "warning", LINE_LENGTH, "2", "1" ),
++                             error( "info", LINE_LENGTH, "3", "1" ) );
++        assertEquals( 2, count( xml, null, "warning", false, new RecordingLog() ) );
++    }
++
++    @Test
++    public void severityInfoCountsAll()
++        throws Exception
++    {
++        String xml = report( error( "error", LINE_LENGTH, "1", "1" ), error( "warning", LINE_LENGTH, "2", "1" ),
++                             error( "info", LINE_LENGTH, "3", "1" ) );
++        assertEquals( 3, count( xml, null, "info", false, new RecordingLog() ) );
++    }
++
++    @Test
++    public void unknownSeverityIsNotAViolation()
++        throws Exception
++    {
++        String xml = report( error( "ignore", LINE_LENGTH, "1", "1" ) );
++        assertEquals( 0, count( xml, null, "info", false, new RecordingLog() ) );
++    }
++
++    @Test
++    public void violationsAreLoggedAtTheLevelOfTheirSeverity()
++        throws Exception
++    {
++        RecordingLog log = new RecordingLog();
++        String xml = report( error( "error", LINE_LENGTH, "3", "5" ), error( "warning", FINAL_CLASS, "7", null ),
++                             error( "info", LINE_LENGTH, "9", "2" ) );
++        assertEquals( 3, count( xml, null, "info", true, log ) );
++        assertEquals( 1, log.errors.size() );
++        assertEquals( 1, log.warns.size() );
++        assertEquals( 1, log.infos.size() );
++        assertTrue( log.errors.get( 0 ).contains( ":[3,5]" ) );
++        assertTrue( log.warns.get( 0 ).contains( ":[7]" ) );
++    }
++
++    @Test
++    public void nothingIsLoggedWhenConsoleLoggingIsOff()
++        throws Exception
++    {
++        RecordingLog log = new RecordingLog();
++        count( report( error( "error", LINE_LENGTH, "1", "1" ) ), null, "error", false, log );
++        assertTrue( log.errors.isEmpty() && log.warns.isEmpty() && log.infos.isEmpty() );
++    }
++
++    /** Depends on how RuleUtil.parseMatchers reads a rule name; see the note in the study. */
++    @Test
++    public void ignoredRuleIsNotCounted()
++        throws Exception
++    {
++        RecordingLog log = new RecordingLog();
++        String xml = report( error( "error", LINE_LENGTH, "1", "1" ), error( "error", FINAL_CLASS, "2", "1" ) );
++        assertEquals( 1, count( xml, "LineLength", "error", false, log ) );
++        assertTrue( log.infos.get( 0 ).startsWith( "Ignored 1 error" ) );
++    }
++}
+\ No newline at end of file
